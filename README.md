@@ -4,6 +4,7 @@ In this repository, you can find the [official GitHub public feedback discussion
 
 - [GitHub Mobile](https://github.com/mobile) - [:iphone: Mobile Feedback](https://github.com/github/feedback/discussions?discussions_q=category%3A%22Mobile+Feedback%22)
 - [GitHub Discussions](https://github.blog/2020-05-06-new-from-satellite-2020-github-codespaces-github-discussions-securing-code-in-private-repositories-and-more/#discussions) - [:speaking_head: Discussions Feedback](https://github.com/github/feedback/discussions?discussions_q=category%3A%22Discussions+Feedback%22)
+- [GitHub Codespaces (beta)](https://github.com/features/codespaces) - β [Codespaces Beta Feedback](https://github.com/github/feedback/discussions/categories/codespaces-feedback)
 
 These discussions are where you can share suggestions for how the products should be improved and discuss those improvements with the community, including members of the GitHub product team. Check out [Making suggestions](#making-suggestions) to learn how to provide feedback.
 
