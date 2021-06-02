@@ -1,11 +1,12 @@
 # GitHub public feedback discussions
 
-In this repository, you can find the [official GitHub public feedback discussions](https://github.com/github/feedback/discussions) for the following products:
+In this repository, you can find the [official GitHub public feedback discussions](https://github.com/github/feedback/discussions) for the following product areas, as well as a category for general product feedback:
 
-- [GitHub Mobile](https://github.com/mobile) - [:iphone: Mobile Feedback](https://github.com/github/feedback/discussions?discussions_q=category%3A%22Mobile+Feedback%22)
-- [GitHub Discussions (public beta)](https://github.blog/2020-05-06-new-from-satellite-2020-github-codespaces-github-discussions-securing-code-in-private-repositories-and-more/#discussions) - [:speaking_head: Discussions Feedback](https://github.com/github/feedback/discussions?discussions_q=category%3A%22Discussions+Feedback%22)
 - [GitHub Codespaces (limited public beta)](https://github.com/features/codespaces) - :computer: [Codespaces Feedback](https://github.com/github/feedback/discussions/categories/codespaces-feedback)
+- [GitHub Discussions (public beta)](https://github.blog/2020-05-06-new-from-satellite-2020-github-codespaces-github-discussions-securing-code-in-private-repositories-and-more/#discussions) - [:speaking_head: Discussions Feedback](https://github.com/github/feedback/discussions?discussions_q=category%3A%22Discussions+Feedback%22)
+- [GitHub Mobile](https://github.com/mobile) - [:iphone: Mobile Feedback](https://github.com/github/feedback/discussions?discussions_q=category%3A%22Mobile+Feedback%22)
 - [GitHub Sponsors](https://github.com/sponsors) - [:sparkling_heart: Sponsors Feedback](https://github.com/github/feedback/discussions/categories/sponsors-feedback)
+- :octocat: [General Feedback](https://github.com/github/feedback/discussions/categories/general-feedback)
 
 These discussions are where you can share suggestions for how the products should be improved and discuss those improvements with the community, including members of the GitHub product team. Check out [Making suggestions](#making-suggestions) to learn how to provide feedback.
 
