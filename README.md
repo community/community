@@ -10,7 +10,7 @@ In this repository, you can find the [official GitHub public feedback discussion
 
 These discussions are where you can share suggestions for how the products should be improved and discuss those improvements with the community, including members of the GitHub product team. Check out [Making suggestions](#making-suggestions) to learn how to provide feedback.
 
-This repository works in conjunction with the [GitHub public product roadmap](https://github.com/github/roadmap), which is where you can learn about what features we're working on, what stage they're in, and when we expect to bring them to you. Accordingly, the Issues feature of this repository has been disabled. Discussions here will be limited to the products listed above and corresponding categories. Any discussions opened for other topics will be resolved by redirecting the feedback to the appropriate channel or outright removal in the case of unacceptable behavior per the [CODE OF CONDUCT](CODE_OF_CONDUCT.md).
+This repository works in conjunction with the [GitHub public product roadmap](https://github.com/github/roadmap), which is where you can learn about what features we're working on, what stage they're in, and when we expect to bring them to you. Accordingly, the Issues feature of this repository has been disabled. Please review the [CODE OF CONDUCT](CODE_OF_CONDUCT.md) before participating in discussions.
 
 ## Making suggestions
 
