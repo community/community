@@ -17,14 +17,14 @@ This repository works in conjunction with the [GitHub public product roadmap](ht
 
 We encourage you to [open a discussion](https://github.com/github/feedback/discussions) if you have suggestions for how we can improve our products. You don't need to have a solution to the problem you are facing to kick off a discussion. We are hoping to foster productive and collaborative conversations, so please check out [how to give good feedback](https://github.com/github/feedback/discussions/1) if you want some guidance on how to kick off a successful discussion.
 
-Prior to making a new discussion please take a look at previous discussions to see if someone else has already brought to our attention your suggestions. If you find a similar discussion reply with additional details or react to signal your support rather than creating a new discussion.
+Prior to making a new discussion, please take a look at previous discussions to see if someone else has already brought to our attention your suggestions. If you find a similar discussion, reply with additional details or react to signal your support rather than creating a new discussion.
 
 ### From a suggestion to a shipped feature
 
 Once you kick off a discussion the GitHub product team will evaluate the feedback but will not be able to respond to every submission. From there, we will work with you, and the entire community, to ensure we understand the current capabilities GitHub doesn’t have and explore the space for potential solutions to your problem statement:
 
-- If the product team determines that we are going to prioritize a feature to solve the problem you've identified we may open an issue and track it's development in the [public roadmap](https://github.com/github/roadmap).
-- If the product team determines that we will not be working to solve the problem you have identified we may comment on the discussion describing our reasoning so our decisions can remain transparent.
+- If the product team determines that we are going to prioritize a feature to solve the problem you've identified, we may open an issue and track it's development in the [public roadmap](https://github.com/github/roadmap).
+- If the product team determines that we will not be working to solve the problem you have identified, we may comment on the discussion describing our reasoning so our decisions can remain transparent.
 
 ## Disclaimer
 
