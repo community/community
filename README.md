@@ -2,7 +2,7 @@
 
 In this repository, you can find the [official GitHub public feedback discussions](https://github.com/github/feedback/discussions) for the following product areas, as well as an overall category for general product feedback:
 
-- [GitHub Codespaces (limited public beta)](https://github.com/features/codespaces) - :computer: [Codespaces Feedback](https://github.com/github/feedback/discussions/categories/codespaces-feedback)
+- [GitHub Codespaces](https://github.com/features/codespaces) - :computer: [Codespaces Feedback](https://github.com/github/feedback/discussions/categories/codespaces-feedback)
 - [GitHub Discussions (public beta)](https://github.blog/2020-05-06-new-from-satellite-2020-github-codespaces-github-discussions-securing-code-in-private-repositories-and-more/#discussions) - [:speaking_head: Discussions Feedback](https://github.com/github/feedback/discussions/categories/discussions-feedback)
 - [GitHub Issues](https://github.com/features/issues) - [:octopus: Issues Feedback](https://github.com/github/feedback/discussions/categories/issues-feedback)
 - [GitHub Mobile](https://github.com/mobile) - [:iphone: Mobile Feedback](https://github.com/github/feedback/discussions/categories/mobile-feedback)
