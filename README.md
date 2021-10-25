@@ -7,6 +7,7 @@ In this repository, you can find the [official GitHub public feedback discussion
 - [GitHub Discussions](https://github.blog/2020-05-06-new-from-satellite-2020-github-codespaces-github-discussions-securing-code-in-private-repositories-and-more/#discussions) - [:speaking_head: Discussions Feedback](https://github.com/github/feedback/discussions/categories/discussions-feedback)
 - [GitHub Issues](https://github.com/features/issues) - [:octopus: Issues Feedback](https://github.com/github/feedback/discussions/categories/issues-feedback)
 - [GitHub Mobile](https://github.com/mobile) - [:iphone: Mobile Feedback](https://github.com/github/feedback/discussions/categories/mobile-feedback)
+- [Pull Requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) - [:heavy_check_mark: Pull Requests Feedback](https://github.com/github/feedback/discussions/categories/pull-requests-feedback)
 - [GitHub Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes) - [❇️ Releases Feedback](https://github.com/github/feedback/discussions/categories/releases-feedback)
 - [GitHub Sponsors](https://github.com/sponsors) - [:sparkling_heart: Sponsors Feedback](https://github.com/github/feedback/discussions/categories/sponsors-feedback)
 - :octocat: [General Feedback](https://github.com/github/feedback/discussions/categories/general-feedback)
