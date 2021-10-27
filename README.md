@@ -24,9 +24,9 @@ Prior to making a new discussion, please take a look at previous discussions to 
 
 ### From a suggestion to a shipped feature
 
-Once you kick off a discussion the GitHub product team will evaluate the feedback but will not be able to respond to every submission. From there, we will work with you, and the entire community, to ensure we understand the current capabilities GitHub doesn’t have and explore the space for potential solutions to your problem statement:
+Once you kick off a discussion, the GitHub product team will evaluate the feedback but will not be able to respond to every submission. From there, we will work with you, and the entire community, to ensure we understand the current capabilities GitHub doesn’t have and explore the space for potential solutions to your problem statement:
 
-- If the product team determines that we are going to prioritize a feature to solve the problem you've identified, we may open an issue and track it's development in the [public roadmap](https://github.com/github/roadmap).
+- If the product team determines that we are going to prioritize a feature to solve the problem you've identified, we may open an issue and track its development in the [public roadmap](https://github.com/github/roadmap).
 - If the product team determines that we will not be working to solve the problem you have identified, we may comment on the discussion describing our reasoning so our decisions can remain transparent.
 
 ## Disclaimer
