@@ -3,6 +3,7 @@
 In this repository, you can find the [official GitHub public feedback discussions](https://github.com/github/feedback/discussions) for the following product areas, as well as an overall category for general product feedback:
 
 - [GitHub Actions](https://github.com/features/actions) - :ship: [Actions and Packages Feedback](https://github.com/github/feedback/discussions/categories/actions-and-packages-feedback)
+- [GitHub Code Search](https://cs.github.com/about) - :mag_right: [Code Search Feedback](https://github.com/github/feedback/discussions/categories/code-search-feedback)
 - [GitHub Codespaces](https://github.com/features/codespaces) - :computer: [Codespaces Feedback](https://github.com/github/feedback/discussions/categories/codespaces-feedback)
 - [GitHub Copilot](https://copilot.github.com/) (Technical Preview) - :woman_pilot: [Copilot Feedback](https://github.com/github/feedback/discussions/categories/copilot-feedback)
 - [GitHub Discussions](https://github.blog/2020-05-06-new-from-satellite-2020-github-codespaces-github-discussions-securing-code-in-private-repositories-and-more/#discussions) - [:speaking_head: Discussions Feedback](https://github.com/github/feedback/discussions/categories/discussions-feedback)
