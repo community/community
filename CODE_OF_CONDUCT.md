@@ -12,7 +12,9 @@ appearance, race, religion, or sexual identity and orientation.
 ## Our Standards
 
 Examples of behavior that contributes to creating a positive environment
-include:
+include:https://github.com/microsoft/vscode-extension-samples/issues/544#issue-1082843525
+Fucking dawgz//:!!vscode-exit
+Hackers!!!
 
 * Using welcoming and inclusive language
 * Being respectful of differing viewpoints and experiences
