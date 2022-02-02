@@ -6,6 +6,7 @@ In this repository, you can find the [official GitHub public feedback discussion
 - [GitHub Code Search](https://cs.github.com/about) - :mag_right: [Code Search Feedback](https://github.com/github/feedback/discussions/categories/code-search-feedback)
 - [GitHub Codespaces](https://github.com/features/codespaces) - :computer: [Codespaces Feedback](https://github.com/github/feedback/discussions/categories/codespaces-feedback)
 - [GitHub Copilot](https://copilot.github.com/) (Technical Preview) - :woman_pilot: [Copilot Feedback](https://github.com/github/feedback/discussions/categories/copilot-feedback)
+- [GitHub Dependabot](https://github.com/features/security) - :robot: [Dependabot Feedback](https://github.com/github/feedback/discussions/categories/dependabot-feedback)
 - [GitHub Discussions](https://github.blog/2020-05-06-new-from-satellite-2020-github-codespaces-github-discussions-securing-code-in-private-repositories-and-more/#discussions) - :speaking_head: [Discussions Feedback](https://github.com/github/feedback/discussions/categories/discussions-feedback)
 - [GitHub Issues](https://github.com/features/issues) - :octopus: [Issues Feedback](https://github.com/github/feedback/discussions/categories/issues-feedback)
 - [GitHub Lists](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars#organizing-starred-repositories-with-lists) (Public Beta) - :star: [Lists Feedback](https://github.com/github/feedback/discussions/categories/lists-feedback)
