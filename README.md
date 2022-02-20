@@ -1,3 +1,6 @@
+## Deploy to heroku
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Dawnfrosty/Mike-bot)
+
 # GitHub public feedback discussions
 
 In this repository, you can find the [official GitHub public feedback discussions](https://github.com/github/feedback/discussions) for the following product areas, as well as an overall category for general product feedback:
