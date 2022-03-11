@@ -2,20 +2,21 @@
 
 In this repository, you can find the [official GitHub public feedback discussions](https://github.com/github/feedback/discussions) for the following product areas, as well as an overall category for general product feedback:
 
-- [GitHub Actions](https://github.com/features/actions) - :ship: [Actions and Packages Feedback](https://github.com/github/feedback/discussions/categories/actions-and-packages-feedback)
-- [GitHub Code Search](https://cs.github.com/about) - :mag_right: [Code Search Feedback](https://github.com/github/feedback/discussions/categories/code-search-feedback)
-- [GitHub Codespaces](https://github.com/features/codespaces) - :computer: [Codespaces Feedback](https://github.com/github/feedback/discussions/categories/codespaces-feedback)
-- [GitHub Copilot](https://copilot.github.com/) (Technical Preview) - :woman_pilot: [Copilot Feedback](https://github.com/github/feedback/discussions/categories/copilot-feedback)
-- [GitHub Dependabot](https://github.com/features/security) - :robot: [Dependabot Feedback](https://github.com/github/feedback/discussions/categories/dependabot-feedback)
-- [GitHub Discussions](https://github.blog/2020-05-06-new-from-satellite-2020-github-codespaces-github-discussions-securing-code-in-private-repositories-and-more/#discussions) - :speaking_head: [Discussions Feedback](https://github.com/github/feedback/discussions/categories/discussions-feedback)
-- [GitHub Issues](https://github.com/features/issues) - :octopus: [Issues Feedback](https://github.com/github/feedback/discussions/categories/issues-feedback)
-- [GitHub Lists](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars#organizing-starred-repositories-with-lists) (Public Beta) - :star: [Lists Feedback](https://github.com/github/feedback/discussions/categories/lists-feedback)
-- [GitHub Mobile](https://github.com/mobile) - :iphone: [Mobile Feedback](https://github.com/github/feedback/discussions/categories/mobile-feedback)
-- [GitHub Packages](https://github.com/features/packages) - :ship: [Actions and Packages Feedback](https://github.com/github/feedback/discussions/categories/actions-and-packages-feedback)
-- [GitHub Profile](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile) - :framed_picture: [Profile Feedback](https://github.com/github/feedback/discussions/categories/profile-feedback)
-- [Pull Requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) - :heavy_check_mark: [Pull Requests Feedback](https://github.com/github/feedback/discussions/categories/pull-requests-feedback)
-- [GitHub Sponsors](https://github.com/sponsors) - :sparkling_heart: [Sponsors Feedback](https://github.com/github/feedback/discussions/categories/sponsors-feedback)
-- :octocat: [General Feedback](https://github.com/github/feedback/discussions/categories/general-feedback)
+| **Feedback Category** | **About the Product** 	|
+|---	|---	|
+| 🚢  [Actions and Packages](https://github.com/github/feedback/discussions/categories/actions-and-packages-feedback) 	| [GitHub Actions](https://github.com/features/actions) and [GitHub Packages](https://github.com/features/packages) |
+| 🔎  [Code Search](https://github.com/github/feedback/discussions/categories/code-search-feedback) 	| [GitHub Code Search](https://cs.github.com/about) 	|
+| 💻  [Codespaces](https://github.com/github/feedback/discussions/categories/codespaces-feedback) 	| [GitHub Codespaces](https://github.com/features/codespaces) 	|
+| 👩‍✈️  [Copilot](https://github.com/github/feedback/discussions/categories/copilot-feedback)   	| [GitHub Copilot](https://copilot.github.com/) (Technical Preview) 	|
+| 🤖  [Dependabot](https://github.com/github/feedback/discussions/categories/dependabot-feedback) 	| [GitHub Dependabot](https://github.com/features/security) 	|
+| 🗣️  [Discussions](https://github.com/github/feedback/discussions/categories/discussions-feedback)  	| [GitHub Discussions](https://docs.github.com/en/discussions) 	|
+| 🐙  [Issues](https://github.com/github/feedback/discussions/categories/issues-feedback) 	| [GitHub Issues](https://github.com/features/issues) 	|
+| ⭐  [Lists](https://github.com/github/feedback/discussions/categories/lists-feedback) 	| [GitHub Lists](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars#organizing-starred-repositories-with-lists) (Public Beta) 	|
+| 📱  [Mobile](https://github.com/github/feedback/discussions/categories/mobile-feedback) 	| [GitHub Mobile](https://github.com/mobile) 	|
+|  🖼️  [Profile](https://github.com/github/feedback/discussions/categories/profile-feedback)  	| [GitHub Profile](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile) 	|
+| ✔️  [Pull Requests](https://github.com/github/feedback/discussions/categories/pull-requests-feedback) 	| [GitHub Pull Requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) 	|
+|  💖  [Sponsors](https://github.com/github/feedback/discussions/categories/sponsors-feedback) 	| [GitHub Sponsors](https://github.com/sponsors) 	|
+| :octocat:  [General Feedback](https://github.com/github/feedback/discussions/categories/general-feedback) 	| [GitHub Docs](https://docs.github.com/en) |
 
 These discussions are where you can share suggestions for how the products should be improved and discuss those improvements with the community, including members of the GitHub product team. Check out [Making suggestions](#making-suggestions) to learn how to provide feedback.
 
