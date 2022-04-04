@@ -10,6 +10,7 @@ In this repository, you can find the [official GitHub public feedback discussion
 | 👩‍✈️  [Copilot](https://github.com/github/feedback/discussions/categories/copilot-feedback)   	| [GitHub Copilot](https://copilot.github.com/) (Technical Preview) 	|
 | 🤖  [Dependabot](https://github.com/github/feedback/discussions/categories/dependabot-feedback) 	| [GitHub Dependabot](https://github.com/features/security) 	|
 | 🗣️  [Discussions](https://github.com/github/feedback/discussions/categories/discussions-feedback)  	| [GitHub Discussions](https://docs.github.com/en/discussions) 	|
+| 🌐  [Feed](https://github.com/github/feedback/discussions/categories/feed-feedback)  	| [GitHub Feed](https://github.blog/2022-03-22-improving-your-github-feed/) 	|
 | 🐙  [Issues](https://github.com/github/feedback/discussions/categories/issues-feedback) 	| [GitHub Issues](https://github.com/features/issues) 	|
 | ⭐  [Lists](https://github.com/github/feedback/discussions/categories/lists-feedback) 	| [GitHub Lists](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars#organizing-starred-repositories-with-lists) (Public Beta) 	|
 | 📱  [Mobile](https://github.com/github/feedback/discussions/categories/mobile-feedback) 	| [GitHub Mobile](https://github.com/mobile) 	|
