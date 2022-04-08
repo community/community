@@ -5,7 +5,7 @@ In this repository, you can find the [official GitHub public feedback discussion
 | **Feedback Category** | **About the Product** 	|
 |---	|---	|
 | 🚢  [Actions and Packages](https://github.com/github/feedback/discussions/categories/actions-and-packages-feedback) 	| [GitHub Actions](https://github.com/features/actions) and [GitHub Packages](https://github.com/features/packages) |
-| 🔎  [Code Search & Navigation Feedback](https://github.com/github/feedback/discussions/categories/code-search-and-navigation-feedback) 	| [Code Search & Navigation Feedback](https://cs.github.com/about) 	|
+| 🔎  [Code Search & Navigatio](https://github.com/github/feedback/discussions/categories/code-search-and-navigation-feedback) 	| [Code Search & Navigation](https://cs.github.com/about) 	|
 | 💻  [Codespaces](https://github.com/github/feedback/discussions/categories/codespaces-feedback) 	| [GitHub Codespaces](https://github.com/features/codespaces) 	|
 | 👩‍✈️  [Copilot](https://github.com/github/feedback/discussions/categories/copilot-feedback)   	| [GitHub Copilot](https://copilot.github.com/) (Technical Preview) 	|
 | 🤖  [Dependabot](https://github.com/github/feedback/discussions/categories/dependabot-feedback) 	| [GitHub Dependabot](https://github.com/features/security) 	|
