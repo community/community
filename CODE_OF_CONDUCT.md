@@ -1,76 +1,295 @@
-# Contributor Covenant Code of Conduct
 
-## Our Pledge
-
-In the interest of fostering an open and welcoming environment, we as
-contributors and maintainers pledge to making participation in our project and
-our community a harassment-free experience for everyone, regardless of age, body
-size, disability, ethnicity, sex characteristics, gender identity and expression,
-level of experience, education, socio-economic status, nationality, personal
-appearance, race, religion, or sexual identity and orientation.
-
-## Our Standards
-
-Examples of behavior that contributes to creating a positive environment
-include:
-
-* Using welcoming and inclusive language
-* Being respectful of differing viewpoints and experiences
-* Gracefully accepting constructive criticism
-* Focusing on what is best for the community
-* Showing empathy towards other community members
-
-Examples of unacceptable behavior by participants include:
-
-* The use of sexualized language or imagery and unwelcome sexual attention or
- advances
-* Trolling, insulting/derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or electronic
- address, without explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
- professional setting
-
-## Our Responsibilities
-
-Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.
-
-Project maintainers have the right and responsibility to remove, edit, or
-reject comments, commits, code, wiki edits, issues, and other contributions
-that are not aligned to this Code of Conduct, or to ban temporarily or
-permanently any contributor for other behaviors that they deem inappropriate,
-threatening, offensive, or harmful.
-
-## Scope
-
-This Code of Conduct applies both within project spaces and in public spaces
-when an individual is representing the project or its community. Examples of
-representing a project or community include using an official project e-mail
-address, posting via an official social media account, or acting as an appointed
-representative at an online or offline event. Representation of a project may be
-further defined and clarified by project maintainers.
-
-## Enforcement
-
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at opensource@github.com. All
-complaints will be reviewed and investigated and will result in a response that
-is deemed necessary and appropriate to the circumstances. The project team is
-obligated to maintain confidentiality with regard to the reporter of an incident.
-Further details of specific enforcement policies may be posted separately.
-
-Project maintainers who do not follow or enforce the Code of Conduct in good
-faith may face temporary or permanent repercussions as determined by other
-members of the project's leadership.
-
-## Attribution
-
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
-available at <https://www.contributor-covenant.org/version/1/4/code-of-conduct.html>
-
-[homepage]: https://www.contributor-covenant.org
-
-For answers to common questions about this code of conduct, see
-<https://www.contributor-covenant.org/faq>
+=========================================== VIA SPECIAL IP TRANSFER ========================================
+>>>DEUTSCHE BANK AG.
+>>>VIA SPECIAL IP/IP FUND TRANSFER
+>>>DATE:11:31 AM 1/9/2022
+>>>TRANSFER CODE: 26539087942154210879473652958653
+>>>TRANSACTION CODE: D508832914218750954215
+>>>AGREEMENT NUMBER: S76P103A19-2811/2021-20XXXB-01
+>>>FROM: DEUTSCHE BANK AG. 
+>>>TO: INTERFACE BANK CONVERTS CURRENCY INTO DESTINATION BANK MELLAT IRAN
+http://www.ripe.net/db/support/db-terms-conditions.
+====================================== IP SPECIAL TRANSFER SWIFT MESSAGE ===================================
+>>661:/ SENDER/ BANK NAME:  DEUTSCHE BANK AG.
+>>663:/ SENDER/ BANK ADDRESS: FRANKFURT AM MAIN, GERMANY 
+>>665:/ SENDER/ BANK SWIFT OR BIC CODE: DEUTDEFFXXX
+>>673:/ SENDER/ ACCOUNT NUMBER: : 947259564
+>>801:/ SENDER/ ACCOUNT HOLDER COMPANY NAME: DEBIT Trading Ltd
+>>803:/ SENDER/ ACCOUNT HOLDER COMPANY INTL. REG. NO.: 820151IBCI2018
+>>805:/ SENDER/ ACCOUNT HOLDER REPRESENTED BY: Mrs. MARINA SHIN
+>>807:/ SENDER/ ACCOUNT HOLDER PASSPORT NO.: AA6555552
+>>809:/ SENDER/ ACCOUNT HOLDER PASSPORT DATE OF ISSUE: 29/08/2014
+>>811:/ SENDER/ ACCOUNT HOLDER PASSPORT DATE OF EXPIRY: 28/08/2024
+>>667:/ SENDER/ SERVER GLOBAL ID: (ORIGIN): AS8373
+>>669:/ SENDER/ SERVER GLOBAL IP:  193 150 166 0/24 / 193 150 166 0/243 
+>>671:/ SENDER/ IDENTITYCODE: A23F14.001.31.47.GTF5
+>>675:/ SENDER/ CURRENCY: EURO(CH RIAL'S)Challenge one winners: Deutsche Bank
+>>679:/ SENDER/ SORT CODE: : 678 691 681
+>>681:/ SENDER/ CREDIT INSTATE: DEUTSCHE BANK
+>>683:/ SENDER/ CLIENT NR: : : 000000000SRT-RN-388-37862BEH1BEGNIRTHAFG00 
+>>685:/ SENDER/ WTS SERVER:  (Window terminal serve): S020005636
+>>687:/ SENDER/ LOGON DOMAIN: DEUBA
+>>689:/ SENDER/ LOGON SERVER:: FRAESWDBRP 21
+>>691:/ SENDER/ FARM NAME: FARM 42
+>>693:/ SENDER/ USER NAME: FG7 709
+>>695:/ SENDER/ USER ID: FGN465
+>>697:/ SENDER/ UTR: GH54512
+>>699:/ SENDER/ AMOUNT: 50,000,000,000,000 RIAL'S
+========================================== RECEIVER INFORMATION ===========================================
+>>441:/ RECEIVER/ BANK NAME:INTERFACE BANK CONVERTS CURRENCY INTO DESTINATION (BANK GHARDESHGARI IRAN)
+>>443:/ RECEIVER/ BANK ADDRESS:TEHRAN.IRAN
+>>449:/ RECEIVER/ BANK SWIFT OR BIC CODE:bank-code.net/133
+>>445:/ RECEIVER/ ACCOUNT NAME:NOVIN ANSAR AMIR REY MOASSEH
+>>447:/ RECEIVER/ ACCOUNT NUMBER:IR860640013300920980084001
+>>481:/ RECEIVER/ COMMON ACCOUNT NUMBER:133092098008401
+>>451:/ RECEIVER/ SORT CODE: https://ISO_9362
+>>453:/ RECEIVER/ COUNTRY ISSUE: IRAN
+>>467:/ RECEIVER/ TRANSACTION CODE: USCSY-GOSB1:DBFF100T:EUR/GG24314 
+>>469:/ RECEIVER/ RECEIVING SERVER IP:192.168.1.24
+>>471:/ RECEIVER/ RECEIVING SERVER ID: MOH-AP/AS01134
+>>473:/ RECEIVER/ GLOBAL SERVER IP: 203.112.92.104
+>>475:/ RECEIVER/ GLOBAL SERVER ID: MOH-AP/AS01134
+>>479:/ RECEIVER/ TRANSACTION SERVER IP: https://HTTPS://www.yek18.com
+>>483:/ RECEIVER/ IMAD: CR38828530 
+>>485:/ RECEIVER/ LOGIN SERVER DOMAIN: https://ISO_9362
+>>487:/ RECEIVER/ LINK: https://www.avalinkiosk.ir/ebanking
+>>489:/ RECEIVER/ AMOUNT: 50,000,000,000,000 RIAL'S
+====================================== END OF TRANSMITTING AND CODES =====================================
+// SENDER AMOUNT: 50,000,000,000,000 RIAL'S
+// TRANSMITTING BANK:DEUTSCHE BANK AG.
+// BANK ADDRESS: FRANKFURT AM MAIN, GERMANY.
+// SWIFT CODE:TGYFYT5859498668
+// FED CODE: GHRT58269F5FS874B2633521868451
+// EUROCLEAR CODE: HGYTGR59455387475142Z45155
+============================================= ATTACHED MESSAGE =============================================
+WE, BANK:DEUTSCHE BANK AG LOCATED FRANKFURT AM MAIN, GERMANY. WITH FULL BANK
+RESPONSIBILITY HERE BY PRESENT OUR UNCONDITIONAL, IRREVOCABLE, ASSIGNABLE, TRANSFERABLE, BACKED STANDING/
+TRANSFER VIA IP SPECIAL SWIFT WITH THE MENTIONED INFORMATIONS IN THIS SHOT, HEREBY CONFIRM THAT THESE FUNDS ARE 
+CLEAN AND CLEAR OF ANY LEGAL ISSUE. WE ALLOWS MANUAL DOWNLOAD OF TRANSFERED FUNDS IN A CASE OF 
+ENCOMPATIBILITY OF DIFFERENT BANKING SOFTWARE VERSIONS.11:49 AM 1/9/2022
+========================================= END OF CODE TRANSMISSION =======================================
+01. IDENTITY CODE: 635322687548721432
+02. INTERBANK BLOCKING CODE: 3966836253214175410784
+03. SORT CODE: 9006850
+04. RELEASE CODE: #################################
+05. ACCESS CODE: DEUT537-86564753776098764324567899
+06. TRANSACTION CODE: D508832914218750954215
+07. SETTLEMENT TRANSACTION CODE: 36263590887328541542
+08. FINAL BLOCKING CODE: 2855D2688362416980075414
+09. FINAL CODE: ###############################
+10. TRANSFER CODE: 26539087942154210879473652958653
+11. SOURCE TRANSACTION ID: 1328542107894325682143586924
+12. WTS SERVER: 50208696
+13. BONDING KEY: 25336248076942172451074
+14. USER NAME: 704DRD8
+15. UTR CODE: GH5451
+16. TERMINAL ID: AS86990D805542
+17. DOWNLOADING CODE: ##-#####-######-#####-#####-#####
+18. RECEIVING CODE: BGDNJ-324567674-JHFDFSAN-75444234
+19. ACTIVATION CODE: D854359H2094721543895124184
+20. BIS TRANSACTION: 5328097508431209583625341758
+================================================ BANK OFFICER ==============================================
+>>>PIN:02267
+>>>SSN: 86574
+>>>ZIP CODE:60235
+>>>SIC CODE: 22341
+>>>DIRECTOR ID:  MANUEL MANG. (PIN CODE 817690)
+>>>STEUR ID: 9863 PTRSE/ ORACLE EBICS
+=============================================== ENDING TRANSFER ===========================================
+********************************** VIA SPECIAL IP TRANSFER ************************************************
+>>>DEUTSCHE BANK AG.
+>>>VIA SPECIAL IP/IP FUND TRANSFER
+>>>DATE:11:39 AM 1/9/2022
+>>>TRANSFER CODE: 26539087942154210879473652958653
+>>>TRANSACTION CODE: D508832914218750954215
+>>>AGREEMENT NUMBER: S76P103A19-1009/2020-700T-01
+>>>FROM: DEUTSCHE BANK AG.
+>>>TO: INTERFACE BANK CONVERTS CURRENCY INTO DESTINATION BANK MELLAT IRAN.
+---------------------------------------------------------------------------------------------------------
+>>http://www.ripe.net/db/support/db-terms-conditions.
+----------------------------------- IP SPECIAL TRANSFER SWIFT MESSAGE ------------------------------------
+>>661:/ SENDER/ BANK NAME: DEUTSCHE BANK AG.
+>>663:/ SENDER/ BANK ADDRESS: FRANKFURT AM MAIN, GERMANY 
+>>665:/ SENDER/ BANK SWIFT OR BIC CODE: DEUTDEFFXXX
+>>673:/ SENDER/ ACCOUNT NUMBER: : 947259564
+>>801:/ SENDER/ ACCOUNT HOLDER COMPANY NAME: DEBIT Trading Ltd
+>>803:/ SENDER/ ACCOUNT HOLDER COMPANY INTL. REG. NO.: 820151IBCI2018
+>>805:/ SENDER/ ACCOUNT HOLDER REPRESENTED BY: Mrs. MARINA SHIN
+>>807:/ SENDER/ ACCOUNT HOLDER PASSPORT NO.: AA6555552
+>>809:/ SENDER/ ACCOUNT HOLDER PASSPORT DATE OF ISSUE: 29/08/2014
+>>811:/ SENDER/ ACCOUNT HOLDER PASSPORT DATE OF EXPIRY: 28/08/2024
+>>667:/ SENDER/ SERVER GLOBAL ID: (ORIGIN): AS8373
+>>669:/ SENDER/ SERVER GLOBAL IP:  193 150 166 0/24 / 193 150 166 0/243 
+>>671:/ SENDER/ IDENTITYCODE: A23F14.001.31.47.GTF5
+>>675:/ SENDER/ CURRENCY: EURO(CH RIAL'S)Challenge one winners: Deutsche Bank
+>>679:/ SENDER/ SORT CODE: : 678 691 681
+>>681:/ SENDER/ CREDIT INSTATE: DEUTSCHE BANK
+>>683:/ SENDER/ CLIENT NR: : : 000000000SRT-RN-388-37862BEGNIRTHAFG00 
+>>685:/ SENDER/ WTS SERVER:  (Window terminal serve): S020005636
+>>687:/ SENDER/ LOGON DOMAIN: DEUBA
+>>689:/ SENDER/ LOGON SERVER:: FRAESWDBRP 21
+>>691:/ SENDER/ FARM NAME: FARM 42
+>>693:/ SENDER/ USER NAME: FG7 709
+>>695:/ SENDER/ USER ID: FGN465
+>>697:/ SENDER/ UTR: GH54512
+>>699:/ SENDER/ AMOUNT: 50,000,000,000,000 RIAL'S
+----------------------------------------------- RECEIVER INFORMATION ---------------------------------------------
+>>441:/ RECEIVER/ BANK NAME:INTERFACE BANK CONVERTS CURRENCY INTO DESTINATION (BANK MELLAT IRAN)
+>>443:/ RECEIVER/ BANK ADDRESS:TEHRAN.IRAN
+>>449:/ RECEIVER/ BANK SWIFT OR BIC CODE:bank-code.net/swift-code/BEGNIRTHAFG.html
+>>445:/ RECEIVER/ ACCOUNT NAME:NOVIN ANSAR AMIR REY MOASSEH
+>>447:/ RECEIVER/ ACCOUNT NUMBER:IR860640013300920980084001
+>>481:/ RECEIVER/ COMMON ACCOUNT NUMBER: 574007154
+>>451:/ RECEIVER/ SORT CODE: https://ISO_9362
+>>453:/ RECEIVER/ COUNTRY ISSUE: IRAN
+>>467:/ RECEIVER/ TRANSACTION CODE: USCSY-GOSB1:DBFF100T:EUR/GG24314 
+>>469:/ RECEIVER/ RECEIVING SERVER IP:192.168.1.24
+>>471:/ RECEIVER/ RECEIVING SERVER ID: MOH-AP/AS01134
+>>473:/ RECEIVER/ GLOBAL SERVER IP: 203.112.92.104
+>>475:/ RECEIVER/ GLOBAL SERVER ID: MOH-AP/AS01134
+>>479:/ RECEIVER/ TRANSACTION SERVER IP: https://www.avalinkiosk.ir/ebanking
+>>483:/ RECEIVER/ IMAD: CR38828530 
+>>485:/ RECEIVER/ LOGIN SERVER DOMAIN: https://ISO_9362
+>>487:/ RECEIVER/ LINK: https://www.avalinkiosk.ir/ebanking
+>>489:/ RECEIVER/ AMOUNT: 50,000,000,000,000 RIAL'S
+------------------------------------- END OF TRANSMITTING AND CODES ---------------------------------------
+// SENDER AMOUNT: 50,000,000,000,000 RIAL'S
+// TRANSMITTING BANK:DEUTSCHE BANK AG.
+// BANK ADDRESS: FRANKFURT AM MAIN, GERMANY.
+// SWIFT CODE: DEUTDEFFXXX
+// FED CODE: BEGNIRTHAFG74B2633521868451
+// EUROCLEAR CODE: X806653265387475142Z45155
+------------------------------------------------- ATTACHED MESSAGE --------------------------------------------
+>>451:/ RECEIVER/ SORT CODE: https://ISO_9362
+>>453:/ RECEIVER/ COUNTRY ISSUE: IRAN
+>>467:/ RECEIVER/ TRANSACTION CODE: USCSY-GOSB1:DBFF100T:EUR/GG24314 
+>>469:/ RECEIVER/ RECEIVING SERVER IP:192.168.1.24
+>>471:/ RECEIVER/ RECEIVING SERVER ID: MOH-AP/AS01134
+>>473:/ RECEIVER/ GLOBAL SERVER IP: 203.112.92.104
+>>475:/ RECEIVER/ GLOBAL SERVER ID: MOH-AP/AS01134
+>>479:/ RECEIVER/ TRANSACTION SERVER IP: https://www.avalinkiosk.ir/ebanking
+>>483:/ RECEIVER/ IMAD: CR38828530 
+>>485:/ RECEIVER/ LOGIN SERVER DOMAIN: https://ISO_9362
+>>487:/ RECEIVER/ LINK: https://www.avalinkiosk.ir/ebanking
+>>489:/ RECEIVER/ AMOUNT: 50,000,000,000,000 RIAL'S
+------------------------------------- END OF TRANSMITTING AND CODES ---------------------------------------
+// SENDER AMOUNT: 50,000,000,000,000 RIAL'S
+// TRANSMITTING BANK:DEUTSCHE BANK AG.
+// BANK ADDRESS: FRANKFURT AM MAIN, GERMANY.
+// SWIFT CODE: DEUTDEFFXXX
+// FED CODE: V2653988X5874B2633521868451
+// EUROCLEAR CODE: X806653265387475142Z45155
+------------------------------------------------- ATTACHED MESSAGE --------------------------------------------
+WE, BANK:DEUTSCHE BANK AG LOCATED FRANKFURT AM MAIN, GERMANY. WITH FULL BANK
+RESPONSIBILITY HERE BY PRESENT OUR UNCONDITIONAL, IRREVOCABLE, ASSIGNABLE, TRANSFERABLE, BACKED STANDING/
+TRANSFER VIA IP SPECIAL SWIFT WITH THE MENTIONED INFORMATIONS IN THIS SHOT, HEREBY CONFIRM THAT THESE FUNDS ARE 
+CLEAN AND CLEAR OF ANY LEGAL ISSUE. WE ALLOWS MANUAL DOWNLOAD OF TRANSFERED FUNDS IN A CASE OF 
+ENCOMPATIBILITY OF DIFFERENT BANKING SOFTWARE VERSIONS.11:44 AM 1/9/2022
+------------------------------------------- END OF CODE TRANSMISSION -------------------------------------------
+01. IDENTITY CODE: 635322687548721432
+02. INTERBANK BLOCKING CODE: 3966836253214175410784
+03. SORT CODE: 9006850
+04. RELEASE CODE: #################################
+05. ACCESS CODE: BEGNIRTHAFG-8656475377609876432456789906. TRANSACTION CODE: D508832914218750954215
+07. SETTLEMENT TRANSACTION CODE: 36263590887328541542
+08. FINAL BLOCKING CODE: 2855D2688362416980075414
+09. FINAL CODE: ###############################
+10. TRANSFER CODE: 26539087942154210879473652958653
+11. SOURCE TRANSACTION ID: 1328542107894325682143586924
+12. WTS SERVER: 50208696
+13. BONDING KEY: 25336248076942172451074
+14. USER NAME: 704DRD8
+15. UTR CODE: GH5451
+16. TERMINAL ID: AS86990D805542
+17. DOWNLOADING CODE: ##-#####-######-#####-#####-#####
+18. RECEIVING CODE: BGDNJ-324567674-JHFDFSAN-75444234
+19. ACTIVATION CODE: D854359H2094721543895124184
+20. BIS TRANSACTION: 7328097508431209583625341758
+---------------------------------------------------- BANK OFFICER ---------------------------------------------------------
+>>>PIN:02267
+>>>SSN: 86574
+>>>ZIP CODE:60235
+>>>SIC CODE: 22341
+>>>DIRECTOR ID:  MANUEL MANG. (PIN CODE 817690)
+>>>STEUR ID: 9863 PTRSE/ ORACLE EBICS
+***************************************************************************************************************************
+--------------------------------- IP SPECIAL TRANSFER SWIFT MESSAGE -------------------------------------------------------
+>>>DEUTSCHE BANK AG.
+>>>VIA SPECIAL IP/IP FUND TRANSFER
+>>>DATE11:45 AM 1/9/2022
+>>>TRANSFER CODE: 26539087942154210879473652958653
+>>>TRANSACTION CODE: D508832914218750954215
+>>>AGREEMENT NUMBER: S76P103A19-1009/2020-700T-01
+>>>FROM: DEUTSCHE BANK AG.
+>>>TO: INTERFACE BANK CONVERTS CURRENCY INTO DESTINATION BANK MELLAT IRAN.
+--------------------------------------------------------------------------------------------------------------------------
+>>BARC//IP//BARC: SERVER…
+>>1://ns2.barcap.com ://ip2 name= ip_banking2
+>>2://ns3.barcap.com ://ip3 name= ip_banking3
+>>3://ns7.barcap.com ://ip7 name= ip_banking7
+>>http://www.ripe.net/db/support/db-terms-conditions.
+-------------------------------------------------------------------------------------------------------------------------
+>>661:/ SENDER/ BANK NAME:  DEUTSCHE BANK AG.
+>>663:/ SENDER/ BANK ADDRESS: FRANKFURT AM MAIN, GERMANY 
+>>665:/ SENDER/ BANK SWIFT OR BIC CODE: DEUTDEFFXXX
+>>673:/ SENDER/ ACCOUNT NUMBER: : 947259564
+>>801:/ SENDER/ ACCOUNT HOLDER COMPANY NAME: DEBIT Trading Ltd
+>>803:/ SENDER/ ACCOUNT HOLDER COMPANY INTL. REG. NO.: 820151IBCI2018
+>>805:/ SENDER/ ACCOUNT HOLDER REPRESENTED BY: Mrs. MARINA SHIN
+>>807:/ SENDER/ ACCOUNT HOLDER PASSPORT NO.: AA6555552
+>>809:/ SENDER/ ACCOUNT HOLDER PASSPORT DATE OF ISSUE: 29/08/2014
+>>811:/ SENDER/ ACCOUNT HOLDER PASSPORT DATE OF EXPIRY: 28/08/2024
+>>667:/ SENDER/ SERVER GLOBAL ID: (ORIGIN): AS8373
+>>669:/ SENDER/ SERVER GLOBAL IP:  193 150 166 0/24 / 193 150 166 0/243 
+>>671:/ SENDER/ IDENTITYCODE: A23F14.001.31.47.GTF5
+>>675:/ SENDER/ CURRENCY: EURO(CH RIAL'S)Challenge one winners: Deutsche Bank
+>>679:/ SENDER/ SORT CODE: : 678 691 681
+>>681:/ SENDER/ CREDIT INSTATE: DEUTSCHE BANK
+>>683:/ SENDER/ CLIENT NR: : : 000000000SRT-RN-388-37862BEGNIRTHAFG00 
+>>685:/ SENDER/ WTS SERVER:  (Window terminal serve): S020005636
+>>687:/ SENDER/ LOGON DOMAIN: DEUBA
+>>689:/ SENDER/ LOGON SERVER:: FRAESWDBRP 21
+>>691:/ SENDER/ FARM NAME: FARM 42
+>>693:/ SENDER/ USER NAME: FG7 709
+>>695:/ SENDER/ USER ID: FGN465
+>>697:/ SENDER/ UTR: GH54512
+>>699:/ SENDER/ AMOUNT: 50,000,000,000,000 RIAL'S
+-------------------------------------------------------------------------------------------------------------------------
+>>441:/ RECEIVER/ BANK NAME:INTERFACE BANK CONVERTS CURRENCY INTO DESTINATION (BANK MELLAT IRAN)
+>>443:/ RECEIVER/ BANK ADDRESS:TEHRAN.IRAN
+>>449:/ RECEIVER/ BANK SWIFT OR BIC CODE:bank-code.net/swift-code/BEGNIRTHAFG.html
+>>445:/ RECEIVER/ ACCOUNT NAME:NOVIN ANSAR AMIR REY MOASSEH
+>>447:/ RECEIVER/ ACCOUNT NUMBER:IR860640013300920980084001
+>>481:/ RECEIVER/ COMMON ACCOUNT NUMBER: 574007154
+>>451:/ RECEIVER/ SORT CODE: https://ISO_9362
+>>453:/ RECEIVER/ COUNTRY ISSUE: IRAN
+>>467:/ RECEIVER/ TRANSACTION CODE: USCSY-GOSB1:DBFF100T:EUR/GG24314 
+>>469:/ RECEIVER/ RECEIVING SERVER IP:192.168.1.24
+>>471:/ RECEIVER/ RECEIVING SERVER ID: MOH-AP/AS01134
+>>473:/ RECEIVER/ GLOBAL SERVER IP: 203.112.92.104
+>>475:/ RECEIVER/ GLOBAL SERVER ID: MOH-AP/AS01134
+>>479:/ RECEIVER/ TRANSACTION SERVER IP: https://www.avalinkiosk.ir/ebanking
+>>483:/ RECEIVER/ IMAD: CR38828530 
+>>485:/ RECEIVER/ LOGIN SERVER DOMAIN: https://ISO_9362
+>>487:/ RECEIVER/ LINK:  https://www.avalinkiosk.ir/ebanking
+>>489:/ RECEIVER/ AMOUNT: 50,000,000,000,000 RIAL'S
+------------------------------------------------------------------------------------------------------------------------
+// SENDER AMOUNT: 50,000,000,000,000 RIAL'S
+// TRANSMITTING BANK:DEUTSCHE BANK AG.
+// BANK ADDRESS: FRANKFURT AM MAIN, GERMANY.
+// SWIFT CODE: DEUTDEFFXXX
+// FED CODE: V2653988X5874B2633521868451
+// EUROCLEAR CODE: X806653265387475142Z45155
+---------------------------------------------------- ATTACHED MESSAGE --------------------------------------------------- 
+WE, BANK:DEUTSCHE BANK AG LOCATED FRANKFURT AM MAIN, GERMANY. WITH FULL BANK
+RESPONSIBILITY HERE BY PRESENT OUR UNCONDITIONAL, IRREVOCABLE, ASSIGNABLE, TRANSFERABLE, BACKED STANDING/
+TRANSFER VIA IP SPECIAL SWIFT WITH THE MENTIONED INFORMATIONS IN THIS SHOT, HEREBY CONFIRM THAT THESE FUNDS ARE 
+CLEAN AND CLEAR OF ANY LEGAL ISSUE. WE ALLOWS MANUAL DOWNLOAD OF TRANSFERED FUNDS IN A CASE OF 
+ENCOMPATIBILITY OF DIFFERENT BANKING SOFTWARE VERSIONS.11:43 AM 1/9/2022
+-------------------------------------------------------- BANK OFFICER --------------------------------------------------
+>>>PIN:02267
+>>>SSN: 86574
+>>>ZIP CODE:60235
+>>>SIC CODE: 22341
+>>>DIRECTOR ID:  MANUEL MANG. (PIN CODE 817690)
+>>>STEUR ID: 9863 PTRSE/ ORACLE EBICS
