@@ -8,7 +8,7 @@ In this repository, you can find the [official GitHub public feedback discussion
 | 🔎  [Code Search & Navigation](https://github.com/github/feedback/discussions/categories/code-search-and-navigation-feedback) 	| [Code Search & Navigation](https://cs.github.com/about) 	|
 | 💻  [Codespaces](https://github.com/github/feedback/discussions/categories/codespaces-feedback) 	| [GitHub Codespaces](https://github.com/features/codespaces) 	|
 | 👩‍✈️  [Copilot](https://github.com/github/feedback/discussions/categories/copilot-feedback)   	| [GitHub Copilot](https://copilot.github.com/) (Technical Preview) 	|
-| 🤖  [Dependabot](https://github.com/github/feedback/discussions/categories/dependabot-feedback) 	| [GitHub Dependabot](https://github.com/features/security) 	|
+| 🤖  [Code Security](https://github.com/github/feedback/discussions/categories/code-security-feedback) 	| [GitHub Code Security](https://github.com/features/security) 	|
 | 🗣️  [Discussions](https://github.com/github/feedback/discussions/categories/discussions-feedback)  	| [GitHub Discussions](https://docs.github.com/en/discussions) 	|
 | 🌐  [Feed](https://github.com/github/feedback/discussions/categories/feed-feedback)  	| [GitHub Feed](https://github.blog/2022-03-22-improving-your-github-feed/) 	|
 | 🐙  [Issues](https://github.com/github/feedback/discussions/categories/issues-feedback) 	| [GitHub Issues](https://github.com/features/issues) 	|
