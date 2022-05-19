@@ -4,6 +4,7 @@ In this repository, you can find the [official GitHub public feedback discussion
 
 | **Feedback Category** | **About the Product** 	|
 |---	|---	|
+| 👍  [Accessibility](https://github.com/github/feedback/discussions/categories/accessibility-feedback) 	| [About Accessibility](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-personal-account-settings/managing-accessibility-settings#about-accessibility-settings) |
 | 🚢  [Actions and Packages](https://github.com/github/feedback/discussions/categories/actions-and-packages-feedback) 	| [GitHub Actions](https://github.com/features/actions) and [GitHub Packages](https://github.com/features/packages) |
 | 🔎  [Code Search & Navigation](https://github.com/github/feedback/discussions/categories/code-search-and-navigation-feedback) 	| [Code Search & Navigation](https://cs.github.com/about) 	|
 | 💻  [Codespaces](https://github.com/github/feedback/discussions/categories/codespaces-feedback) 	| [GitHub Codespaces](https://github.com/features/codespaces) 	|
