@@ -19,7 +19,7 @@ In this repository, you can find the [official GitHub public feedback discussion
 | ✔️  [Pull Requests](https://github.com/github/feedback/discussions/categories/pull-requests-feedback) 	| [GitHub Pull Requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) 	|
 |  💖  [Sponsors](https://github.com/github/feedback/discussions/categories/sponsors-feedback) 	| [GitHub Sponsors](https://github.com/sponsors) 	|
 | :octocat:  [General Feedback](https://github.com/github/feedback/discussions/categories/general-feedback) 	| [GitHub Docs](https://docs.github.com/en) |
-
+ 
 These discussions are where you can share suggestions for how the products should be improved and discuss those improvements with the community, including members of the GitHub product team. Check out [Making suggestions](#making-suggestions) to learn how to provide feedback.
 
 This repository works in conjunction with the [GitHub public product roadmap](https://github.com/github/roadmap), which is where you can learn about what features we're working on, what stage they're in, and when we expect to bring them to you. Accordingly, the Issues feature of this repository has been disabled. Discussion categories have been established for specific features listed above, as well as a general category for other topics. Additional categories may be added in the future. In the meantime, topics outside of the listed categories above, will be transferred into the general category. Please review the [CODE OF CONDUCT](CODE_OF_CONDUCT.md) before participating in discussions.
