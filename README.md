@@ -12,9 +12,11 @@ In this repository, you can find the [official GitHub public feedback discussion
 | 🤖  [Code Security](https://github.com/github-community/community/discussions/categories/code-security) 	| [GitHub Code Security](https://github.com/features/security) 	|
 | 🗣️  [Discussions](https://github.com/github-community/community/discussions/categories/discussions)  	| [GitHub Discussions](https://docs.github.com/en/discussions) 	|
 | 🌐  [Feed](https://github.com/github-community/community/discussions/categories/feed)  	| [GitHub Feed](https://github.blog/2022-03-22-improving-your-github-feed/) 	|
+| 📙  [GitHub Education](https://github.com/github-community/community/discussions/categories/github-education)  	| [GitHub Education](https://education.github.com/) 	|
 | 🐙  [Issues](https://github.com/github-community/community/discussions/categories/issues) 	| [GitHub Issues](https://github.com/features/issues) 	|
 | ⭐  [Lists](https://github.com/github-community/community/discussions/categories/lists) 	| [GitHub Lists](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars#organizing-starred-repositories-with-lists) (Public Beta) 	|
 | 📱  [Mobile](https://github.com/github-community/community/discussions/categories/mobile) 	| [GitHub Mobile](https://github.com/mobile) 	|
+  📶  [Polls](https://github.com/github-community/community/discussions/categories/polls)  	| [GitHub Polls](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile) 	|
 |  🖼️  [Profile](https://github.com/github-community/community/discussions/categories/profile)  	| [GitHub Profile](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile) 	|
 | ✔️  [Pull Requests](https://github.com/github-community/community/discussions/categories/pull-requests) 	| [GitHub Pull Requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) 	|
 |  💖  [Sponsors](https://github.com/github-community/community/discussions/categories/sponsors) 	| [GitHub Sponsors](https://github.com/sponsors) 	|
