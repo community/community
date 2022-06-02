@@ -17,7 +17,7 @@ In this repository, you can find the [official GitHub public feedback discussion
 | 📱  [Mobile](https://github.com/github-community/community/discussions/categories/mobile) 	| [GitHub Mobile](https://github.com/mobile) 	|
 |  🖼️  [Profile](https://github.com/github-community/community/discussions/categories/profile)  	| [GitHub Profile](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile) 	|
 | ✔️  [Pull Requests](https://github.com/github-community/community/discussions/categories/pull-requests) 	| [GitHub Pull Requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) 	|
-|  💖  [Sponsors](https://github.com/github-community/community/discussions/ategories/sponsors) 	| [GitHub Sponsors](https://github.com/sponsors) 	|
+|  💖  [Sponsors](https://github.com/github-community/community/discussions/categories/sponsors) 	| [GitHub Sponsors](https://github.com/sponsors) 	|
 | :octocat:  [General Feedback](https://github.com/github-community/community/discussions/categories/general) 	| [GitHub Docs](https://docs.github.com/en) |
 
 These discussions are where you can share suggestions for how the products should be improved and discuss those improvements with the community, including members of the GitHub product team. Check out [Making suggestions](#making-suggestions) to learn how to provide feedback.
