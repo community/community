@@ -1,6 +1,6 @@
 # GitHub public feedback discussions
 
-In this repository, you can find the [official GitHub public feedback discussions](https://https://github.com/github-community/community/discussions) for the following product areas, as well as an overall category for general product feedback:
+In this repository, you can find the [official GitHub public feedback discussions](https://github.com/github-community/community/discussions) for the following product areas, as well as an overall category for general product feedback:
 
 | **Feedback Category** | **About the Product** 	|
 |---	|---	|
