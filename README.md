@@ -12,7 +12,7 @@ In this repository, you can find the [official GitHub public feedback discussion
 | 🤖  [Code Security](https://github.com/github-community/community/discussions/categories/code-security) 	| [GitHub Code Security](https://github.com/features/security) 	|
 | 🗣️  [Discussions](https://github.com/github-community/community/discussions/categories/discussions)  	| [GitHub Discussions](https://docs.github.com/en/discussions) 	|
 | 🌐  [Feed](https://github.com/github-community/community/discussions/categories/feed)  	| [GitHub Feed](https://github.blog/2022-03-22-improving-your-github-feed/) 	|
-| 📙  [GitHub Education](https://github.com/github-community/community/discussions/categories/github-education)  	| [GitHub Education](https://education.github.com/) 	|
+| 🎒  [GitHub Education](https://github.com/github-community/community/discussions/categories/github-education)  	| [GitHub Education](https://education.github.com/) 	|
 | 🐙  [Issues](https://github.com/github-community/community/discussions/categories/issues) 	| [GitHub Issues](https://github.com/features/issues) 	|
 | ⭐  [Lists](https://github.com/github-community/community/discussions/categories/lists) 	| [GitHub Lists](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars#organizing-starred-repositories-with-lists) (Public Beta) 	|
 | 📱  [Mobile](https://github.com/github-community/community/discussions/categories/mobile) 	| [GitHub Mobile](https://github.com/mobile) 	|
