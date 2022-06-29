@@ -6,6 +6,7 @@ In this repository, you can find the [official GitHub public feedback discussion
 |---	|---	|
 | 👍  [Accessibility](https://github.com/github-community/community/discussions/categories/accessibility) 	| [About Accessibility](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-personal-account-settings/managing-accessibility-settings#about-accessibility-settings) |
 | 🚢  [Actions and Packages](https://github.com/github-community/community/discussions/categories/actions-and-packages) 	| [GitHub Actions](https://github.com/features/actions) and [GitHub Packages](https://github.com/features/packages) |
+| 📋  [API](https://github.com/github-community/community/discussions/categories/api) 	| [GitHub API](https://docs.github.com/en/rest) |
 | 🔎  [Code Search & Navigation](https://github.com/github-community/community/discussions/categories/code-search-and-navigation) 	| [Code Search & Navigation](https://cs.github.com/about) 	|
 | 💻  [Codespaces](https://github.com/github-community/community/discussions/categories/codespaces) 	| [GitHub Codespaces](https://github.com/features/codespaces) 	|
 | 👩‍✈️  [Copilot](https://github.com/github-community/community/discussions/categories/copilot)   	| [GitHub Copilot](https://copilot.github.com/) (Technical Preview) 	|
@@ -21,6 +22,7 @@ In this repository, you can find the [official GitHub public feedback discussion
 | ✔️  [Pull Requests](https://github.com/github-community/community/discussions/categories/pull-requests) 	| [GitHub Pull Requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) 	|
 |  💖  [Sponsors](https://github.com/github-community/community/discussions/categories/sponsors) 	| [GitHub Sponsors](https://github.com/sponsors) 	|
 | :octocat:  [General Feedback](https://github.com/github-community/community/discussions/categories/general) 	| [GitHub Docs](https://docs.github.com/en) |
+| ⚓ [Webhooks](https://github.com/github-community/community/discussions/categories/webhooks) 	| [GitHub Webhooks](https://docs.github.com/en/developers/webhooks-and-events/webhooks/about-webhooks) |
 
 These discussions are where you can share suggestions for how the products should be improved and discuss those improvements with the community, including members of the GitHub product team. Check out [Making suggestions](#making-suggestions) to learn how to provide feedback.
 
