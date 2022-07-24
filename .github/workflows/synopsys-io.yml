@@ -76,10 +76,16 @@ jobs:
         # Path to SARIF file relative to the root of the repository
         sarif_file: workflowengine-results.sarif.json
 
+
+
+
 #!/bin/bash
 
 run() {
-    box_line "Synopsys Intelligent Security Scan" "Copyright 2016-2020 Synopsys, Inc. All rights reserved worldwide."
+
+
+   box_line "Synopsys Intelligent Security Scan" "Copyright 2016-2020 Synopsys, Inc. All rights reserved worldwide."
+    
     allargs="${ARGS[@]}"
     
     config_file="io-manifest.yml"
