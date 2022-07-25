@@ -44,7 +44,7 @@ This repository works in conjunction with the [GitHub public product roadmap](ht
 
 ## Making suggestions
 
-We encourage you to [open a discussion](https://github.com/community) if you have suggestions for how we can improve our products. You don't need to have a solution to the problem you are facing to kick off a discussion. We hope to foster productive and collaborative conversations, so please check out [how to give good feedback](https://github.com/community/discussions/1) for guidance on how to kick off a successful discussion.
+We encourage you to [open a discussion](https://github.com/orgs/community/discussions) if you have suggestions for how we can improve our products. You don't need to have a solution to the problem you are facing to kick off a discussion. We hope to foster productive and collaborative conversations, so please check out [how to give good feedback](https://github.com/community/discussions/1) for guidance on how to kick off a successful discussion.
 
 Prior to creating a new discussion, please take a look at previous discussions to see if someone else has already shared your suggestion(s). If you find a similar discussion, reply with additional details or upvote the discussion to signal your support rather than creating a new one.
 
