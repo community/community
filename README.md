@@ -36,10 +36,16 @@ You will also find previous Discourse Community Forum categories that have since
 | Code to Cloud 	| Actions and Packages |
 | GitHub Ecosystem 	| APIs and Integrations 	|
 | Uncategorized 	| General 	|
+|  	| 	|
 
 When creating a new post, make sure to choose the predetermined category that best fits your topic. This will ensure that conversations are indexed by their corresponding product or feature, to help community members quickly find answers to their questions.
 
 This repository works in conjunction with the [GitHub public product roadmap](https://github.com/github/roadmap), which is where you can learn about what features we're working on, and when they'll be available. Accordingly, the Issues feature of this repository has been disabled. Discussion categories have been established for specific features listed above, as well as a general category for other topics. Additional categories may be added in the future. In the meantime, topics outside of the listed categories above, will be transferred into the General category. Please review the [CODE OF CONDUCT](https://docs.github.com/en/site-policy/github-terms/github-community-forum-code-of-conduct) before participating in discussions.
+
+
+These discussions are where you can share suggestions for how the products should be improved and discuss those improvements with the community, including members of the GitHub product team. Check out [Making suggestions](#making-suggestions) to learn how to provide feedback.
+
+This repository works in conjunction with the [GitHub public product roadmap](https://github.com/github/roadmap), which is where you can learn about what features we're working on, what stage they're in, and when we expect to bring them to you. Accordingly, the Issues feature of this repository has been disabled. Discussion categories have been established for specific features listed above, as well as a general category for other topics. Additional categories may be added in the future. In the meantime, topics outside of the listed categories above, will be transferred into the general category. Please review the [CODE OF CONDUCT](https://docs.github.com/en/site-policy/github-terms/github-community-forum-code-of-conduct) before participating in discussions.
 
 ## Making suggestions
 
