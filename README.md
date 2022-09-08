@@ -8,7 +8,6 @@ In this repository, you will find categories for various product areas. Feel fre
 |---	|---	|
 | 👍  [Accessibility](https://github.com/orgs/community/discussions/categories/accessibility) 	| [About Accessibility](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-personal-account-settings/managing-accessibility-settings#about-accessibility-settings) |
 | 🚢  [Actions and Packages](https://github.com/orgs/community/discussions/categories/actions-and-packages) 	| [GitHub Actions](https://github.com/features/actions) and [GitHub Packages](https://github.com/features/packages) |
-| 🔁  [API and Webhooks](https://github.com/orgs/community/discussions/categories/api-and-webhooks) 	| [GitHub API](https://docs.github.com/en/rest) and [GitHub Webhooks](https://docs.github.com/en/developers/webhooks-and-events/webhooks/about-webhook) |
 | 🔎  [Code Search & Navigation](https://github.com/orgs/community/discussions/categories/code-search-and-navigation) 	| [Code Search & Navigation](https://cs.github.com/about) 	|
 | 💻  [Codespaces](https://github.com/orgs/community/discussions/categories/codespaces) 	| [GitHub Codespaces](https://github.com/features/codespaces) 	|
 | 👩‍✈️  [Copilot](https://github.com/orgs/community/discussions/categories/copilot)   	| [GitHub Copilot](https://copilot.github.com/) (Technical Preview) 	|
@@ -19,8 +18,7 @@ In this repository, you will find categories for various product areas. Feel fre
 | 🐙  [Issues](https://github.com/orgs/community/discussions/categories/issues) 	| [GitHub Issues](https://github.com/features/issues) 	|
 | ⭐  [Lists](https://github.com/orgs/community/discussions/categories/lists) 	| [GitHub Lists](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars#organizing-starred-repositories-with-lists) (Public Beta) 	|
 | 📱  [Mobile](https://github.com/orgs/community/discussions/categories/mobile) 	| [GitHub Mobile](https://github.com/mobile) 	|
-|🗒️ [Pages](https://github.com/orgs/community/discussions/categories/pages)    | [GitHub Pages](https://docs.github.com/en/pages)  |
-|📶  [Polls](https://github.com/orgs/community/discussions/categories/polls)  	| [GitHub Polls](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile) 	|
+  📶  [Polls](https://github.com/orgs/community/discussions/categories/polls)  	| [GitHub Polls](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile) 	|
 |  🖼️  [Profile](https://github.com/orgs/community/discussions/categories/profile)  	| [GitHub Profile](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile) 	|
 | ✔️  [Pull Requests](https://github.com/orgs/community/discussions/categories/pull-requests) 	| [GitHub Pull Requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) 	|
 |  💖  [Sponsors](https://github.com/orgs/community/discussions/categories/sponsors) 	| [GitHub Sponsors](https://github.com/sponsors) 	|
