@@ -2,6 +2,7 @@
 
 In this repository, you will find categories for various product areas. Feel free to share feedback, discuss topics with other community members, or ask questions.
 
+<<<<<<< HEAD
 ## Product Feedback
 
 | **Feedback Category** | **About the Product** 	|
@@ -23,6 +24,22 @@ In this repository, you will find categories for various product areas. Feel fre
 | ✔️  [Pull Requests](https://github.com/orgs/community/discussions/categories/pull-requests) 	| [GitHub Pull Requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) 	|
 |  💖  [Sponsors](https://github.com/orgs/community/discussions/categories/sponsors) 	| [GitHub Sponsors](https://github.com/sponsors) 	|
 | :octocat:  [General Feedback](https://github.com/orgs/community/discussions/categories/general) 	| [GitHub Docs](https://docs.github.com/en) |
+=======
+- [GitHub Actions](https://github.com/features/actions) - :ship: [Actions and Packages Feedback](https://github.com/github/feedback/discussions/categories/actions-and-packages-feedback)
+- [GitHub Code Search](https://github.com/features/code-search) - :mag_right: [Code Search Feedback](https://github.com/github/feedback/discussions/categories/code-search-feedback)
+- [GitHub Codespaces](https://github.com/features/codespaces) - :computer: [Codespaces Feedback](https://github.com/github/feedback/discussions/categories/codespaces-feedback)
+- [GitHub Copilot](https://copilot.github.com/) (Technical Preview) - :woman_pilot: [Copilot Feedback](https://github.com/github/feedback/discussions/categories/copilot-feedback)
+- [GitHub Discussions](https://github.blog/2020-05-06-new-from-satellite-2020-github-codespaces-github-discussions-securing-code-in-private-repositories-and-more/#discussions) - [:speaking_head: Discussions Feedback](https://github.com/github/feedback/discussions/categories/discussions-feedback)
+- [GitHub Issues](https://github.com/features/issues) - [:octopus: Issues Feedback](https://github.com/github/feedback/discussions/categories/issues-feedback)
+- GitHub Lists (Public Beta coming soon) - [:star: Lists Feedback](https://github.com/github/feedback/discussions/categories/lists-feedback)
+- [GitHub Mobile](https://github.com/mobile) - [:iphone: Mobile Feedback](https://github.com/github/feedback/discussions/categories/mobile-feedback)
+- [GitHub Packages](https://github.com/features/packages) - :ship: [Actions and Packages Feedback](https://github.com/github/feedback/discussions/categories/actions-and-packages-feedback)
+- [GitHub Profile](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile) - :framed_picture: [Profile Feedback](https://github.com/github/feedback/discussions/categories/profile-feedback)
+- [Pull Requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) - [:heavy_check_mark: Pull Requests Feedback](https://github.com/github/feedback/discussions/categories/pull-requests-feedback)
+- [GitHub Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes) - [❇️ Releases Feedback](https://github.com/github/feedback/discussions/categories/releases-feedback)
+- [GitHub Sponsors](https://github.com/sponsors) - [:sparkling_heart: Sponsors Feedback](https://github.com/github/feedback/discussions/categories/sponsors-feedback)
+- :octocat: [General Feedback](https://github.com/github/feedback/discussions/categories/general-feedback)
+>>>>>>> origin/michellemerrill-patch-1
 
 These discussions are where you can share suggestions for how the products should be improved and discuss those improvements with the community, including members of the GitHub product team. Check out [Making suggestions](#making-suggestions) to learn how to provide feedback.
 
