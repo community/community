@@ -64,5 +64,3 @@ Any statement in this repository that is not purely historical is considered a f
  <a href = "https://github.com/community/community/graphs/contributors">
    <img src = "https://contrib.rocks/image?repo=community/community"/>
  </a>
-
----
