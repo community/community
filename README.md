@@ -23,6 +23,7 @@ In this repository, you will find categories for various product areas. Feel fre
 |📶  [Polls](https://github.com/orgs/community/discussions/categories/polls)  	| [GitHub Polls](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile) 	|
 |  🖼️  [Profile](https://github.com/orgs/community/discussions/categories/profile)  	| [GitHub Profile](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile) 	|
 | ✔️  [Pull Requests](https://github.com/orgs/community/discussions/categories/pull-requests) 	| [GitHub Pull Requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) 	|
+| 🗳️ [Repositories](https://github.com/orgs/community/discussions/categories/Repositories) 	| [GitHub Repositories](https://docs.github.com/en/repositories) 	|
 |  💖  [Sponsors](https://github.com/orgs/community/discussions/categories/sponsors) 	| [GitHub Sponsors](https://github.com/sponsors) 	|
 | :octocat:  [General Feedback](https://github.com/orgs/community/discussions/categories/general) 	| [GitHub Docs](https://docs.github.com/en) |
 
