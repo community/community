@@ -1,3 +1,4 @@
+[MIT-LICENSE.txt](https://github.com/customer-service-4-all/community/files/9769204/MIT-LICENSE.txt)
 # GitHub Community Discussions
 
 In this repository, you will find categories for various product areas. Feel free to share feedback, discuss topics with other community members, or ask questions.
