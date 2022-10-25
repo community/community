@@ -1,0 +1,30 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<channel>
+<title>WhatsApp Business API Status</title>
+<link>https://metastatus.com/whatsapp-business-api</link>
+<atom:link href="https://metastatus.com/outage-events-feed-waba.rss" rel="self" type="application/rss+xml"/>
+<description>Status updates for WhatsApp Business API</description>
+<lastBuildDate>Tue, 25 Oct 2022 08:09:34 GMT</lastBuildDate>
+<item>
+<title>[Major disruptions]: On-Premises Solution</title>
+<link>https://metastatus.com/whatsapp-business-api</link>
+<guid isPermaLink="false">On-Premises Solution update at: Tue, 25 Oct 2022 08:09:34 GMT</guid>
+<description>We are aware of major disruptions impacting the ability to send messages via the WhatsApp Business Platform. Our teams are working to mitigate the issue.</description>
+<pubDate>Tue, 25 Oct 2022 08:09:34 GMT</pubDate>
+</item>
+<item>
+<title>[Resolved]: Cloud API</title>
+<link>https://metastatus.com/whatsapp-business-api</link>
+<guid isPermaLink="false">Cloud API update at: Mon, 24 Oct 2022 23:52:00 GMT</guid>
+<description>The issue impacting send media messages has been mitigated.</description>
+<pubDate>Mon, 24 Oct 2022 23:52:00 GMT</pubDate>
+</item>
+<item>
+<title>[Major disruptions]: Cloud API</title>
+<link>https://metastatus.com/whatsapp-business-api</link>
+<guid isPermaLink="false">Cloud API update at: Tue, 25 Oct 2022 08:01:21 GMT</guid>
+<description>We are aware of major disruptions impacting the ability to send messages via the WhatsApp Business Platform. Our teams are working to mitigate the issue.</description>
+<pubDate>Tue, 25 Oct 2022 08:01:21 GMT</pubDate>
+</item>
+</channel>
+</rss>
