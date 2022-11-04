@@ -1,0 +1,97 @@
+name: Label Templated Discussions
+
+on:
+  discussion:
+    types: [created]
+
+jobs:
+  label-templated-discussion:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get selected topic
+        id: get_selected_topic
+        uses: actions/github-script@v6
+        - env:
+          DISCUSSION_HTML: ${{ github.event.discussion.html }}
+        script: |
+          try {
+            const headings = $DISCUSSION_HTML.getElementsByTagName("h3");
+            if (!headings || headings.length == 0) {
+              return '';
+            }
+
+            const getSelectedTopicHeading = function(heading) {
+              return heading.innerText == "Select Topic Area";
+            }
+
+            const selectedTopicHeading = Array.from(headings).filter(getSelectedTopicHeading);
+
+            if (!selectedTopicHeading || selectedTopicHeading.length != 1) {
+              return '';
+            }
+
+            const selectedTopicElement = selectedTopicHeading[0].nextElementSibling;
+            if (!selectedTopicElement || !selectedTopicElement.innerText) {
+              return '';
+            }
+
+            const selectedTopic = selectedTopicElement.innerText.trim().toLowerCase()
+            const validTopics = ["product feedback", "question", "bug", "show & tell", "general"]
+
+            return validTopics.includes(selectedTopic) ? selectedTopic : ''
+
+          } catch (error) {
+            console.log(error);
+            return '';
+          }
+
+      - name: Fetch label id for selected topic
+        id: fetch_label_id
+        if: ${{ steps.get_selected_topic.outputs.result != '' }}
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DISCUSSION_ID: ${{ github.event.discussion.id }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          TOPIC: ${{ steps.get_selected_topic.outputs.result }}
+        run: |
+          gh api graphql -F owner=$OWNER -F name=$REPO -F topic=$TOPIC  -f query='
+            query($owner: String!, $name: String!, $topic: String) {
+              repository(owner: $owner, name: $name){
+                labels(first: 10, query: $topic) {
+                  edges {
+                    node {
+                      id
+                      name
+                    }
+                  }
+                }
+              }
+            }' > repository_label_data.json
+
+          echo 'LABEL_ID='$(jq --arg topic $TOPIC '.data.repository.labels.edges[].node | select(.name== $topic) | .id' repository_label_data.json) >> $GITHUB_ENV
+
+      - name: Label Discussion
+        if: ${{ steps.get_selected_topic.outputs.result != '' }}
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DISCUSSION_ID: ${{ github.event.discussion.id }}
+          LABEL_ID: ${{ steps.fetch_label_id.outputs.result }}
+        run: |
+          gh api graphql -f query='
+            mutation($labelableId: ID!, $labelIds: [ID!]!) {
+              addLabelsToLabelable(input: {labelableId: $labelableId, labelIds: $labelIds}) {
+                labelable {
+                  labels(first: 10) {
+                    edges {
+                      node {
+                        id
+                        name
+                      }
+                    }
+                  }
+                }
+              }
+            }' -f labelableId=$DISCUSSION_ID -f labelIds=$LABEL_ID
+            
