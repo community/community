@@ -73,7 +73,7 @@ jobs:
           echo 'LABEL_ID='$(jq '.data.repository.labels.edges[].node | .id ' repository_label_data.json) >> $GITHUB_ENV
 
       - name: Label Discussion
-        if: ${{ steps.get_selected_topic.outputs.result != '' }}
+        if: ${{ steps.get_selected_topic.outputs.result != '' }} && $LABEL_ID
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISCUSSION_ID: ${{ github.event.discussion.id }}
