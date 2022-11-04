@@ -77,7 +77,6 @@ jobs:
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISCUSSION_ID: ${{ github.event.discussion.id }}
-          LABEL_ID: ${{ steps.fetch_label_id.outputs.result }}
         run: |
           gh api graphql -f query='
             mutation($labelableId: ID!, $labelIds: [ID!]!) {
