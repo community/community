@@ -12,39 +12,40 @@ jobs:
       - name: Get selected topic
         id: get_selected_topic
         uses: actions/github-script@v6
-        - env:
+      - env:
           DISCUSSION_HTML: ${{ github.event.discussion.html }}
-        script: |
-          try {
-            const headings = $DISCUSSION_HTML.getElementsByTagName("h3");
-            if (!headings || headings.length == 0) {
+        with:
+          script: |
+            try {
+              const headings = $DISCUSSION_HTML.getElementsByTagName("h3");
+              if (!headings || headings.length == 0) {
+                return '';
+              }
+
+              const getSelectedTopicHeading = function(heading) {
+                return heading.innerText == "Select Topic Area";
+              }
+
+              const selectedTopicHeading = Array.from(headings).filter(getSelectedTopicHeading);
+
+              if (!selectedTopicHeading || selectedTopicHeading.length != 1) {
+                return '';
+              }
+
+              const selectedTopicElement = selectedTopicHeading[0].nextElementSibling;
+              if (!selectedTopicElement || !selectedTopicElement.innerText) {
+                return '';
+              }
+
+              const selectedTopic = selectedTopicElement.innerText.trim().toLowerCase()
+              const validTopics = ["product feedback", "question", "bug", "show & tell", "general"]
+
+              return validTopics.includes(selectedTopic) ? selectedTopic : ''
+
+            } catch (error) {
+              console.log(error);
               return '';
             }
-
-            const getSelectedTopicHeading = function(heading) {
-              return heading.innerText == "Select Topic Area";
-            }
-
-            const selectedTopicHeading = Array.from(headings).filter(getSelectedTopicHeading);
-
-            if (!selectedTopicHeading || selectedTopicHeading.length != 1) {
-              return '';
-            }
-
-            const selectedTopicElement = selectedTopicHeading[0].nextElementSibling;
-            if (!selectedTopicElement || !selectedTopicElement.innerText) {
-              return '';
-            }
-
-            const selectedTopic = selectedTopicElement.innerText.trim().toLowerCase()
-            const validTopics = ["product feedback", "question", "bug", "show & tell", "general"]
-
-            return validTopics.includes(selectedTopic) ? selectedTopic : ''
-
-          } catch (error) {
-            console.log(error);
-            return '';
-          }
 
       - name: Fetch label id for selected topic
         id: fetch_label_id
