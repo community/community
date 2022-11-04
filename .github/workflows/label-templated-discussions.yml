@@ -12,7 +12,7 @@ jobs:
       - name: Get selected topic
         id: get_selected_topic
         uses: actions/github-script@v6
-      - env:
+        env:
           DISCUSSION_HTML: ${{ github.event.discussion.html }}
         with:
           script: |
@@ -50,7 +50,7 @@ jobs:
       - name: Fetch label id for selected topic
         id: fetch_label_id
         if: ${{ steps.get_selected_topic.outputs.result != '' }}
-      - env:
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISCUSSION_ID: ${{ github.event.discussion.id }}
           OWNER: ${{ github.repository_owner }}
@@ -75,7 +75,7 @@ jobs:
 
       - name: Label Discussion
         if: ${{ steps.get_selected_topic.outputs.result != '' }} && $LABEL_ID
-      - env:
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISCUSSION_ID: ${{ github.event.discussion.id }}
         run: |
