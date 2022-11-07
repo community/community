@@ -73,7 +73,6 @@ jobs:
         if: ${{ steps.get_selected_topic.outputs.result != '' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DISCUSSION_ID: ${{ github.event.discussion.id }}
           OWNER: ${{ github.repository_owner }}
           REPO: ${{ github.event.repository.name }}
           TOPIC: ${{ steps.get_selected_topic.outputs.result }}
@@ -98,7 +97,6 @@ jobs:
         if: ${{ steps.get_selected_topic.outputs.result != '' }} && $LABEL_ID
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DISCUSSION_ID: ${{ github.event.discussion.id }}
         run: |
           gh api graphql -f query='
             mutation($labelableId: ID!, $labelIds: [ID!]!) {
