@@ -27,8 +27,10 @@ jobs:
               }
             }' > discussion_data.json
             
-          echo 'DISCUSSION_BODY='$(jq '.data.repository.discussion.body' discussion_data.json) >> $GITHUB_ENV
+          echo 'DISCUSSION_BODY_HTML='$(jq '.data.repository.discussion.bodyHTML' discussion_data.json) >> $GITHUB_ENV
           echo 'DISCUSSION_ID='$(jq '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
+          
+      - run: npm install jsdom
       
       - name: Get selected topic
         id: get_selected_topic
@@ -37,7 +39,26 @@ jobs:
           result-encoding: string
           script: |
             try {
-              return "bug";
+              const jsdom = require('jsdom');
+              const { JSDOM } = jsdom;
+              const { DISCUSSION_BODY_HTML } = process.env
+              
+              const fragment = JSDOM.fragment(DISCUSSION_BODY_HTML);
+              const selectTopicHeader = fragment.querySelector("h3");
+              const templated = selectTopicHeader.textContent === 'Select Topic Area';
+              if (!templated) {
+                return "";
+              }
+              
+              const selectedTopicElement = selectTopicHeader.nextElementSibling;
+              if (!selectedTopicElement) {
+                return "";
+              }
+              
+              const selectedTopic = selectedTopicElement.textContent.trim().toLowerCase();
+              const validTopics = ["product feedback", "question", "bug", "show & tell", "general"];
+              return validTopics.includes(selectedTopic) ? selectedTopic : "";
+              
             } catch (error) {
               return "";
             }
@@ -68,7 +89,7 @@ jobs:
           echo 'LABEL_ID='$(jq '.data.repository.labels.edges[].node | .id ' repository_label_data.json) >> $GITHUB_ENV
           
       - name: Label the discussion
-        if: ${{ steps.get_selected_topic.outputs.result != '' && github.env.LABEL_ID }}
+        if: ${{ steps.get_selected_topic.outputs.result != '' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
