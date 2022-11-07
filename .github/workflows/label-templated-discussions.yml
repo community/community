@@ -9,6 +9,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Get discussion body html
+        id: get_discussion_body_html
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
+        run: |
+          gh api graphql -F owner=$OWNER -F name=$REPO -F number=$DISCUSSION_NUMBER  -f query='
+            query($owner: String!, $name: String!, $number: Int!) {
+              repository(owner: $owner, name: $name){
+                discussion(number: $number) {
+                  bodyHTML
+                  id
+                }
+              }
+            }' > discussion_data.json
+            
+          echo 'DISCUSSION_BODY='$(jq '.data.repository.discussion.body' discussion_data.json) >> $GITHUB_ENV
+          echo 'DISCUSSION_ID='$(jq '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
+      
       - name: Get selected topic
         id: get_selected_topic
         uses: actions/github-script@v6
@@ -46,7 +67,7 @@ jobs:
               console.log(error);
               return '';
             }
-
+            
       - name: Fetch label id for selected topic
         id: fetch_label_id
         if: ${{ steps.get_selected_topic.outputs.result != '' }}
@@ -70,9 +91,9 @@ jobs:
                 }
               }
             }' > repository_label_data.json
-
+            
           echo 'LABEL_ID='$(jq '.data.repository.labels.edges[].node | .id ' repository_label_data.json) >> $GITHUB_ENV
-
+          
       - name: Label Discussion
         if: ${{ steps.get_selected_topic.outputs.result != '' }} && $LABEL_ID
         env:
