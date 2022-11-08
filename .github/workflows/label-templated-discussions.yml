@@ -72,7 +72,7 @@ jobs:
           REPO: ${{ github.event.repository.name }}
           TOPIC: ${{ steps.get_selected_topic.outputs.result }}
         run: |
-          gh api graphql -F owner=$OWNER -F name=$REPO -F topic=`$TOPIC`  -f query='
+          gh api graphql -F owner=$OWNER -F name=$REPO -F topic="$TOPIC"  -f query='
             query($owner: String!, $name: String!, $topic: String) {
               repository(owner: $owner, name: $name){
                 labels(first: 1, query: $topic) {
