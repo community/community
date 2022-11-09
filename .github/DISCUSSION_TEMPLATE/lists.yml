@@ -1,5 +1,5 @@
 title: "<title>"
-labels: [List]
+labels: [Lists]
 body:
 - type: dropdown
   attributes:

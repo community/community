@@ -1,5 +1,5 @@
 title: "<title>"
-labels: [Pull Request]
+labels: [Pull Requests]
 body:
 - type: dropdown
   attributes:
