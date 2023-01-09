@@ -1,4 +1,4 @@
-name: Label Templated Discussions
+[![Node CI](https://github.com/Terux101/Pouri90/actions/workflows/nodejs.yml/badge.svg?branch=master&event=check_run)](https://github.com/Terux101/Pouri90/actions/workflows/nodejs.yml)name: Label Templated Discussions
 
 on:
   discussion:
