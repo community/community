@@ -3,7 +3,7 @@ labels: [Issues]
 body:
 - type: markdown
   attributes: 
-     value:  "This category is solely for conversations related to the GitHub feature areas Issues and Projects :warning:
+     value: | "This category is solely for conversations related to the GitHub feature areas Issues and Projects :warning:
 The GitHub Product Issues Category is NOT for any issue you are having on GitHub.com. We know the "issues" naming convention can be a little confusing. To report an issue with another area of the GitHub experience, please use the corresponding product category, if one does not exist, use the General category. To ensure you receive a timely response and connect with the proper team(s) make sure you are posting in the correct category. Discussions that are posted in this category that do not pertain to Issues or Projects will be at risk for being moved."
 - type: dropdown
   attributes:
