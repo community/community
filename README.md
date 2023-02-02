@@ -1,6 +1,9 @@
-# GitHub Community Discussions
+# GitHub Community Discussions🌐 
 
 In this repository, you will find categories for various product areas. Feel free to share feedback, discuss topics with other community members, or ask questions.
+_____________________________________________________________________________________________________
+
+<img align="right" alt="" width="400" src="https://i.pinimg.com/originals/87/6f/9c/876f9c5858d664d0efa0c476db65ef87.gif">
 
 ## Product Feedback
 
