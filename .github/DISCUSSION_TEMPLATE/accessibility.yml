@@ -4,7 +4,7 @@ body:
 - type: markdown
   attributes: 
    value: |
-     ⚠️ This category is solely for discussions and feedback on [the digital accessibility of GitHub products](https://accessibility.github.com/).⚠️
+     ⚠️ This category is solely for discussions and feedback on [the digital accessibility of GitHub products](https://accessibility.github.com/). ⚠️
 
      The Accessibility community is NOT for issues regarding GitHub account access, profile settings, or email verification. To ensure you receive a timely response and connect with the proper team(s), please post in the correct category by using the corresponding product category form. If one does not exist, use [the General category](https://github.com/orgs/community/discussions/categories/general).
 
