@@ -1,0 +1,80 @@
+The compatibility mechanism in the CC ShareAlike licenses allows contributions to an adaptation to be licensed under a different license if “approved by Creative Commons as essentially the equivalent of this Public License” and listed on the Compatible Licenses page.<ref> Note that the BY-NC-SA license did not contain a compatibility mechanism in versions prior to 4.0.  The mechanism is contained in both BY-SA and BY-NC-SA as of version 4.0.</ref>
+
+As steward of the CC licenses, we think it is important to ensure that licensors can trust that when they license their works under one of our licenses, the features of our licenses that are important to them continue to be respected when their works are adapted.  Creative Commons seeks to meet licensor expectations as closely as possible, but we also seek to grow the commons of remixable content by declaring compatibility with other licenses that share the same fundamental purpose and effect as our licenses. Please keep these considerations in mind as you review the process and criteria below. Learn more about how ShareAlike compatibility works [https://wiki.creativecommons.org/ShareAlike_compatibility here].
+
+Creative Commons may revise this document in the future, with a 30-day public consultation before any changes are made final. 
+
+==Process for Compatibility Evaluation==
+
+
+'''1. A proposal for a candidate license is made to Creative Commons via a posting to appropriate CC communication channels such as a mailing list or Slack channel.
+
+The proposal must include a link to the full text of the license posted by the steward.<ref> CC may require additional information in connection with the proposal, such as identification of the important license features. </ref>  It is not essential that the proposal be made by the license steward (see process note, below), but it is strongly preferred. CC may also begin the process by proposing a candidate license.  Similar licenses containing substantially the same text may be proposed or analyzed together. 
+
+'''2. Creative Commons creates a wiki page for the candidate license.'''
+
+The primary place of public discussion will be the CC license development and versioning list; however, relevant information about the proposal, a summary of the points of discussion, and analysis of whether compatibility criteria are met will be posted on the wiki.
+
+'''3. Creative Commons publishes a preliminary comparison and analysis of the CC license and the candidate license.'''
+
+This comparison maps elements and features of the CC license to elements and features of the candidate license, and analyzes relevant differences. 
+
+'''4. The public discussion period begins.'''
+
+The public discussion period will typically remain open for 30 days.  If complicated issues arise, it may be desirable for the discussion to last longer than 30 days until issues are understood fully.  However, Creative Commons also reserves the right to close the public discussion early if we determine that a candidate license clearly does not meet our criteria for compatibility. 
+
+'''5. CC issues a compatibility determination.'''
+
+Creative Commons will issue a determination detailing reasons why a candidate license is or is not compatible with the CC license.  The decision will be posted to the CC license development and versioning list, and posted on the wiki page.
+
+If compatibility is declared, Creative Commons will list the license as a compatible license on its [https://creativecommons.org/compatiblelicenses compatible licenses page].  Reusers of works under the relevant CC license may thereafter apply the compatible license to the contributions they make to adaptations of those works.  If CC declines to name the license as compatible, Creative Commons will list the candidate license as reviewed but not deemed compatible on its [https://creativecommons.org/compatiblelicenses compatible licenses page].  The candidate license will not be reconsidered for compatibility unless the license steward addresses the identified concerns.
+
+'''''Process notes.'''''
+
+''This is not intended as an approval process or a recommendation process.'' 
+
+:A compatibility determination means only that you may license your contributions to adaptations of BY-SA or BY-NC-SA licensed works under that license; it is not a recommendation, and a determination that a license is incompatible does not mean that CC recommends against using that license in other circumstances. 
+
+''We encourage participation of license stewards.''
+
+:CC would strongly prefer that the license steward participate in the compatibility discussion, particularly if a statement of interpretation or intention is necessary to address concerns or clarify uncertain issues.  
+
+:For two-way compatibility, it's often the case that the stewards of both licenses must work together to remove inconsistencies between the licenses, possibly through versioning of one or both of the licenses. CC does not anticipate versioning again in the foreseeable future, but did work with the license stewards of several compatible license candidates during the 4.0 versioning process in anticipation of this process.  In cases where licenses are not actively stewarded, participation of the relevant license-user community may be sufficient. If there is no active community of licensors, the value of a compatibility determination may be small, unless there is a very large existing pool of content otherwise incompatibly licensed.
+
+==Minimum Compatibility Criteria==
+
+
+'''''General.'''''
+
+To be compatible with BY-SA or BY-NC-SA, a candidate license must have the same purpose, meaning, and effect as the corresponding CC license.<ref> This requirement was originally dictated by the language in BY-SA 3.0, and was carried forward in  and BY-NC-SA 4.0.</ref>   For each of the criteria below, it is not necessary that the candidate license provide identical treatment.  As long as the treatment of relevant factors in the candidate license closely approximates the treatment in the CC license then compatibility is achievable. This is not an exhaustive list of criteria. CC retains discretion not to declare a license compatible based on other factors.
+
+'''''Technical note about adaptations of CC-licensed material. '''''
+
+When an adaptation of a CC-licensed work is created, use of the adaptation requires compliance with the original CC license and the license applied by the adapter to contributions she makes to an adaptation.  This means the licenses [[4.0/Treatment_of_adaptations|“stack”]] in the sense that users of the adaptation need to be aware of and comply with the terms of the original license and the adapter’s license.<ref>However, starting with the version 4.0 ShareAlike licenses, it is explicitly clear that downstream users of adaptations created from 4.0 licensed works may satisfy the terms of the upstream license(s) – version 4.0 – by complying with the conditions of the adapter’s license. That means, for example, that someone using the adaptation may attribute the original author in the manner prescribed by the adapter’s license (i.e. the compatible license) rather than the manner dictated by the version 4.0 license applied to the original.</ref>   For this reason, the conditions of compatible licenses must align closely with the corresponding CC license.  This best respects the expectations of the original CC licensor, and comports with the expectations and practices of reusers of adapted works.
+
+===Minimum compatibility criteria. ===
+
+*'''An approved ShareAlike compatible license must at a minimum:
+
+#	contain a ShareAlike mechanism;
+#	contain an attribution mechanism;
+#	license rights under copyright;<ref>At a minimum, a candidate license must license copyright. The extent to which the candidate licenses fails to license or otherwise address the other rights covered by CC licenses (e.g., sui generis database rights), or licenses additional rights beyond those in the CC license (e.g., patent rights), will be an important part of the compatibility analysis. Even where a difference in license scope is not deemed a barrier to compatibility, it may be necessary to require that special care be taken so that reusers are aware of the differences.</ref> 
+#	for BY-SA, not violate the definition of Free Cultural Works;<ref>CC has [[CC_Attribution-ShareAlike_Intent|committed]] that its BY-SA licenses will always be compliant with the [http://freedomdefined.org/Definition Definition of Free Cultural Works]. While the [http://opendefinition.org/od/ Open Definition] wasn’t included in that earlier statement, we may also look to that standard of openness for guidance as we evaluate candidate licenses. Licensors who choose BY-SA expect that their material will only be reused in ways that ensure that downstream users know they have the ability to reuse and remix.</ref> and
+#	for BY-NC-SA 4.0, contain a noncommercial limitation. '''
+
+== Additional considerations ==
+
+*An approved ShareAlike compatible license does not need to be reciprocally compatible with the CC license – that is, two-way compatibility need not exist – provided there are strategic policy or practical reasons for allowing one-way compatibility with a particular license.
+
+*An approved ShareAlike compatible license may impose more conditions on reuse than the corresponding CC license, but only so long as the extra conditions do not unduly burden reuse or neutralize important features of the license.<ref>For example, a few potential compatible licenses used predominantly for software require reusers to distribute or make source code available to facilitate modifications.  CC licenses are not designed for software, and contain no equivalent provision. However, this sort of additional condition may be acceptable in a compatible license if necessary steps are taken to ensure it does not unduly complicate reuse.</ref>
+
+*An approved ShareAlike compatible license should address Effective Technological Measures in some way, but not necessarily in the same way as the CC licenses: for example, CC may consider a candidate license that allows licensees to impose ETMs on the conditions that an unencumbered copy is distributed in parallel. It’s also possible that a candidate license addresses ETMs implicitly, such as through other terms which imply a restriction on imposing ETMs.
+
+* While an approved ShareAlike compatible license must contain an attribution requirement, it is not necessary that the requirement align precisely with the CC licenses. Acceptable variation will be determined on a case-by-case basis. 
+
+==Changelog==
+* 2 June 2014: Initial published version.
+* 8 June 2021: Updated process to account for retired mailing list. Made reference to communication channel generic.
+
+== Notes ==
+<references/>
