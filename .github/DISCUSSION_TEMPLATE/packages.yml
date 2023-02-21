@@ -1,5 +1,4 @@
-title: "<title>"
-labels: [Actions and Packages]
+labels: [Packages]
 body:
 - type: dropdown
   attributes:
