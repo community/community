@@ -40,7 +40,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const body = `This pull request is being automatically closed because we do not accept external contributions to this repository.`;
+            const body = `This pull request is being closed automatically because we are not accepting external contributions to this repository at this current time.`;
 
             await github.rest.issues.createComment({
               ...context.repo,
