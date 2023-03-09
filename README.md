@@ -36,10 +36,10 @@ You will also find previous Discourse Community Forum categories that have since
 
 | **Discourse Category** | **New Discussions Category** 	|
 |---	|---	|
-| GitHub Help 	| New to GitHub |
-| Code to Cloud 	| Actions and Packages |
-| GitHub Ecosystem 	| APIs and Integrations 	|
-| Uncategorized 	| General 	|
+| GitHub Help 	| [New to GitHub](https://github.com/community/community/discussions/categories/new-to-github) |
+| Code to Cloud 	| [Actions](https://github.com/community/community/discussions/categories/actions) and [Packages](https://github.com/community/community/discussions/categories/packages) |
+| GitHub Ecosystem 	| [API and Webhooks](https://github.com/community/community/discussions/categories/api-and-webhooks) 	|
+| Uncategorized 	| [General](https://github.com/community/community/discussions/categories/general) 	|
 
 When creating a new post, make sure to choose the predetermined category that best fits your topic. This will ensure that conversations are indexed by their corresponding product or feature, to help community members quickly find answers to their questions.
 
