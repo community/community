@@ -1,4 +1,3 @@
-title: "<title>"
 labels: [API and Webhooks]
 body:
 - type: dropdown
@@ -6,8 +5,8 @@ body:
     label: Select Topic Area
     description: What would you like to discuss?
     options:
-      - "Product Feedback"
       - "Question"
+      - "Product Feedback"
       - "Bug"
       - "Show & Tell"
       - "General"
