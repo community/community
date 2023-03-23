@@ -109,3 +109,4 @@ jobs:
               }
             }' -f labelableId=$DISCUSSION_ID -f labelIds=$LABEL_ID
             
+[![Label Templated Discussions](https://github.com/community/community/actions/workflows/label-templated-discussions.yml/badge.svg)](https://github.com/community/community/actions/workflows/label-templated-discussions.yml)
