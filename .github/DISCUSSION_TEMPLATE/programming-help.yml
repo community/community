@@ -16,4 +16,3 @@ body:
       options:
         - label: This one!
           required: true
-          h
