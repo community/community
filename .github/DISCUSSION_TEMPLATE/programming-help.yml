@@ -15,5 +15,5 @@ body:
   attributes:
     label: I have read and understood this category's [guidelines](https://github.com/orgs/community/discussions/51384) before making this post. 
     options:
-      - label: Yes
+      - label: 'Yes'
         required: true
