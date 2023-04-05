@@ -13,6 +13,5 @@ body:
     required: true
 - type: checkboxes
   attributes:
-      - type: markdown
       - label: I have read and understood this category's [guidelines](https://github.com/orgs/community/discussions/51384) before making this post.
         required: true
