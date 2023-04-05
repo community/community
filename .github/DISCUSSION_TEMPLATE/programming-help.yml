@@ -13,10 +13,5 @@ body:
     required: true
 - type: checkboxes
   attributes:
-    label: I have read and understood this category's 'guidelines' before making this post. 
-    options:
-    properties: 
-        linkText: 'https://github.com/orgs/community/discussions/51384'
-      - label: 'Yes'
-     validations:
+      - label: I have read and understood this category's [guidelines](https://github.com/orgs/community/discussions/51384) before making this post.
         required: true
