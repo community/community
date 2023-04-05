@@ -13,8 +13,10 @@ body:
     required: true
 - type: checkboxes
   attributes:
-    label: Guidelines
-    description: If you want to include a description here for guidelines....
+    label: I have read and understood this category's 'guidelines' before making this post. 
     options:
-      - label: I have read and understood this category's [guidelines](https://github.com/orgs/community/discussions/51384) before making this post.
+    properties: 
+        linkText: 'https://github.com/orgs/community/discussions/51384'
+      - label: 'Yes'
+     validations:
         required: true
