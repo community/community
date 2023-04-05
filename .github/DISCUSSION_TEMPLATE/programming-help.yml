@@ -13,7 +13,9 @@ body:
     required: true
 - type: checkboxes
   attributes:
-    label: I have read and understood this category's <a href="https://github.com/orgs/community/discussions/51384">guidelines</a> before making this post. 
+    label: I have read and understood this category's 'guidelines' before making this post. 
     options:
+    properties: 
+        linkText: 'https://github.com/orgs/community/discussions/51384'
       - label: 'Yes'
         required: true
