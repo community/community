@@ -40,6 +40,8 @@ You will also find previous Discourse Community Forum categories that have since
 | Code to Cloud 	| Actions and Packages |
 | GitHub Ecosystem 	| APIs and Integrations 	|
 | Uncategorized 	| General 	|
+| Software Development 	| Programming Help 	|
+| 	| Machine Learning and ML Ops 	|
 
 When creating a new post, make sure to choose the predetermined category that best fits your topic. This will ensure that conversations are indexed by their corresponding product or feature, to help community members quickly find answers to their questions.
 
