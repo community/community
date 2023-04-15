@@ -1,13 +1,12 @@
-title: "<title>"
-labels: [Actions and Packages]
+labels: [Packages]
 body:
 - type: dropdown
   attributes:
     label: Select Topic Area
     description: What would you like to discuss?
     options:
-      - "Product Feedback"
       - "Question"
+      - "Product Feedback"
       - "Bug"
       - "Show & Tell"
       - "General"

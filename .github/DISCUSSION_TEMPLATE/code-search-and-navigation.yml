@@ -1,4 +1,4 @@
-title: "<title>"
+title: "<Your question or feedback about the GitHub Code Search and Code View products>"
 labels: [Code Search and Navigation]
 body:
 - type: dropdown
@@ -6,8 +6,8 @@ body:
     label: Select Topic Area
     description: What would you like to discuss?
     options:
-      - "Product Feedback"
       - "Question"
+      - "Product Feedback"
       - "Bug"
       - "Show & Tell"
       - "General"
