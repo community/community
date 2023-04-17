@@ -32,6 +32,11 @@ body:
         - label: Projects
     validations:
       required: true
+      oneOf:
+        - optionLabels:
+            - Issues
+        - optionLabels:
+            - Projects
   - type: textarea
     attributes:
       label: Body
