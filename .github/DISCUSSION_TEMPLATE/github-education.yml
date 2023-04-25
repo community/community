@@ -32,7 +32,7 @@ body:
   - type: input
     id: suggestion
     attributes:
-      label: A suggestion...
+      label: A suggestion...(optional)
       description: "What activities would you like to see more of in the **GitHub Education Community**? 🎒"
       placeholder: "See more students & teachers showcasing their projects..."
     validations:
