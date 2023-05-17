@@ -41,7 +41,7 @@ body:
     attributes:
       label: Body
       description: Start your discussion!
-      placeholder: STOP: This category is only for discussions on GitHub Issues and GitHub Projects. GitHub Issues are the issues you open in a repo to track your work. NOT issues you are having with GitHub or a GitHub product. GitHub Projects are project boards you can create ex: Kanban boards, to track your work. NOT projects on GitHub.
+      placeholder: STOP! This category is only for discussions on GitHub Issues and GitHub Projects. GitHub Issues are the issues you open in a repo to track your work. NOT issues you are having with GitHub or a GitHub product. GitHub Projects are project boards you can create for example Kanban boards, to track your work. NOT projects on GitHub.
 
 
                    We know the "issues" and ‘projects” naming conventions can be a little confusing. 
