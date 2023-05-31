@@ -1,6 +1,7 @@
 labels: [Codespaces]
 body:
 - type: dropdown
+  id: topic
   attributes:
     label: Select Topic Area
     description: What would you like to discuss?
@@ -13,6 +14,7 @@ body:
   validations:
     required: true
 - type: textarea
+  id: text
   attributes:
     label: Body
     description: Start your discussion!
