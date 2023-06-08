@@ -2,7 +2,7 @@ name: Check labels
 
 on:
   discussion:
-    types: [labeled]
+    types: [labeled, created]
 
 jobs:
   check_labels:
