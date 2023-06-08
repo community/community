@@ -30,12 +30,12 @@ jobs:
               }
             } catch (error) {
               console.log(error);
-              return 'false';
+              return false;
             }
       
       - name: Check labels
         id: check_labels
-        if: ${{ steps.check_employee.outputs.result == 'false' }}
+        if: ${{ steps.check_employee.outputs.result == false }}
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -48,16 +48,23 @@ jobs:
 
             console.log(context.payload);
 
-            labelsToRemove.forEach(label => {
-              if (context.payload.label.name === labelsToRemove) {
-                return true;
+            const removeLabels = [];
 
-                // Remove labels
+            for (const label of context.payload.discussion.labels) {
+              if (labelsToRemove.includes(label.name)) {
+                removeLabels.push(label.name);
               }
-            });
+            }
+
+            if (removeLabels.length > 0) {
+              core.setOutput('remove_labels', removeLabels.join(','));
+              core.setOutput('remove_labels_bool', true);
+            } else {
+              core.setOutput('remove_labels_bool', false);
+            }
             
       - name: Remove label
-        if: ${{ steps.check_employee.outputs.result == 'false' && steps.check_labels.outputs.returnValue == true }}
+        if: ${{ steps.check_employee.outputs.result == false && steps.check_labels.outputs.remove_labels_bool == true }}
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -70,7 +77,7 @@ jobs:
 
             const removeLabel = async () => {
               for (const label of labelsToRemove) {
-                await github.issues.removeLabel({
+                await github.rest.issues.removeLabel({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: context.issue.number,
