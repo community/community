@@ -1,4 +1,4 @@
-name: Check labels
+name: Remove Governed Labels
 
 on:
   discussion:
