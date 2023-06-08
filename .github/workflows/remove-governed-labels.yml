@@ -49,7 +49,7 @@ jobs:
             console.log(context.payload);
 
             labelsToRemove.forEach(label => {
-              if (context.payload.label.name === label) {
+              if (context.payload.label.name === labelsToRemove) {
                 return true;
 
                 // Remove labels
