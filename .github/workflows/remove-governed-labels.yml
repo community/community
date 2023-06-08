@@ -1,0 +1,82 @@
+name: Check labels
+
+on:
+  discussion:
+    types: [labeled]
+
+jobs:
+  check_labels:
+    name: Check labels
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check if employee
+        id: check_employee
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.READ_GITHUB_ORG_MEMBERS_TOKEN }}
+          result-encoding: string
+          script: |
+            try {
+              const response = await github.rest.orgs.checkMembershipForUser({
+                org: `github`,
+                username: context.payload.discussion.user.login
+              });
+
+              if (response.status === 204) {
+                return true;
+              } else {
+                return false;
+              }
+            } catch (error) {
+              console.log(error);
+              return 'false';
+            }
+      
+      - name: Check labels
+        id: check_labels
+        if: ${{ steps.check_employee.outputs.result == 'false' }}
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const labelsToRemove = [
+              'in backlog',
+              'more information needed',
+              'fixed'
+            ];
+
+            console.log(context.payload);
+
+            labelsToRemove.forEach(label => {
+              if (context.payload.label.name === label) {
+                return true;
+
+                // Remove labels
+              }
+            });
+            
+      - name: Remove label
+        if: ${{ steps.check_employee.outputs.result == 'false' && steps.check_labels.outputs.returnValue == true }}
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const labelsToRemove = [
+              'in backlog',
+              'more information needed',
+              'fixed'
+            ];
+
+            const removeLabel = async () => {
+              for (const label of labelsToRemove) {
+                await github.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  name: label
+                });
+              }
+            };
+
+            removeLabel();
