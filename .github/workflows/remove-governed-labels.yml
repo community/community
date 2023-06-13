@@ -17,73 +17,89 @@ jobs:
           github-token: ${{ secrets.READ_GITHUB_ORG_MEMBERS_TOKEN }}
           result-encoding: string
           script: |
+            console.log(context.payload);
+
             try {
               const response = await github.rest.orgs.checkMembershipForUser({
                 org: `github`,
-                username: context.payload.discussion.user.login
+                username: context.payload.sender.login
               });
 
               if (response.status === 204) {
-                return true;
+                return 'true';
               } else {
-                return false;
+                return 'false';
               }
             } catch (error) {
               console.log(error);
-              return false;
+              return 'false';
             }
       
-      - name: Check labels
-        id: check_labels
-        if: ${{ steps.check_employee.outputs.result == false }}
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const labelsToRemove = [
-              'in backlog',
-              'more information needed',
-              'fixed'
-            ];
-
-            console.log(context.payload);
-
-            const removeLabels = [];
-
-            for (const label of context.payload.discussion.labels) {
-              if (labelsToRemove.includes(label.name)) {
-                removeLabels.push(label.name);
+      - name: Fetch label id
+        id: fetch_label_id
+        if: ${{ steps.check_employee.outputs.result == 'false' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          TOPIC: 'more information needed'
+        run: |
+          gh api graphql -F owner=$OWNER -F name=$REPO -F topic="$TOPIC"  -f query='
+            query($owner: String!, $name: String!, $topic: String) {
+              repository(owner: $owner, name: $name){
+                labels(first: 1, query: $topic) {
+                  edges {
+                    node {
+                      id
+                      name
+                    }
+                  }
+                }
               }
-            }
-
-            if (removeLabels.length > 0) {
-              core.setOutput('remove_labels', removeLabels.join(','));
-              core.setOutput('remove_labels_bool', true);
-            } else {
-              core.setOutput('remove_labels_bool', false);
-            }
+            }' > repository_label_data.json
             
-      - name: Remove label
-        if: ${{ steps.check_employee.outputs.result == false && steps.check_labels.outputs.remove_labels_bool == true }}
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const labelsToRemove = [
-              'in backlog',
-              'more information needed',
-              'fixed'
-            ];
-
-            const removeLabel = async () => {
-              for (const label of labelsToRemove) {
-                await github.rest.issues.removeLabel({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  issue_number: context.issue.number,
-                  name: label
-                });
+          echo 'LABEL_ID='$(jq '.data.repository.labels.edges[].node | .id ' repository_label_data.json) >> $GITHUB_ENV
+          
+      - name: Fetch discussion ID
+        id: fetch_discussion_id
+        if: ${{ steps.check_employee.outputs.result == 'false' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          TOPIC: 'more information needed'
+        run: |
+          gh api graphql -F owner=$OWNER -F name=$REPO -f query='
+            query($owner: String!, $name: String!) {
+              repository(owner: $owner, name: $name) {
+                discussion(number: ${{ github.event.discussion.number }}) {
+                  id
+                }
               }
-            };
+            }' > discussion_data.json
+            
+          echo 'DISCUSSION_ID='$(jq '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
 
-            removeLabel();
+          
+      - name: Unlabel the discussion
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          TOPIC: 'more information needed'
+        run: |
+          gh api graphql -f query='
+            mutation($labelableId: ID!, $labelIds: [ID!]!) {
+              removeLabelsFromLabelable(input: {labelableId: $labelableId, labelIds: $labelIds}) {
+                labelable {
+                  labels(first: 10) {
+                    edges {
+                      node {
+                        id
+                        name
+                      }
+                    }
+                  }
+                }
+              }
+            }' -f labelableId=$DISCUSSION_ID -f labelIds=$LABEL_ID
