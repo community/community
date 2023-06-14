@@ -2,7 +2,7 @@ name: issue and project labeler
 
 on:
   discussion:
-    types: [opened]
+    types: [created]
 
 permissions:
   issues: write
