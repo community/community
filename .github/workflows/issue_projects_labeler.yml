@@ -5,11 +5,11 @@ on:
     types: [created]
 
 permissions:
-  issues: write
+  discussion: write
   contents: read
 
 jobs:
-  label-templated-issue:
+  label-templated-discussion:
     runs-on: ubuntu-latest
     steps:
       - name: Get selected feature area
@@ -18,10 +18,10 @@ jobs:
         with:
           result-encoding: string
           script: |
-            const issueBody = context.payload.issue.body;
-            console.log("Issue Body:", issueBody);
+            const discussionBody = context.payload.discussion.body;
+            console.log("discussion Body:", discussionBody);
             const featureAreaRegex = /Feature Area\s*(.+)/i;
-            const match = issueBody.match(featureAreaRegex);
+            const match = discussionBody.match(featureAreaRegex);
             console.log("Match:", match);
             if (match && match[1]) {
               return match[1].trim().toLowerCase();
@@ -40,7 +40,7 @@ jobs:
         with:
           script: |
             const featureArea = "${{ steps.get_selected_feature_area.outputs.result }}";
-            const labels = await github.rest.issues.listLabelsForRepo({
+            const labels = await github.rest.discussions.listLabelsForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo
             });
@@ -48,19 +48,19 @@ jobs:
             console.log("Found Label:", featureArea);
             return featureArea ? featureArea : "";
 
-      - name: Label the issue
+      - name: Label the discussion
         if: ${{ steps.fetch_label_id.outputs.result != '' }}
         uses: actions/github-script@v6
         with:
           script: |
             const labelName = ${{ steps.fetch_label_id.outputs.result }};
-            const issueNumber = context.payload.issue.number;
+            const discussionNumber = context.payload.discussion.number;
             if (labelName) {
               console.log("Applying Label:", labelName);
-              await github.rest.issues.addLabels({
+              await github.rest.discussions.addLabels({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                issue_number: issueNumber,
+                discussion_number: discussionNumber,
                 labels: [labelName],
               });
             } else {
