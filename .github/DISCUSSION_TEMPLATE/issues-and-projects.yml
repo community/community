@@ -23,20 +23,15 @@ body:
         - General
     validations:
       required: true
-  - type: checkboxes
+  - type: dropdown
     attributes:
-      label: Select Feature Area
+      label: Feature Area
       description: What GitHub product/feature area would you like to discuss? This category is only for conversations related to the below. 
       options:
-        - label: Issues (The feature that allows you to track ideas, feedback, tasks, or bugs for work on GitHub. Not for any issue you are having).
-        - label: Projects (For planning and tracking work on GitHub - not any open source or other type of project). 
+        -  Issues 
+        -  Projects
     validations:
       required: true
-      oneOf:
-        - optionLabels:
-            - Issues
-        - optionLabels:
-            - Projects
   - type: textarea
     attributes:
       label: Body
