@@ -1,0 +1,69 @@
+name: auto_blue_labeler
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  label-templated-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get selected feature area
+        id: get_selected_feature_area
+        uses: actions/github-script@v6
+        with:
+          result-encoding: string
+          script: |
+            const issueBody = context.payload.issue.body;
+            console.log("Issue Body:", issueBody);
+            const featureAreaRegex = /Feature Area\s*(.+)/i;
+            const match = issueBody.match(featureAreaRegex);
+            console.log("Match:", match);
+            if (match && match[1]) {
+              return match[1].trim().toLowerCase();
+            } else {
+              return "";
+            }
+      
+      - name: Debug selected feature area
+        run: |
+          echo "Selected Feature Area: ${{ steps.get_selected_feature_area.outputs.result }}"
+        
+      - name: Fetch label id for selected feature area
+        id: fetch_label_id
+        if: ${{ steps.get_selected_feature_area.outputs.result != '' }}
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const featureArea = "${{ steps.get_selected_feature_area.outputs.result }}";
+            const labels = await github.rest.issues.listLabelsForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            console.log("Labels:", labels.data);
+            console.log("Found Label:", featureArea);
+            return featureArea ? featureArea : "";
+
+      - name: Label the issue
+        if: ${{ steps.fetch_label_id.outputs.result != '' }}
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const labelName = ${{ steps.fetch_label_id.outputs.result }};
+            const issueNumber = context.payload.issue.number;
+            if (labelName) {
+              console.log("Applying Label:", labelName);
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                labels: [labelName],
+              });
+            } else {
+              console.log("No label to apply.");
+            }
+          github-token: ${{ secrets.GITHUB_TOKEN }}
