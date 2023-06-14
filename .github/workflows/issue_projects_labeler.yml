@@ -1,4 +1,4 @@
-name: auto_blue_labeler
+name: issue and project labeler
 
 on:
   discussion:
