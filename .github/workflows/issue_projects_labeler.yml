@@ -1,7 +1,7 @@
 name: auto_blue_labeler
 
 on:
-  issues:
+  discussion:
     types: [opened]
 
 permissions:
