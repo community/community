@@ -1,14 +1,16 @@
-name: Remove Governed Labels
+name: 'On Label: Remove Governed Label'
 
 on:
   discussion:
-    types: [labeled, created]
+    types: [labeled]
+
+permissions:
+  contents: read
+  discussions: write
 
 jobs:
-  check_labels:
-    name: Check labels
+  action:
     runs-on: ubuntu-latest
-
     steps:
       - name: Check if employee
         id: check_employee
@@ -17,8 +19,6 @@ jobs:
           github-token: ${{ secrets.READ_GITHUB_ORG_MEMBERS_TOKEN }}
           result-encoding: string
           script: |
-            console.log(context.payload);
-
             try {
               const response = await github.rest.orgs.checkMembershipForUser({
                 org: `github`,
@@ -34,40 +34,14 @@ jobs:
               console.log(error);
               return 'false';
             }
-      
-      - name: Fetch label id
-        id: fetch_label_id
-        if: ${{ steps.check_employee.outputs.result == 'false' }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OWNER: ${{ github.repository_owner }}
-          REPO: ${{ github.event.repository.name }}
-          TOPIC: 'more information needed'
-        run: |
-          gh api graphql -F owner=$OWNER -F name=$REPO -F topic="$TOPIC"  -f query='
-            query($owner: String!, $name: String!, $topic: String) {
-              repository(owner: $owner, name: $name){
-                labels(first: 1, query: $topic) {
-                  edges {
-                    node {
-                      id
-                      name
-                    }
-                  }
-                }
-              }
-            }' > repository_label_data.json
-            
-          echo 'LABEL_ID='$(jq '.data.repository.labels.edges[].node | .id ' repository_label_data.json) >> $GITHUB_ENV
-          
+         
       - name: Fetch discussion ID
         id: fetch_discussion_id
-        if: ${{ steps.check_employee.outputs.result == 'false' }}
+        if: ${{ steps.check_employee.outputs.result == 'false' && github.event.repository && github.event.discussion }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ github.repository_owner }}
           REPO: ${{ github.event.repository.name }}
-          TOPIC: 'more information needed'
         run: |
           gh api graphql -F owner=$OWNER -F name=$REPO -f query='
             query($owner: String!, $name: String!) {
@@ -80,26 +54,10 @@ jobs:
             
           echo 'DISCUSSION_ID='$(jq '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
 
-          
-      - name: Unlabel the discussion
+      - name: UnLabel Discussion
+        if: ${{ steps.check_employee.outputs.result == 'false' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ github.repository_owner }}
           REPO: ${{ github.event.repository.name }}
-          TOPIC: 'more information needed'
-        run: |
-          gh api graphql -f query='
-            mutation($labelableId: ID!, $labelIds: [ID!]!) {
-              removeLabelsFromLabelable(input: {labelableId: $labelableId, labelIds: $labelIds}) {
-                labelable {
-                  labels(first: 10) {
-                    edges {
-                      node {
-                        id
-                        name
-                      }
-                    }
-                  }
-                }
-              }
-            }' -f labelableId=$DISCUSSION_ID -f labelIds=$LABEL_ID
+          config-path: '.github/label-actions.yml'
