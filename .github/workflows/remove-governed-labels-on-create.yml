@@ -37,7 +37,7 @@ jobs:
       
       - name: Fetch label id
         id: fetch_label_id
-        if: ${{ steps.check_employee.outputs.result == 'true' }}
+        if: ${{ steps.check_employee.outputs.result == 'false' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ github.repository_owner }}
@@ -62,7 +62,7 @@ jobs:
           
       - name: Fetch discussion ID
         id: fetch_discussion_id
-        if: ${{ steps.check_employee.outputs.result == 'true' }}
+        if: ${{ steps.check_employee.outputs.result == 'false' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ github.repository_owner }}
