@@ -2,7 +2,7 @@ name: 'On Label: Remove Governed Label'
 
 on:
   discussion:
-    types: [labeled, created]
+    types: [labeled]
 
 permissions:
   contents: read
