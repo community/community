@@ -92,7 +92,7 @@ jobs:
             mutation($labelableId: ID!, $labelIds: [ID!]!) {
               removeLabelsFromLabelable(input: {labelableId: $labelableId, labelIds: $labelIds}) {
                 labelable {
-                  labels(first: 10) {
+                  labels(first: 1) {
                     edges {
                       node {
                         id
