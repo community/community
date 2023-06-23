@@ -47,7 +47,7 @@ jobs:
           gh api graphql -F owner=$OWNER -F name=$REPO -F topic="$TOPIC"  -f query='
             query($owner: String!, $name: String!, $topic: String) {
               repository(owner: $owner, name: $name){
-                labels(first: 1, query: $topic) {
+                labels(first: 3, query: $topic) {
                   edges {
                     node {
                       id
@@ -92,7 +92,7 @@ jobs:
             mutation($labelableId: ID!, $labelIds: [ID!]!) {
               removeLabelsFromLabelable(input: {labelableId: $labelableId, labelIds: $labelIds}) {
                 labelable {
-                  labels(first: 10) {
+                  labels(first: 1) {
                     edges {
                       node {
                         id
