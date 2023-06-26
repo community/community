@@ -80,26 +80,29 @@ jobs:
             
           echo 'DISCUSSION_ID='$(jq '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
 
-          
       - name: Unlabel the discussion
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ github.repository_owner }}
           REPO: ${{ github.event.repository.name }}
-          TOPIC: 'more information needed'
+          DISCUSSION_ID: ${{ env.DISCUSSION_ID }}
+          LABEL_IDS: ${{ env.LABEL_ID }}
         run: |
-          gh api graphql -f query='
-            mutation($labelableId: ID!, $labelIds: [ID!]!) {
-              removeLabelsFromLabelable(input: {labelableId: $labelableId, labelIds: $labelIds}) {
-                labelable {
-                  labels(first: 10) {
-                    edges {
-                      node {
-                        id
-                        name
+          IFS=' ' read -ra labelIds <<< "$LABEL_IDS"
+          for labelId in "${labelIds[@]}"; do
+            gh api graphql -f query='
+              mutation($labelableId: ID!, $labelIds: [ID!]!) {
+                removeLabelsFromLabelable(input: {labelableId: $labelableId, labelIds: $labelIds}) {
+                  labelable {
+                    labels(first: 10) {
+                      edges {
+                        node {
+                          id
+                          name
+                        }
                       }
                     }
                   }
                 }
-              }
-            }' -f labelableId=$DISCUSSION_ID -f labelIds=$LABEL_ID
+              }' -f labelableId=$DISCUSSION_ID -f labelIds=$labelId
+          done
