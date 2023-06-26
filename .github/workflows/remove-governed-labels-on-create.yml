@@ -80,7 +80,6 @@ jobs:
             
           echo 'DISCUSSION_ID='$(jq '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
 
-          
       - name: Unlabel the discussion
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
