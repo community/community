@@ -4,7 +4,7 @@ on:
   discussion:
     types: [created]
 
-permissions:
+permissions:[![issue and project labeler](https://github.com/community/community/actions/workflows/issue_projects_labeler.yml/badge.svg)](https://github.com/community/community/actions/workflows/issue_projects_labeler.yml)
   discussion: write
   contents: read
 
