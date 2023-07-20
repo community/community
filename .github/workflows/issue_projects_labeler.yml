@@ -1,4 +1,4 @@
-name: Label Templated Discussions
+name: Issue and Project Templated Discussions
 
 on:
   discussion:
@@ -26,10 +26,10 @@ jobs:
                 }
               }
             }' > discussion_data.json
-            
+
           echo 'DISCUSSION_BODY_HTML='$(jq '.data.repository.discussion.bodyHTML' discussion_data.json) >> $GITHUB_ENV
           echo 'DISCUSSION_ID='$(jq '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
-          
+
       - run: npm install jsdom
       
       - name: Get selected topic
@@ -42,27 +42,27 @@ jobs:
               const jsdom = require('jsdom');
               const { JSDOM } = jsdom;
               const { DISCUSSION_BODY_HTML } = process.env
-              
+
               const fragment = JSDOM.fragment(DISCUSSION_BODY_HTML);
-              const selectTopicHeader = fragment.querySelector("h3");
-              const templated = selectTopicHeader.textContent === 'Feature Area';
-              if (!templated) {
+              const featureAreaHeaders = fragment.querySelectorAll("h3");
+              const featureAreaHeader = Array.from(featureAreaHeaders).find(header => header.textContent.trim().toLowerCase() === 'feature area');
+              if (!featureAreaHeader) {
                 return "";
               }
-              
-              const selectedTopicElement = selectTopicHeader.nextElementSibling;
+
+              const selectedTopicElement = featureAreaHeader.nextElementSibling;
               if (!selectedTopicElement) {
                 return "";
               }
-              
+
               const selectedTopic = selectedTopicElement.textContent.trim().toLowerCase();
-              const validTopics = ["Projects", "Issues"];
+              const validTopics = ["projects", "issues"];
               return validTopics.includes(selectedTopic) ? selectedTopic : "";
-              
+
             } catch (error) {
               return "";
             }
-            
+          
       - name: Fetch label id for selected topic
         id: fetch_label_id
         if: ${{ steps.get_selected_topic.outputs.result != '' }}
@@ -85,7 +85,7 @@ jobs:
                 }
               }
             }' > repository_label_data.json
-            
+
           echo 'LABEL_ID='$(jq '.data.repository.labels.edges[].node | .id ' repository_label_data.json) >> $GITHUB_ENV
           
       - name: Label the discussion
@@ -108,4 +108,3 @@ jobs:
                 }
               }
             }' -f labelableId=$DISCUSSION_ID -f labelIds=$LABEL_ID
-            
