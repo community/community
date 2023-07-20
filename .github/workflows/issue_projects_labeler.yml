@@ -31,7 +31,7 @@ jobs:
       
       - name: Debug selected feature area
         run: |
-          echo "Selected Feature Area: ${{ steps.get_selected_feature_area.outputs.result }}"
+          echo "Feature Area: ${{ steps.get_selected_feature_area.outputs.result }}"
         
       - name: Fetch label id for selected feature area
         id: fetch_label_id
