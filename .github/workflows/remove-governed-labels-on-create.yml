@@ -1,5 +1,6 @@
 name: 'On Create: Remove Governed Label'
 
+# Trigger workflow whenever a discussion is created
 on:
   discussion:
     types: [created]
@@ -9,6 +10,7 @@ jobs:
     name: Check labels
     runs-on: ubuntu-latest
 
+# Step 1 is to check if the discussion creator is an employee. If employee = 'true', later steps will not fire. If employee = 'false', later steps will continue 
     steps:
       - name: Check if employee
         id: check_employee
@@ -34,7 +36,8 @@ jobs:
               console.log(error);
               return 'false';
             }
-      
+
+# Step 2 grabs the label id of the label we want to remove and stores it in the GITHUB_ENV. We use the 'TOPIC' to define the label in plain text
       - name: Fetch label id
         id: fetch_label_id
         if: ${{ steps.check_employee.outputs.result == 'false' }}
@@ -59,7 +62,8 @@ jobs:
             }' > repository_label_data.json
             
           echo 'LABEL_ID='$(jq '.data.repository.labels.edges[].node | .id ' repository_label_data.json) >> $GITHUB_ENV
-          
+
+# Step 3 is to record the discussion id of the discussion that triggered the workflow in the GITHUB_ENV so the workflow knows which discussion post to then act on later         
       - name: Fetch discussion ID
         id: fetch_discussion_id
         if: ${{ steps.check_employee.outputs.result == 'false' }}
@@ -80,6 +84,7 @@ jobs:
             
           echo 'DISCUSSION_ID='$(jq '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
 
+# Step 4 recalls the appropriate discussion id and label id from the GITHUB_ENV and removes the label from the discussion
       - name: Unlabel the discussion
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
