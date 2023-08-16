@@ -1,5 +1,6 @@
 name: 'On Label: Remove Governed Label'
 
+# Trigger workflow whenever a discussion is labeled
 on:
   discussion:
     types: [labeled]
@@ -11,6 +12,7 @@ permissions:
 jobs:
   action:
     runs-on: ubuntu-latest
+# Step 1 is to check if the user applying the label is an employee. If employee = 'true', later steps will not fire. If employee = 'false', later steps will continue     
     steps:
       - name: Check if employee
         id: check_employee
@@ -34,7 +36,8 @@ jobs:
               console.log(error);
               return 'false';
             }
-         
+
+# Step 2 is to record the discussion id of the discussion that triggered the workflow in the GITHUB_ENV so the workflow knows which discussion post to then act on later                  
       - name: Fetch discussion ID
         id: fetch_discussion_id
         if: ${{ steps.check_employee.outputs.result == 'false' && github.event.repository && github.event.discussion }}
@@ -54,6 +57,8 @@ jobs:
             
           echo 'DISCUSSION_ID='$(jq '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
 
+# Step 3 references the label-actions.yml file for instructions. That config file tells the action what to do next.
+# config file will reference the GITHUB_ENV and will only process the 'unlabel' action on 'discussions' and will unlabel the named labels
       - name: Label Actions
         if: ${{ steps.check_employee.outputs.result == 'false' }}
         env:
