@@ -25,7 +25,7 @@ Examples of unacceptable behavior include:
 * Contacting individual members, contributors, or leaders privately, outside designated community mechanisms, without their explicit permission
 * Other conduct which could reasonably be considered inappropriate in a professional setting
 
-### _Reasonable use of AI generated content_
+### Reasonable use of AI generated content
 
 We love experimenting with new technologies, and we are especially fond of [GitHub Copilot](https://github.com/features/copilot). But as with all new technology, many of us are still getting accustomed to using generative AI tools the most effectively. Here are important guidelines to follow when using generative AI to answer questions in the community:
 
