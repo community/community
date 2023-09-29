@@ -25,6 +25,20 @@ Examples of unacceptable behavior include:
 * Contacting individual members, contributors, or leaders privately, outside designated community mechanisms, without their explicit permission
 * Other conduct which could reasonably be considered inappropriate in a professional setting
 
+### _Reasonable use of AI generated content_
+
+We love experimenting with new technologies, and we are especially fond of [GitHub Copilot](https://github.com/features/copilot). But as with all new technology, many of us are still getting accustomed to using generative AI tools the most effectively. Here are important guidelines to follow when using generative AI to answer questions in the community:
+
+  - Take personal responsibility for everything you post.
+  - Read and revise the content before you post it; use your own authentic voice.
+  - Use your expertise as a developer to verify that the answer works and makes sense.
+  - Do not just post AI-generated content verbatim to inflate your reputation or give a false impression of product expertise.
+  - AI tools will often answer in an authoritative tone that sounds like a tech support professional. Be careful not to [mislead other users](/site-policy/acceptable-use-policies/github-impersonation) into thinking that this authoritative tone means they are receiving an official response from GitHub.
+
+Additionally, all of the guidelines listed in the previous section ([Best Practices for Maintaining a Strong Community](/site-policy/github-terms/github-community-code-of-conduct#best-practices-for-maintaining-a-strong-community)) also apply here.
+
+The community is here for users to build trust through authentic reputations. Not adhering to these guidelines may, in some cases, constitute a Code of Conduct violation. Refer to [the enforcement section](#enforcement) below for more information.
+
 ## Enforcement Responsibilities
 
 Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
