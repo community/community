@@ -1,0 +1,24 @@
+name: Comment on stale discussions
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      discussions: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
+
+      - name: Bundle install
+        run: bundle install
+
+      - name: Comment on discussions
+        run: .github/actions/comment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
