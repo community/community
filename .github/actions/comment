@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require "./lib/github"
+require_relative "../lib/github"
 
 stale_label_id = "LA_kwDOEfmk4M8AAAABYVCU-g"
 owner = "community"
