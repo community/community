@@ -32,6 +32,11 @@ end
 
 categories.each do |c|
   puts "#{c.name} has #{c.discussions.count} eligible discussion(s)"
+
+  c.discussions.each do |d|
+    puts "#{d.url} -- #{d.title}"
+  end
+  puts "----------"
 end
 
 # for initial testing, don't modify any discussions
