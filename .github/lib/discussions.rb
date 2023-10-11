@@ -53,6 +53,7 @@ Discussion = Struct.new(
     GitHub.new.post(graphql: query).map! { |r| r.dig('discussions', 'nodes') }
       .flatten
       .reject { |r| Date.parse(r["updatedAt"]).after?(cutoff_date) }
+      .select { |r| r.dig("labels", "nodes").map { |l| l["name"] }.include?("Question") }
       .reject { |r| r["closed"] }
       .reject { |r| r["locked"] }
       .reject { |r| r.dig("comments", "totalCount") > 0 && Date.parse(r.dig("comments", "nodes", 0, "createdAt")).after?(cutoff_date) }
