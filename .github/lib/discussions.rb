@@ -5,6 +5,8 @@ require "active_support/core_ext/numeric/time"
 
 Discussion = Struct.new(
   :id,
+  :url,
+  :title
 ) do
   def self.all(owner: nil, repo: nil, category: nil)
     return [] if owner.nil? || repo.nil? || category.nil?
@@ -21,6 +23,8 @@ Discussion = Struct.new(
         ) {
           nodes {
             id
+            url
+            title
             closed
             locked
             updatedAt
@@ -55,7 +59,9 @@ Discussion = Struct.new(
       .reject { |r| r.dig("labels", "nodes").map { |l| l["name"] }.include?("stale") }
       .map do |c|
         Discussion.new(
-          c["id"]
+          c["id"],
+          c["url"],
+          c["title"]
         )
       end
   end
