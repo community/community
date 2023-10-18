@@ -30,19 +30,10 @@ categories.map do |category|
   category.discussions = Discussion.all(owner:, repo:, category:)
 end
 
-categories.each do |c|
-  puts "#{c.name} has #{c.discussions.count} eligible discussion(s)"
-
-  c.discussions.each do |d|
-    puts "#{d.url} -- #{d.title}"
+categories.each do |category|
+  category.discussions.each do |discussion|
+    puts "#{discussion.url},#{discussion.title}"
+    discussion.add_comment(body: body)
+    discussion.add_label(label_id: stale_label_id)
   end
-  puts "----------"
 end
-
-# for initial testing, don't modify any discussions
-#categories.each do |category|
-#  category.discussions.each do |discussion|
-#    discussion.add_comment(body: body)
-#    discussion.add_label(label_id: stale_label_id)
-#  end
-#end
