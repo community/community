@@ -40,6 +40,6 @@ categories.each do |category|
     end
     #discussion.add_label(label_id: stale_label_id)
 
-    sleep 0.5
+    sleep 1
   end
 end
