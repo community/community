@@ -36,10 +36,11 @@ categories.each do |category|
     result = discussion.add_comment(body: body)
     if errors = result.dig("errors")
       puts "#{errors.dig(0, "type")}: #{errors.dig(0, "message")}"
+      sleep 1.2
       next
     end
     #discussion.add_label(label_id: stale_label_id)
 
-    sleep 1
+    sleep 1.2
   end
 end
