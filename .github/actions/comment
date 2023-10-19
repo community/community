@@ -6,7 +6,7 @@ require_relative "../lib/github"
 stale_label_id = "LA_kwDOEfmk4M8AAAABYVCU-g"
 owner = "community"
 repo = "community"
-only_these_categories = ["Copilot", "Projects and Issues", "Accessibility"]
+only_these_categories = ["Projects and Issues"]
 
 body =<<BODY
 🕒 **Stale Discussion Alert** 🕒
@@ -33,7 +33,8 @@ end
 categories.each do |category|
   category.discussions.each do |discussion|
     puts "#{discussion.url},#{discussion.title}"
-    discussion.add_comment(body: body)
-    discussion.add_label(label_id: stale_label_id)
+    result = discussion.add_comment(body: body)
+    puts result
+    #discussion.add_label(label_id: stale_label_id)
   end
 end

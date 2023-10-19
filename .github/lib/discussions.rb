@@ -58,6 +58,7 @@ Discussion = Struct.new(
       .reject { |r| r["locked"] }
       .reject { |r| r.dig("comments", "totalCount") > 0 && Date.parse(r.dig("comments", "nodes", 0, "createdAt")).after?(cutoff_date) }
       #.reject { |r| r.dig("labels", "nodes").map { |l| l["name"] }.include?("stale") }
+      .select { |r| r.dig("labels", "nodes").map { |l| l["name"] }.include?("stale") }
       .map do |c|
         Discussion.new(
           c["id"],
