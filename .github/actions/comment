@@ -36,5 +36,7 @@ categories.each do |category|
     result = discussion.add_comment(body: body)
     puts result
     #discussion.add_label(label_id: stale_label_id)
+
+    sleep 0.5
   end
 end
