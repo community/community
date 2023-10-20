@@ -6,7 +6,7 @@ require_relative "../lib/github"
 stale_label_id = "LA_kwDOEfmk4M8AAAABYVCU-g"
 owner = "community"
 repo = "community"
-only_these_categories = ["Copilot", "Projects and Issues", "Accessibility"]
+only_these_categories = ["Copilot"]
 
 body =<<BODY
 🕒 **Stale Discussion Alert** 🕒
