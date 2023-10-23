@@ -8,22 +8,6 @@ owner = "community"
 repo = "community"
 only_these_categories = ["Copilot"]
 
-body =<<BODY
-🕒 **Stale Discussion Alert** 🕒
-
-This Discussion has labeled by stale automated system for having no activity. Please consider one the following actions:
-
-1️⃣ Close by out of deta: If the topic are no longer relevant, close the Discussion as `out of date` at the bottom of the page.
-
-2️⃣ Provide More Information: Share additional details or context — or let the community know if you've found a solution on your own.
-
-3️⃣ Mark a Reply as Answer: If your question has been answered by a reply, mark the most helpful reply as the solution.
-
-Note: This stale notification will only apply to Discussions with the `Question` label. To learn more, see our [recent stalebot announcement](https://github.com/orgs/community/discussions/69407).
-
-Thank you for helping bring this Discussion to a resolution! 💬
-BODY
-
 categories = Category.all(owner:, repo:).select { |c| only_these_categories.include?(c.name) }
 
 categories.map do |category|
