@@ -53,9 +53,7 @@ jobs:
                   id
                 }
               }
-            }' > discussion_data.json
-            
-          echo 'DISCUSSION_ID='$(jq '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
+            }' -q '"DISCUSSION_ID=" + ."data"."repository"."discussion"."id"' >> $GITHUB_ENV
 
 # Step 3 references the label-actions.yml file for instructions. That config file tells the action what to do next.
 # config file will reference the GITHUB_ENV and will only process the 'unlabel' action on 'discussions' and will unlabel the named labels
