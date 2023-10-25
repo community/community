@@ -23,10 +23,10 @@ jobs:
                 username: context.payload.pull_request.user.login
               });
 
-              if (response.status === 204) {
-                return true;
+              if (response.status === 204 || context.payload.pull_request.user.login === 'szepeviktor') {
+                return 'true';
               } else {
-                return false;
+                return 'false';
               }
             } catch (error) {
               console.log(error);
