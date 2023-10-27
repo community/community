@@ -52,7 +52,7 @@ We encourage you to [open a discussion](https://github.com/orgs/community/discus
 
 Prior to creating a new discussion, please take a look at previous discussions to see if someone else has already shared your suggestion(s). If you find a similar discussion, reply with additional details or upvote the discussion to signal your support rather than creating a new one.
 
-### From a suggestion to a shipped feature
+## From a suggestion to a shipped feature
 
 Once you kick off a discussion, the GitHub product team will evaluate the feedback but will not be able to respond to every submission. From there, we will work with you, and the entire community, to ensure we understand the current capabilities GitHub doesn’t have and explore the space for potential solutions to your problem statement:
 
