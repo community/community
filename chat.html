@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>ChatGPT Data Export</title>
+    <style>
+      body {
+        margin: 20px;
+      }
+      h4 {
+        font-family: sans-serif;
+        margin: 0;
+      }
+      #root {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .conversation {
+        border: 1px solid black;
+        padding: 20px;
+        background-color: #f3f3f3;
+      }
+      .message {
+        white-space: pre-wrap;
+        margin: 20px 0;
+      }
+      .author {
+        font-weight: bold;
+        margin-bottom: 4px;
+      }
+      .author::first-letter {
+        text-transform: uppercase;
+      }
+    </style>
+    <script>
+      var jsonData = [{"title": "Indoor Family Fun Ideas", "create_time": 1701312182.424491, "update_time": 1701312197.58777, "mapping": {"d8ade1d4-73c1-468c-9e2f-13731c6c6d15": {"id": "d8ade1d4-73c1-468c-9e2f-13731c6c6d15", "message": {"id": "d8ade1d4-73c1-468c-9e2f-13731c6c6d15", "author": {"role": "system", "name": null, "metadata": {}}, "create_time": null, "update_time": null, "content": {"content_type": "text", "parts": [""]}, "status": "finished_successfully", "end_turn": true, "weight": 0.0, "metadata": {}, "recipient": "all"}, "parent": "F963EF7E-5E81-4689-A6D8-41957DC34498", "children": ["daeec7ee-0cf6-4fc7-8a9f-554c9c92284c"]}, "F963EF7E-5E81-4689-A6D8-41957DC34498": {"id": "F963EF7E-5E81-4689-A6D8-41957DC34498", "message": null, "parent": null, "children": ["d8ade1d4-73c1-468c-9e2f-13731c6c6d15"]}, "daeec7ee-0cf6-4fc7-8a9f-554c9c92284c": {"id": "daeec7ee-0cf6-4fc7-8a9f-554c9c92284c", "message": {"id": "daeec7ee-0cf6-4fc7-8a9f-554c9c92284c", "author": {"role": "user", "name": null, "metadata": {}}, "create_time": 1701312182.424899, "update_time": null, "content": {"content_type": "text", "parts": ["Can you suggest fun activities for a family of 4 to do indoors on a rainy day?"]}, "status": "finished_successfully", "end_turn": null, "weight": 1.0, "metadata": {"timestamp_": "absolute", "message_type": null}, "recipient": "all"}, "parent": "d8ade1d4-73c1-468c-9e2f-13731c6c6d15", "children": ["7cd26a28-7098-4373-82ab-a15957e76260"]}, "7cd26a28-7098-4373-82ab-a15957e76260": {"id": "7cd26a28-7098-4373-82ab-a15957e76260", "message": {"id": "7cd26a28-7098-4373-82ab-a15957e76260", "author": {"role": "assistant", "name": null, "metadata": {}}, "create_time": 1701312191.753894, "update_time": null, "content": {"content_type": "text", "parts": ["Certainly! Here are some indoor activities for a family of four on a rainy day:\n\n1. Board games or card games: Choose from classics like Monopoly, Scrabble, Uno, or try out new games to keep everyone engaged and entertained.\n\n2. Indoor picnic: Set up a cozy picnic area in the living room with blankets, cushions, and your favorite snacks. It&#x27;s a fun way to have a meal together in a different setting.\n\n3. Arts and crafts: Get creative with art supplies such as painting, drawing, making DIY crafts, or even trying out some easy DIY projects found online.\n\n4. Movie marathon or binge-watch a series: Pick a series or movies that the whole family enjoys and create a mini theater experience at home with popcorn and blankets.\n\n5. Indoor scavenger hunt: Create a list of items to find around the house and have a friendly competition to see who can find them first.\n\n6. Baking or cooking together: Choose a recipe and involve everyone in the kitchen to make something delicious. It can be cookies, a cake, or even a homemade pizza.\n\n7. Build a fort or indoor tent: Use blankets, pillows, and furniture to create a cozy fort or tent where you can relax, read stories, or play games.\n\n8. Puzzle time: Work together as a family to complete a jigsaw puzzle. It&#x27;s a great way to bond and enjoy some collective problem-solving.\n\n9. Science experiments: Conduct simple and safe experiments at home, like making a volcano with baking soda and vinegar or creating homemade slime.\n\n10. Dance party: Put on some music and have a dance-off or just enjoy moving and grooving together in your living room.\n\nChoose activities based on your family&#x27;s interests and have a blast spending quality time together indoors despite the rain outside!"]}, "status": "finished_successfully", "end_turn": true, "weight": 1.0, "metadata": {"finish_details": {"type": "stop", "stop_tokens": [100260]}, "is_complete": true, "message_type": null, "model_slug": "text-davinci-002-render-sha", "parent_id": "daeec7ee-0cf6-4fc7-8a9f-554c9c92284c", "timestamp_": "absolute"}, "recipient": "all"}, "parent": "daeec7ee-0cf6-4fc7-8a9f-554c9c92284c", "children": []}}, "moderation_results": [], "current_node": "7cd26a28-7098-4373-82ab-a15957e76260", "plugin_ids": null, "conversation_id": "37aa6d80-e6b5-4803-b432-008cb3b00520", "conversation_template_id": null, "gizmo_id": null, "id": "37aa6d80-e6b5-4803-b432-008cb3b00520"}]
+
+      function getConversationMessages(conversation) {
+          var messages = [];
+          var currentNode = conversation.current_node;
+          while (currentNode != null) {
+              var node = conversation.mapping[currentNode];
+              if (
+                  node.message &&
+                  node.message.content &&
+                  node.message.content.content_type == "text"
+                  && node.message.content.parts.length > 0 &&
+                  node.message.content.parts[0].length > 0 &&
+                  (node.message.author.role !== "system"  || node.message.metadata.is_user_system_message)
+              ) {
+                  author = node.message.author.role;
+                  if (author === "assistant") {
+                      author = "ChatGPT";
+                  } else if (author === "system" && node.message.metadata.is_user_system_message) {
+                      author = "Custom user info"
+                  }
+                  messages.push({ author, text: node.message.content.parts[0] });
+              }
+              currentNode = node.parent;
+          }
+          return messages.reverse();
+      }
+
+      // on load, add messages to the root div
+      window.onload = function() {
+          var root = document.getElementById("root");
+          for (var i = 0; i < jsonData.length; i++) {
+              var conversation = jsonData[i];
+              var messages = getConversationMessages(conversation);
+              var div = document.createElement("div");
+              div.className = "conversation";
+              div.innerHTML = "<h4>" + conversation.title + "</h4>";
+              for (var j = 0; j < messages.length; j++) {
+                  var message = document.createElement("pre");
+                  message.className = "message";
+                  message.innerHTML = `<div class="author">${messages[j].author}</div><div>${messages[j].text}</div>`;
+                  div.appendChild(message);
+              }
+              root.appendChild(div);
+          }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
