@@ -26,6 +26,11 @@ on:
         required: true
         # The data type of the input
         type: string
+      max_to_move:
+        description: 'The maximum number of discussions we should try to move (up to 100), helpful in testing'
+        type: number
+        default: 50
+        required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -47,7 +52,7 @@ jobs:
         searchQuery="label:${{ inputs.label }} repo:${{ github.repository}}"
         discussions="$(gh api graphql -F queryString="$searchQuery" -f query='
           query($queryString: String!) {
-            search(query:$queryString,type:DISCUSSION,first:50){
+            search(query:$queryString,type:DISCUSSION,first:${{ inputs.max_to_move }}){
               nodes{
                 ...on Discussion{id}
               }
