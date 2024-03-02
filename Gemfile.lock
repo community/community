@@ -9,7 +9,6 @@ GEM
     ast (2.4.2)
     base64 (0.1.1)
     concurrent-ruby (1.2.2)
-    dotenv (2.8.1)
     faraday (2.7.11)
       base64
       faraday-net_http (>= 2.0, < 3.1)
@@ -25,7 +24,7 @@ GEM
       ast (~> 2.4.1)
       racc
     racc (1.7.1)
-    rack (3.0.8)
+    rack (3.0.9.1)
     rainbow (3.1.1)
     regexp_parser (2.8.1)
     rexml (3.2.6)
@@ -62,9 +61,9 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
-  dotenv
   faraday
   rubocop-github
 
