@@ -27,6 +27,10 @@ class GitHub
       response = @conn.post("/graphql") do |req|
         req.body = { query: }.to_json
       end
+      unless response.status == 200
+        puts "#{response.reason_phrase}: #{JSON.parse(response.body).dig("message")}"
+        exit
+      end
 
       node = JSON.parse(response.body).dig("data", "repository")
       nodes << node
