@@ -1,4 +1,4 @@
-name: Comment on stale discussions
+name: Comment on dormant discussions
 
 on: workflow_dispatch
 
