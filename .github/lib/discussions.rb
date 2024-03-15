@@ -1,69 +1,69 @@
 # frozen_string_literal: true
 
+require "active_support"
 require "active_support/core_ext/date_and_time/calculations"
 require "active_support/core_ext/numeric/time"
 
 Discussion = Struct.new(
   :id,
   :url,
-  :title
+  :title,
+  :labelled
 ) do
-  def self.all(owner: nil, repo: nil, category: nil)
-    return [] if owner.nil? || repo.nil? || category.nil?
+  def self.all(owner: nil, repo: nil)
+    return [] if owner.nil? || repo.nil?
+
+    cutoff_date = Time.now.advance(days: -60).to_date.to_s
+    searchquery = "repo:#{owner}/#{repo} is:unanswered is:open is:unlocked updated:<#{cutoff_date} category:Copilot category:Accessibility category:\\\"Projects and Issues\\\" label:Question"
 
     query = <<~QUERY
     {
-      repository(owner: "#{owner}", name: "#{repo}"){
-        discussions(
-          first: 100,
-          after: "%ENDCURSOR%"
-          #{"answered: false," if category.answerable}
-          categoryId: "#{category.id}"
-          orderBy: { field: CREATED_AT, direction: ASC }
-        ) {
-          nodes {
-            id
-            url
-            title
-            closed
-            locked
-            updatedAt
-            comments(last: 1) {
-              totalCount
-              nodes {
-                createdAt
-              }
+      search(
+        first: 100
+        after: "%ENDCURSOR%"
+        query: "#{searchquery}"
+        type: DISCUSSION
+      ) {
+        discussionCount
+        ...Results
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+      }
+      rateLimit {
+        limit
+        cost
+        remaining
+        resetAt
+      }
+    }
+    fragment Results on SearchResultItemConnection {
+      nodes {
+        ... on Discussion {
+          id
+          url
+          title
+          labels(first: 10) {
+            nodes {
+              name
             }
-            labels(first: 100) {
-              nodes {
-                name
-              }
-            }
-          }
-          pageInfo {
-            hasNextPage
-            endCursor
           }
         }
       }
     }
     QUERY
 
-    cutoff_date = Time.now.advance(days: -60)
-    GitHub.new.post(graphql: query).map! { |r| r.dig('discussions', 'nodes') }
+    GitHub.new.post(graphql: query)
+      .map! { |r| r.dig('nodes') }
       .flatten
-      .reject { |r| Date.parse(r["updatedAt"]).after?(cutoff_date) }
-      .select { |r| r.dig("labels", "nodes").map { |l| l["name"] }.include?("Question") }
-      .reject { |r| r["closed"] }
-      .reject { |r| r["locked"] }
-      .reject { |r| r.dig("comments", "totalCount") > 0 && Date.parse(r.dig("comments", "nodes", 0, "createdAt")).after?(cutoff_date) }
-      #.reject { |r| r.dig("labels", "nodes").map { |l| l["name"] }.include?("stale") }
-      .select { |r| r.dig("labels", "nodes").map { |l| l["name"] }.include?("stale") }
       .map do |c|
+        labelled = c.dig("labels", "nodes").map { |l| l["name"] }.include?("inactive")
         Discussion.new(
           c["id"],
           c["url"],
-          c["title"]
+          c["title"],
+          labelled
         )
       end
   end

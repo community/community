@@ -1,6 +1,10 @@
 name: Comment on dormant discussions
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  schedule:
+    # At minute 23 past every 2nd hour
+    - cron: '23 */2 * * *'
 
 jobs:
   build:
