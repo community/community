@@ -4,6 +4,6 @@ source "https://rubygems.org"
 
 gem "faraday"
 
-group :test, :development do
+group :test, :development do 
   gem "rubocop-github"
 end
