@@ -109,4 +109,25 @@ Discussion = Struct.new(
 
     GitHub.new.mutate(graphql: query)
   end
+
+  def self.remove_label(node_id: nil, label_id: nil)
+    return if node_id.nil?
+    return if label_id.nil?
+
+    query = <<~QUERY
+    mutation {
+      removeLabelsFromLabelable(
+        input: {
+          labelIds: ["#{label_id}"],
+          labelableId: "#{node_id}",
+          clientMutationId: "rubyGraphQL"
+        }
+      ) {
+        clientMutationId
+      }
+    }
+    QUERY
+
+    GitHub.new.mutate(graphql: query)
+  end
 end
