@@ -3,8 +3,8 @@ name: Comment on dormant discussions
 on:
   workflow_dispatch:
   schedule:
-    # At minute 23 past every 2nd hour
-    - cron: '23 */2 * * *'
+    # At 03:23 every day
+    - cron: '23 3 * * *'
 
 jobs:
   build:
