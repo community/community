@@ -1,10 +1,10 @@
-name: Comment on dormant discussions
+name: Close out dormant discussions
 
 on:
   workflow_dispatch:
   schedule:
-    # At 03:23 every day
-    - cron: '23 3 * * *'
+    # At 01:23 every day
+    - cron: '23 1 * * *'
 
 jobs:
   build:
@@ -22,7 +22,8 @@ jobs:
       - name: Bundle install
         run: bundle install
 
-      - name: Comment on discussions
-        run: .github/actions/comment
+      - name: Close out discussions
+        run: .github/actions/close
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
