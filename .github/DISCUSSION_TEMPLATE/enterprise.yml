@@ -1,5 +1,4 @@
 labels: [Enterprise]
-labels: [Repositories]
 body:
 - type: textarea
   attributes:
