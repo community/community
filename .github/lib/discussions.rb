@@ -14,7 +14,7 @@ Discussion = Struct.new(
     return [] if owner.nil? || repo.nil?
 
     cutoff_date = Time.now.advance(days: -60).to_date.to_s
-    searchquery = "repo:#{owner}/#{repo} is:unanswered is:open is:unlocked updated:<#{cutoff_date} category:Copilot category:Accessibility category:\\\"Projects and Issues\\\" category:Sponsors category:Actions category:\\\"API and Webhooks\\\" category:\\\"Code Search and Navigation\\\" category: \\\"Code Security\\\" category:Codespaces category:Discussions label:Question"
+    searchquery = "repo:#{owner}/#{repo} is:unanswered is:open is:unlocked updated:<#{cutoff_date} category:Copilot category:Accessibility category:\\\"Projects and Issues\\\" category:Sponsors category:Actions category:\\\"API and Webhooks\\\" category:\\\"Code Search and Navigation\\\" category: \\\"Code Security\\\" category:Codespaces category:Discussions category:Feed category:Lists category:Mobile label:Question"
 
     query = <<~QUERY
     {
@@ -72,7 +72,7 @@ Discussion = Struct.new(
     return [] if owner.nil? || repo.nil?
 
     cutoff_date = Time.now.advance(days: -30).to_date.to_s
-    searchquery = "repo:#{owner}/#{repo} is:unanswered is:open is:unlocked updated:<#{cutoff_date} category:Copilot category:Accessibility category:\\\"Projects and Issues\\\" category:Sponsors category:Actions category:\\\"API and Webhooks\\\" category:\\\"Code Search and Navigation\\\" category: \\\"Code Security\\\" category:Codespaces category:Discussions label:Question label:inactive"
+    searchquery = "repo:#{owner}/#{repo} is:unanswered is:open is:unlocked updated:<#{cutoff_date} category:Copilot category:Accessibility category:\\\"Projects and Issues\\\" category:Sponsors category:Actions category:\\\"API and Webhooks\\\" category:\\\"Code Search and Navigation\\\" category: \\\"Code Security\\\" category:Codespaces category:Discussions category:Feed category:Lists category:Mobile label:Question label:inactive"
 
     query = <<~QUERY
     {
@@ -135,7 +135,7 @@ Discussion = Struct.new(
   def self.to_remove_label(owner: nil, repo: nil)
     return [] if owner.nil? || repo.nil?
 
-    searchquery = "repo:#{owner}/#{repo} is:unanswered is:open category:Copilot category:Accessibility category:\\\"Projects and Issues\\\" category:Sponsors category:Actions category:\\\"API and Webhooks\\\" category:\\\"Code Search and Navigation\\\" category: \\\"Code Security\\\" category:Codespaces category:Discussions label:Question label:inactive"
+    searchquery = "repo:#{owner}/#{repo} is:unanswered is:open category:Copilot category:Accessibility category:\\\"Projects and Issues\\\" category:Sponsors category:Actions category:\\\"API and Webhooks\\\" category:\\\"Code Search and Navigation\\\" category: \\\"Code Security\\\" category:Codespaces category:Discussions category:Feed category:Lists category:Mobile label:Question label:inactive"
 
     query = <<~QUERY
     {
