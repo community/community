@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative "../lib/github"
+
+owner = "community"
+repo = "community"
+
+node_id = ENV['NODE_ID']
+puts "Checking #{node_id} for an existing feedback comment"
+Discussion.existing_feedback_comment?(node_id: node_id)

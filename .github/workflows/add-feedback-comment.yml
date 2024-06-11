@@ -1,0 +1,27 @@
+name: Add a feedback comment when a discussion gets a related label
+
+on:
+  discussion:
+    types: [labeled]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      discussions: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
+
+      - name: Bundle install
+        run: bundle install
+
+      - name: Remove the label
+        run: .github/actions/add_feedback_comment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_ID: ${{ github.event.discussion.node_id }}

@@ -275,4 +275,13 @@ Discussion = Struct.new(
 
     GitHub.new.mutate(graphql: query)
   end
+
+  def self.existing_feedback_comment?(node_id: nil)
+    return false if node_id.nil?
+
+    query = <<~QUERY
+    QUERY
+
+    GitHub.new.post(graphql: query)
+  end
 end
