@@ -1,20 +1,23 @@
 labels: [Profile]
-body:
-- type: dropdown
-  attributes:
-    label: Select Topic Area
-    description: What would you like to discuss?
-    options:
-      - "Question"
-      - "Product Feedback"
-      - "Bug"
-      - "Show & Tell"
-      - "General"
-  validations:
-    required: true
-- type: textarea
-  attributes:
-    label: Body
-    description: Start your discussion!
-  validations:
-    required: true
+fields:
+  - type: dropdown
+    attributes:
+      label: "Select Topic Area"
+      description: "Choose the topic you want to discuss:"
+      options:
+        - "Question"
+        - "Product Feedback"
+        - "Bug"
+        - "Show & Tell"
+        - "General"
+      placeholder: "Please select a topic"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Discussion Details"
+      description: "Provide details about your discussion:"
+      placeholder: "Start your discussion here..."
+      rows: 5
+    validations:
+      required: true
