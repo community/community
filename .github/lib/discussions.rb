@@ -276,12 +276,43 @@ Discussion = Struct.new(
     GitHub.new.mutate(graphql: query)
   end
 
-  def self.existing_feedback_comment?(node_id: nil)
-    return false if node_id.nil?
+  def self.should_comment?(discussion_number: nil, owner: nil, repo: nil)
+    return false if owner.nil? || repo.nil?
+    return false if discussion_number.nil?
 
     query = <<~QUERY
+    {
+      repository(owner: "#{owner}", name: "#{repo}") {
+        discussion(number: #{discussion_number}) {
+          labels(first:100) {
+            nodes {
+              name
+            }
+          }
+          comments(first:100) {
+            nodes {
+              author {
+                login
+              }
+            }
+          }
+        }
+      }
+    }
     QUERY
 
-    GitHub.new.post(graphql: query)
+    response = GitHub.new.post(graphql: query)
+      .map { |r|
+        {
+          labels: r.dig("discussion", "labels", "nodes").map { |l|  l["name"] },
+          comments_by: r.dig("discussion", "comments", "nodes").map { |c| c.dig("author", "login") }
+        }
+      }.first
+
+    return false unless response[:labels].include?("Product Feedback") || response[:labels].include?("Bug")
+
+    return false if response[:comments_by].include?("github-actions")
+
+    true
   end
 end

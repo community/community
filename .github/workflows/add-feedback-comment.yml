@@ -2,7 +2,7 @@ name: Add a feedback comment when a discussion gets a related label
 
 on:
   discussion:
-    types: [labeled]
+    types: [created,labeled]
 
 jobs:
   build:
@@ -20,8 +20,9 @@ jobs:
       - name: Bundle install
         run: bundle install
 
-      - name: Remove the label
+      - name: Add feedback comment
         run: .github/actions/add_feedback_comment
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
           NODE_ID: ${{ github.event.discussion.node_id }}
