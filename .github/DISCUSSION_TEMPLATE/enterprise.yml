@@ -1,4 +1,5 @@
 labels: [Enterprise]
+body:
 - type: dropdown
   attributes:
     label: Select Topic Area
@@ -11,7 +12,6 @@ labels: [Enterprise]
       - "General"
   validations:
     required: true
-body:
 - type: textarea
   attributes:
     label: Body
