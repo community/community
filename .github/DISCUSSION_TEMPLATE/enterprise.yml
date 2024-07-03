@@ -1,4 +1,16 @@
 labels: [Enterprise]
+- type: dropdown
+  attributes:
+    label: Select Topic Area
+    description: What would you like to discuss?
+    options:
+      - "Question"
+      - "Product Feedback"
+      - "Bug"
+      - "Show & Tell"
+      - "General"
+  validations:
+    required: true
 body:
 - type: textarea
   attributes:
