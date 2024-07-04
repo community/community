@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Check if employee
         id: check_employee
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.READ_GITHUB_ORG_MEMBERS_TOKEN }}
           result-encoding: string
@@ -36,7 +36,7 @@ jobs:
       - name: Close PR
         id: close_pr
         if: ${{ steps.check_employee.outputs.result == 'false' }}
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
