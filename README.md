@@ -62,3 +62,12 @@ Once you kick off a discussion, the GitHub product team will evaluate the feedba
 ## Disclaimer
 
 Any statement in this repository that is not purely historical is considered a forward-looking statement. Forward-looking statements included in this repository are based on information available to GitHub as of the date they are made, and GitHub assumes no obligation to update any forward-looking statements. The forward-looking comments in the public feedback discussions do not represent a commitment, guarantee, obligation or promise to deliver any product or feature, or to deliver any product and feature by any particular date, and are intended to outline the general development plans. Customers should not rely on these public feedback discussions to make any purchasing decision.
+
+## Contributors ✨
+ <table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Tvenus"><img src="https://avatars.githubusercontent.com/u/156801994?s=400&u=89e9792d10923112e1bc8bf852ce03cd30f8bd30&v=4" width="100px;" alt="⭐Tvenus⭐"/><br /><sub><b>⭐Tvenus⭐</b></sub></a><br /><a href="#content-Tvenus" title="Content">🖋</a></td>
+    </tr>
+  </tbody>
+</table>
