@@ -1,20 +1,76 @@
-labels: [Actions]
-body:
-- type: dropdown
-  attributes:
-    label: Select Topic Area
-    description: What would you like to discuss?
-    options:
-      - "Question"
-      - "Product Feedback"
-      - "Bug"
-      - "Show & Tell"
-      - "General"
-  validations:
-    required: true
-- type: textarea
-  attributes:
-    label: Body
-    description: Start your discussion!
-  validations:
-    required: true
+{
+  "labels": ["Actions"],
+  "body": [
+    {
+      "type": "dropdown",
+      "attributes": {
+        "label": "Select Topic Area",
+        "description": "What would you like to discuss?",
+        "options": [
+          "Question",
+          "Product Feedback",
+          "Bug",
+          "Show & Tell",
+          "General"
+        ],
+        "help_text": "Choose the most appropriate category for your discussion."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "attributes": {
+        "label": "Body",
+        "description": "Start your discussion!",
+        "help_text": "Provide as much detail as possible.",
+        "placeholder": "Enter the details here...",
+        "max_length": 1000
+      },
+      "validations": {
+        "required": true,
+        "min_length": 10
+      }
+    },
+    {
+      "type": "conditional",
+      "attributes": {
+        "condition": {
+          "field": "Select Topic Area",
+          "value": "Bug"
+        },
+        "fields": [
+          {
+            "type": "textarea",
+            "attributes": {
+              "label": "Steps to Reproduce",
+              "description": "Describe the steps to reproduce the bug.",
+              "help_text": "Include step-by-step instructions to help us understand the issue.",
+              "placeholder": "Step 1: ... Step 2: ...",
+              "max_length": 2000
+            },
+            "validations": {
+              "required": true,
+              "min_length": 20
+            }
+          },
+          {
+            "type": "textarea",
+            "attributes": {
+              "label": "Expected Behavior",
+              "description": "Describe what you expected to happen.",
+              "help_text": "Explain the expected outcome of the actions.",
+              "placeholder": "I expected that ...",
+              "max_length": 1000
+            },
+            "validations": {
+              "required": true,
+              "min_length": 10
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
