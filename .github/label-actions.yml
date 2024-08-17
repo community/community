@@ -1,17 +1,31 @@
 # Configuration for Label Actions - remove label id
 
-more information needed:
+📣 Announcement:
   discussions:
-    # Remove labels
     unlabel:
-      - 'more information needed'
+      - '📣 Announcement'
 
-in backlog:
+👂 Feedback Wanted:
   discussions:
     unlabel:
-      - 'in backlog'
+      - '👂 Feedback Wanted'
 
-fixed:
+👨‍💻 In the Backlog:
   discussions:
     unlabel:
-      - 'fixed'
+      - '👨‍💻 In the Backlog'
+
+❗️ Incident:
+  discussions:
+    unlabel:
+      - '❗️ Incident'
+
+🛣️ On the Roadmap:
+  discussions:
+    unlabel:
+      - '🛣️ On the Roadmap'
+
+🚀 Shipped:
+  discussions:
+    unlabel:
+      - '🚀 Shipped'

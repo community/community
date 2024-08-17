@@ -3,8 +3,8 @@
 
 require_relative "../lib/github"
 
-stale_label_id = "LA_kwDOEfmk4M8AAAABYVCU-g"
-owner = "community"
+stale_label_id = "LA_kwDOMkvYrs8AAAABtZoJIg"
+owner = "fennelmarkets"
 repo = "community"
 
 body =<<BODY
