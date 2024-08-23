@@ -1,5 +1,11 @@
-labels: [general]
+labels: [General]
 body:
+- type: markdown
+  attributes: 
+   value:
+    ⚠️ Please note: flagged accounts, account takeovers, billing issues, and two-factor authentication recovery can only be resolved via your [GitHub Support](https://support.github.com/contact) ticket. ⚠️
+
+    Community Discussions team members are unable to assist with nor escalate your ticket, but we can assure you it is in the right place. It will be answered in the order it was received based on our team's resources and the amount of tickets ahead of yours.
 - type: dropdown
   attributes:
     label: Select Topic Area
