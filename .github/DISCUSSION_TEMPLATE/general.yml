@@ -3,9 +3,7 @@ body:
 - type: markdown
   attributes: 
    value:
-    ⚠️ This Community is not a support forum. Flagged accounts, account takeovers, billing issues, and two-factor authentication recovery can only be resolved via your [GitHub Support](https://support.github.com/contact) ticket. ⚠️
-
-    Community Discussions team members are unable to assist with nor escalate your ticket, but we can assure you it is in the right place. It will be answered in the order it was received based on our team's resources and the amount of tickets ahead of yours.
+    "⚠️ Please note: The Community can not help with account-related issues, such as resinstatement requests or help to escalate your [GitHub Support](https://support.github.com/contact) tickets. ⚠️"
 - type: dropdown
   attributes:
     label: Select Topic Area
