@@ -39,5 +39,7 @@ puts "Checking #{node_id} for an existing feedback comment"
 
 exit unless Discussion.should_comment?(discussion_number: discussion_number, owner: owner, repo: repo)
 
+puts "Adding a comment to the discussion"
+
 discussion = Discussion.new(node_id)
 discussion.add_comment(body: body)
