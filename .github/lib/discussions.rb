@@ -309,6 +309,7 @@ Discussion = Struct.new(
         }
       }.first
 
+      p response
     return false unless response[:labels].include?("Product Feedback") || response[:labels].include?("Bug")
 
     return false if response[:comments_by].include?("github-actions")
