@@ -2,8 +2,7 @@ labels: [General]
 body:
 - type: markdown
   attributes: 
-   value:
-    "⚠️ Please note: The Community can not help with account-related issues, such as resinstatement requests or help to escalate your [GitHub Support](https://support.github.com/contact) tickets. ⚠️"
+   value: "⚠️ Please note: The Community can not help with account-related issues, such as reinstatement requests or help to escalate your [GitHub Support](https://support.github.com/contact) tickets. ⚠️"
 - type: dropdown
   attributes:
     label: Select Topic Area
