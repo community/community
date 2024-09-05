@@ -51,6 +51,7 @@ class GitHub
     response = @conn.post("/graphql") do |req|
       req.body = { query: graphql }.to_json
     end
+    p response
 
     JSON.parse(response.body)
   end
