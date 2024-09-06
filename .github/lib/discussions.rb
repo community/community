@@ -200,7 +200,7 @@ Discussion = Struct.new(
     mutation {
       addDiscussionComment(
         input: {
-          body: "#{body}",
+          body: """#{body}""",
           discussionId: "#{self.id}",
           clientMutationId: "rubyGraphQL"
         }
