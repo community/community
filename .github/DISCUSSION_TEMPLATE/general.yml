@@ -1,13 +1,16 @@
-title: "<title>"
-labels: [general]
+labels: [General]
 body:
+- type: markdown
+  attributes:
+   value:
+    ⚠️ The Community can not help with account-related issues, such as reinstatement requests or help to escalate your [GitHub Support](https://support.github.com/contact) tickets. ⚠️
 - type: dropdown
   attributes:
     label: Select Topic Area
     description: What would you like to discuss?
     options:
-      - "Product Feedback"
       - "Question"
+      - "Product Feedback"
       - "Bug"
       - "Show & Tell"
       - "General"

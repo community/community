@@ -20,6 +20,12 @@ Category = Struct.new(
           }
         }
       }
+      rateLimit {
+        limit
+        cost
+        remaining
+        resetAt
+      }
     }
     QUERY
 

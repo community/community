@@ -14,7 +14,9 @@ class GitHub
       headers: {
         Authorization: "bearer #{ENV['GITHUB_TOKEN']}"
       }
-    )
+    ) do |f|
+      f.response :raise_error
+    end
   end
 
   def post(graphql:)
@@ -25,15 +27,21 @@ class GitHub
       query = end_cursor.nil? ? graphql.sub(/after.*\n/, "") : graphql.sub("%ENDCURSOR%", end_cursor)
 
       response = @conn.post("/graphql") do |req|
+        req.options.timeout = 10
         req.body = { query: }.to_json
       end
 
+      if rate_limit = JSON.parse(response.body).dig("data", "rateLimit")
+        puts "Rate limit: limit - #{rate_limit["limit"]}, cost - #{rate_limit["cost"]}, remaining - #{rate_limit["remaining"]}, resetAt - #{rate_limit["resetAt"]}"
+      end
+
       node = JSON.parse(response.body).dig("data", "repository")
+      node = JSON.parse(response.body).dig("data", "search") if node.nil?
       nodes << node
 
-      break unless node.dig("discussions", "pageInfo", "hasNextPage")
+      break unless node&.dig("pageInfo", "hasNextPage")
 
-      end_cursor = node.dig("discussions", "pageInfo", "endCursor")
+      end_cursor = node.dig("pageInfo", "endCursor")
     end
 
     nodes.flatten
@@ -43,6 +51,7 @@ class GitHub
     response = @conn.post("/graphql") do |req|
       req.body = { query: graphql }.to_json
     end
+    p response
 
     JSON.parse(response.body)
   end

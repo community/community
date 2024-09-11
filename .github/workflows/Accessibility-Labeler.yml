@@ -1,4 +1,4 @@
-name: Issue and Project Templated Discussions
+name: Accessibility Templated Discussions
 
 on:
   discussion:
@@ -45,7 +45,7 @@ jobs:
 
               const fragment = JSDOM.fragment(DISCUSSION_BODY_HTML);
               const featureAreaHeaders = fragment.querySelectorAll("h3");
-              const featureAreaHeader = Array.from(featureAreaHeaders).find(header => header.textContent.trim().toLowerCase() === 'feature area');
+              const featureAreaHeader = Array.from(featureAreaHeaders).find(header => header.textContent.trim().toLowerCase() === 'github feature area');
               if (!featureAreaHeader) {
                 return "";
               }
@@ -56,7 +56,7 @@ jobs:
               }
 
               const selectedTopic = selectedTopicElement.textContent.trim().toLowerCase();
-              const validTopics = ["projects", "issues"];
+              const validTopics = ["actions", "apis and webhooks", "code scanning", "code search and navigation", "code security", "codespaces", "command palette", "copilot", "dependabot", "discussions", "enterprise", "feed", "ghas", "gists", "github desktop", "github education", "issues", "lists", "markdown", "mobile", "notifications", "packages", "pages", "profile", "projects", "pull requests", "repositories", "security and privacy", "sponsors", "ui/ux", "visual studio", "vscode", "wiki"];
               return validTopics.includes(selectedTopic) ? selectedTopic : "";
 
             } catch (error) {

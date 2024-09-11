@@ -29,14 +29,6 @@ body:
         #### Anything else I should check before posting? 🤔
         * Check out the available documentation answering commonly asked questions: [Octernships FAQs](https://github.com/orgs/community/discussions/49380); [Student Developer Pack Application & FAQs](https://github.com/orgs/community/discussions/17814); [Campus Experts](https://education.github.com/students/experts).
         * Search these boards for previous threads describing similar problems. ⭐ ***Hint:*** *search by rejection reason*
-  - type: input
-    id: suggestion
-    attributes:
-      label: A suggestion...(optional)
-      description: "What activities would you like to see more of in the **GitHub Education Community**? 🎒"
-      placeholder: "See more students & teachers showcasing their projects..."
-    validations:
-      required: false
   - type: markdown
     attributes:
       value: |
