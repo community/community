@@ -2,7 +2,7 @@ labels: [Accessibility]
 body: 
 - type: markdown
   attributes: 
-   value: |
+   value: 
      ⚠️ This category is solely for discussions and feedback on [the digital accessibility of GitHub products](https://accessibility.github.com/). ⚠️
 
     Please use this space for questions, bug reports, opportunities, and feedback related to making GitHub features accessible to users of all abilities. 
