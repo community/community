@@ -1,5 +1,8 @@
 labels: [Actions]
 body:
+- type: markdown
+  attributes: 
+   value: This category is for discussions, questions, and tips about Github Actions. If you are unsure where to start, please check out our [Quick Start Guide](https://github.com/orgs/community/discussions/141947)
 - type: dropdown
   attributes:
     label: Select Topic Area
