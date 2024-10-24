@@ -1,0 +1,35 @@
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## We’re really excited you’re here! 👋 🎉  Welcome to the GitHub Education community! 🎒 
+  - type: markdown
+    attributes:
+      value: |
+        Before jumping into your conversation please read the hints and tips below to help you create a great discussion topic others would more likely respond to 💬
+  - type: markdown
+    attributes:
+      value: |
+        #### Are you asking for help with your GitHub Global Campus application process?
+        * **Help us to help you** 👍 Provide as much relevant information about your application as possible including posting your **latest rejection reasons**.
+        * Do **not post** any personal information on the discussions boards e.g images of your evidence. 
+        
+        #### Need Octernships project guidance?
+        * We **can not** provide specific project guidance and can only recommend you [reach out to your Octernships project maintainers](https://github.com/orgs/community/discussions/51456#discussioncomment-5542896) for instructions or to raise a bug.
+  - type: textarea
+    id: conversation
+    attributes:
+      label: Hi everyone, 
+      description: "Start your conversation below👇. Ensure you have read and adhere to our [Code of Conduct](https://github.com/community/community/blob/main/CODE_OF_CONDUCT.md). For more expectations around feedback responses - check out the [Community ReadMe](https://github.com/community/community#from-a-suggestion-to-a-shipped-feature)."
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        #### Anything else I should check before posting? 🤔
+        * Check out the available documentation answering commonly asked questions: [Octernships FAQs](https://github.com/orgs/community/discussions/49380); [Student Developer Pack Application & FAQs](https://github.com/orgs/community/discussions/17814); [Campus Experts](https://education.github.com/students/experts).
+        * Search these boards for previous threads describing similar problems. ⭐ ***Hint:*** *search by rejection reason*
+  - type: markdown
+    attributes:
+      value: |
+        Remember to mark an [answer as "solved"](https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/participating-in-a-discussion#marking-a-comment-as-an-answer) to help others with similar questions. ✅

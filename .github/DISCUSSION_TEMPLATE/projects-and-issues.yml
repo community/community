@@ -1,0 +1,65 @@
+body:
+  - type: markdown
+    attributes:
+      value: >
+        ⚠️ This category is solely for conversations related to the GitHub
+        feature areas
+        [Issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues)
+        and
+        [Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
+        ⚠️
+  - type: dropdown
+    attributes:
+      label: Select Topic Area
+      description: What would you like to discuss?
+      options:
+        - Question
+        - Product Feedback
+        - Bug
+        - Show & Tell
+        - General
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Feature Area
+      description: >
+        What GitHub product/feature area would you like to discuss? This
+        category is only for conversations related to the below.
+
+        Issues (The feature that allows you to track ideas, feedback, tasks, or bugs for work on GitHub. Not for any issue you are having).
+
+        Projects (For planning and tracking work on GitHub - not any open source or other type of project).
+      options:
+        - Issues
+        - Projects
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Body
+      description: Start your discussion!
+      placeholder: >-
+        STOP! This category is only for discussions on GitHub Issues and
+        GitHub Projects. GitHub Issues are the issues you open in a repo to
+        track your work. NOT issues you are having with GitHub or a GitHub
+        product. GitHub Projects are project boards you can create for example
+        Kanban boards, to track your work. NOT projects on GitHub.
+
+
+        We know the "issues" and ‘projects” naming conventions can be a little confusing.
+
+
+        To report an issue with another area of the GitHub, use the correct product category, if one does not exist, use the General category. To ensure you receive a timely response and connect with the proper team(s) make sure you are posting  in the correct category.
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Guidelines
+      options:
+        - label: I have read the above statement and can confirm my post is relevant to
+            the GitHub feature areas
+            [Issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues)
+            and/or
+            [Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects).
+          required: true
