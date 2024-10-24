@@ -4,8 +4,6 @@ body:
   attributes:
    value:
     ⚠️ The Community can not help with account-related issues, such as reinstatement requests or help to escalate your [GitHub Support](https://support.github.com/contact) tickets. ⚠️
-- If you are new and are unsure where to start, please check out our [Quick Start Guide](https://github.com/orgs/community/discussions/141947). 
-
 - type: dropdown
   attributes:
     label: Select Topic Area
