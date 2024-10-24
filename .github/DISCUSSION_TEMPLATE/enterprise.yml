@@ -1,8 +1,5 @@
 labels: [Enterprise]
 body:
-- type: markdown
-  attributes: 
-   value: Share your thoughts, suggestions, and feedback about Github Enterprise here. For all other topics, please check out our [Quick Start Guide](https://github.com/orgs/community/discussions/141947)
 - type: dropdown
   attributes:
     label: Select Topic Area
