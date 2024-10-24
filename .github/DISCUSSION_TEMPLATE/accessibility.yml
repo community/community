@@ -3,10 +3,9 @@ body:
 - type: markdown
   attributes: 
    value: 
-   > [!Caution]
-   ** This category is solely for discussions and feedback on [the digital accessibility of GitHub products](https://accessibility.github.com/).
+     This category is for discussions and feedback related to [the digital accessibility of GitHub products](https://accessibility.github.com/).
 
-    Please use this space for questions, bug reports, opportunities, and feedback related to making GitHub features accessible to users of all abilities. 
+    ⚠️ Please use this space for questions, bug reports, opportunities, and feedback related to making GitHub features accessible to users of all abilities only.⚠️  
      
      - To ensure you receive a timely response and connect with the proper team(s), please post in the correct category. Questions about access, 2FA, and SMS belong in the [General category](https://github.com/orgs/community/discussions/categories/general?discussions_q=is%3Aopen+category%3AGeneral). 
     
