@@ -1,0 +1,24 @@
+labels: [Code Security]
+body:
+- type: markdown
+  attributes: 
+   value: Start a discussion about code security here. For all other topics, please check out our [Quick Start Guide](https://github.com/orgs/community/discussions/141947)
+
+- type: dropdown
+  attributes:
+    label: Select Topic Area
+    description: What would you like to discuss?
+    options:
+      - "Question"
+      - "Product Feedback"
+      - "Bug"
+      - "Show & Tell"
+      - "General"
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Body
+    description: Start your discussion!
+  validations:
+    required: true
