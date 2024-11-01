@@ -1,5 +1,10 @@
 labels: [Actions]
 body:
+- type: markdown
+  attributes:
+    value: |
+      ### Important News for Actions users 📣 👀
+      #### ⚠️ [Upcoming deprecation of v3 of the artifact actions](https://github.com/orgs/community/discussions/142581) - upgrade to v4 as soon as possible.
 - type: dropdown
   attributes:
     label: Select Topic Area
