@@ -9,7 +9,7 @@ require "active_support/core_ext/numeric/time"
 
 # this action checks for any open incident discussions older than 2 days, and then closes them
 
-discussions = Discussion.find_open_incident_discussions(owner: "community", repo: "incident-discussion-bot")
+discussions = Discussion.find_open_incident_discussions(owner: "community", repo: "community")
 
 discussion_ids = discussions.keep_if { |d| Time.parse(d["createdAt"]) < 2.days.ago }.map! { |d| d["id"] }
 
