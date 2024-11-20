@@ -335,6 +335,7 @@ Discussion = Struct.new(
       clientMutationId
       discussion {
         id
+        body
         }
       }
     }
@@ -358,35 +359,8 @@ Discussion = Struct.new(
       }
       QUERY
 
-
       GitHub.new.mutate(graphql: addLabel)
     end
-
-    incident_discussion_id
-  end
-
-  def self.add_comment_with_id(id:, body:)
-    return if id.nil? || body.nil?
-    # adds a comment to the given discussion
-    query = <<~QUERY
-    mutation {
-      addDiscussionComment(
-        input: {
-          body: "#{body}",
-          discussionId: "#{id}",
-          clientMutationId: "rubyGraphQL"
-        }
-      ) {
-        clientMutationId
-        comment {
-           id
-           body
-        }
-      }
-    }
-    QUERY
-
-    GitHub.new.mutate(graphql: query).dig("data", "addDiscussionComment", "comment", "id")
   end
 
   def self.mark_comment_as_answer(comment_id:)
@@ -417,7 +391,6 @@ Discussion = Struct.new(
 
   def self.update_discussion(id:, body:)
     return if id.nil? || body.nil?
-    puts "body: #{body}"
 
     query = <<~QUERY
     mutation {
@@ -479,7 +452,7 @@ Discussion = Struct.new(
   def self.find_open_incident_discussions(owner:, repo:)
     return [] if owner.nil? || repo.nil?
 
-    searchquery = "repo:#{owner}/#{repo} is:open author:github-actions label:\\\"Incident \:exclamation\:\\\""
+    searchquery = "repo:#{owner}/#{repo} is:open author:github-actions[bot] label:\\\"Incident \:exclamation\:\\\""
 
     query = <<~QUERY
     {
@@ -526,7 +499,7 @@ Discussion = Struct.new(
     }
     QUERY
 
-    GitHub.new.post(graphql: query).first&.dig("node")
+    GitHub.new.post(graphql: query).first
   end
 
   def self.close_as_resolved(id:)

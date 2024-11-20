@@ -23,15 +23,8 @@ jobs:
       - name: Bundle install
         run: bundle install
 
-      - name: Get applicable incident discussion IDs
-        id: get_discussion_ids
-        run: .github/actions/check_open_incident_discussions.rb
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Close incident discussions
         id: close_discussions
         run: .github/actions/close_incident_discussions.rb
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DISCUSSION_IDS: ${{ steps.get_discussion_ids.outputs.DISCUSSION_IDS }}
