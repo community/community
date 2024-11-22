@@ -19,4 +19,4 @@ Discussion.mark_comment_as_answer(comment_id:)
 
 # update the post body to include the resolved picture
 updated_body = "![A dark background with two security-themed abstract shapes positioned in the top left and bottom right corners. In the center of the image, bold white text reads \\\"Incident Resolved\\\" with a white Octocat logo.](https://github.com/community/incident-discussion-bot/blob/main/.github/src/incident_resolved.png?raw=true) \n \n #{selected_discussion.body}"
-selected_discussion.update_discussion(id: discussion.id, body: updated_body)
+selected_discussion.update_discussion(body: updated_body)
