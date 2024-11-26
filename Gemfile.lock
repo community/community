@@ -17,14 +17,21 @@ GEM
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
     drb (2.2.1)
-    faraday (2.0.0)
-      ruby2_keywords (>= 0.0.4)
+    faraday (2.12.1)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
+      logger
+    faraday-net_http (3.4.0)
+      net-http (>= 0.5.0)
     i18n (1.14.4)
       concurrent-ruby (~> 1.0)
     json (2.7.1)
     language_server-protocol (3.17.0.3)
+    logger (1.6.1)
     minitest (5.22.2)
     mutex_m (0.2.0)
+    net-http (0.5.0)
+      uri
     parallel (1.24.0)
     parser (3.3.0.5)
       ast (~> 2.4.1)
@@ -61,11 +68,11 @@ GEM
       rubocop (>= 1.33.0, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
     ruby-progressbar (1.13.0)
-    ruby2_keywords (0.0.5)
     strscan (3.1.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
+    uri (1.0.2)
 
 PLATFORMS
   arm64-darwin-21
