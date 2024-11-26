@@ -3,7 +3,7 @@ name: Close incident discussion after time elapsed
 on:
   workflow_dispatch:
   schedule:
-    # daily at midnight
+    # daily at midnight UTC
     - cron: "0 0 * * *"
 
 jobs:
