@@ -19,7 +19,7 @@ end
 
 discussions.each do |d|
   # if a public summary has not been provided, find the most recent incident comment and mark it as the answer
-  unless d.is_answered?
+  unless d.is_answered
     comment_id = d.find_most_recent_incident_comment_id(actor_login: "github-actions")
 
     unless comment_id.nil?
