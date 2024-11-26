@@ -6,10 +6,11 @@ require_relative "../lib/discussion"
 require "active_support"
 require "active_support/core_ext/date_and_time/calculations"
 require "active_support/core_ext/numeric/time"
+require "date"
 
 # this action checks for any open incident discussions older than 2 days, and then closes them
 
-discussions = Discussion.find_open_incident_discussions(owner: "community", repo: "community").keep_if { |d| d.created_at < 2.days.ago }
+discussions = Discussion.find_open_incident_discussions(owner: "community", repo: "community").keep_if { |d| DateTime.parse(d.created_at) < 2.days.ago }
 
 if discussions.length == 0
   puts "No discussion IDs provided, exiting"
