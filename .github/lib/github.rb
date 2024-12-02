@@ -37,6 +37,7 @@ class GitHub
 
       node = JSON.parse(response.body).dig("data", "repository")
       node = JSON.parse(response.body).dig("data", "search") if node.nil?
+      node = JSON.parse(response.body).dig("data", "node") if node.nil? # for when the query is not a repository or search
       nodes << node
 
       break unless node&.dig("pageInfo", "hasNextPage")
