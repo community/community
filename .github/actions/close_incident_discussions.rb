@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 require_relative "../lib/github"
-require_relative "../lib/discussion"
+require_relative "../lib/discussions"
 require "active_support"
 require "active_support/core_ext/date_and_time/calculations"
 require "active_support/core_ext/numeric/time"

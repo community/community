@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 require_relative "../lib/github"
-require_relative "../lib/discussion"
+require_relative "../lib/discussions"
 
 # This script takes the public incident summary, adds it as a comment to the incident, and then marks that comment as the answer.
 
