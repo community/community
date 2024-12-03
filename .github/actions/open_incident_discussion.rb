@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 require_relative "../lib/github"
-require_relative "../lib/discussion"
+require_relative "../lib/discussions"
 require "active_support/core_ext/date_time"
 
 # This script takes context from a received webhook and creates a new discussion in the correct discussion category

@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 require_relative "../lib/github"
-require_relative "../lib/discussion"
+require_relative "../lib/discussions"
 
 # This script takes the context from the latest update dispatch event and updates the active incident discussion
 
