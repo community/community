@@ -13,7 +13,7 @@ require "date"
 discussions = Discussion.find_open_incident_discussions(owner: "community", repo: "community").keep_if { |d| DateTime.parse(d.created_at) < 2.days.ago }
 
 if discussions.length == 0
-  puts "No discussion IDs provided, exiting"
+  puts "No applicable discussions found, exiting"
   exit
 end
 
