@@ -26,8 +26,11 @@ discussions.each do |d|
       Discussion.mark_comment_as_answer(comment_id:)
     end
 
-    updated_body = "![A dark background with two security-themed abstract shapes positioned in the top left and bottom right corners. In the center of the image, bold white text reads \\\"Incident Resolved\\\" with a white Octocat logo.](https://github.com/community/incident-discussion-bot/blob/main/.github/src/incident_resolved.png?raw=true) \n #{d.body}"
-    d.update_discussion(body: updated_body)
+    # an incident that has been declared as "resolved" should have already updated the post body, this is in case that step failed.
+    unless d.body.include?("https://github.com/community/community/blob/main/.github/src/incident_resolved.png?raw=true")
+      updated_body = "![A dark background with two security-themed abstract shapes positioned in the top left and bottom right corners. In the center of the image, bold white text reads \\\"Incident Resolved\\\" with a white Octocat logo.](https://github.com/community/community/blob/main/.github/src/incident_resolved.png?raw=true) \n #{d.body}"
+      d.update_discussion(body: updated_body)
+    end
   end
 
   d.close_as_resolved
