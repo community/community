@@ -1,0 +1,30 @@
+name: Close incident discussion after time elapsed
+
+on:
+  workflow_dispatch:
+  schedule:
+    # daily at midnight UTC
+    - cron: "0 0 * * *"
+
+jobs:
+  close_incident_post:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      discussions: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@7bae1d00b5db9166f4f0fc47985a3a5702cb58f0
+
+      - name: Bundle install
+        run: bundle install
+
+      - name: Close incident discussions
+        id: close_discussions
+        run: .github/actions/close_incident_discussions.rb
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
