@@ -38,7 +38,8 @@ body:
   - type: textarea
     attributes:
       label: Body
-      description: Start your discussion!
+      description: >
+        Start your discussion!
       placeholder: >-
         STOP! This category is only for discussions on GitHub Issues and
         GitHub Projects. GitHub Issues are the issues you open in a repo to
