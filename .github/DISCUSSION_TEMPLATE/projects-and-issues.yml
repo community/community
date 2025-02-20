@@ -40,6 +40,12 @@ body:
       label: Body
       description: >
         Start your discussion!
+
+        STOP! This category is only for discussions on GitHub Issues and
+        GitHub Projects. GitHub Issues are the issues you open in a repo to
+        track your work. NOT issues you are having with GitHub or a GitHub
+        product. GitHub Projects are project boards you can create for example
+        Kanban boards, to track your work. NOT projects on GitHub.
       placeholder: >-
         STOP! This category is only for discussions on GitHub Issues and
         GitHub Projects. GitHub Issues are the issues you open in a repo to
