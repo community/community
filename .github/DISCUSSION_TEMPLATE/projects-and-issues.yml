@@ -6,7 +6,7 @@ body:
         feature areas
         [Issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues)
         and
-        [Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
+        [Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects). 
         ⚠️
   - type: dropdown
     attributes:
@@ -40,17 +40,10 @@ body:
       label: Body
       description: Start your discussion!
       placeholder: >-
-        STOP! This category is only for discussions on GitHub Issues and
-        GitHub Projects. GitHub Issues are the issues you open in a repo to
+        STOP! GitHub Issues refers to the issues you open in a repo to
         track your work. NOT issues you are having with GitHub or a GitHub
         product. GitHub Projects are project boards you can create for example
-        Kanban boards, to track your work. NOT projects on GitHub.
-
-
-        We know the "issues" and ‘projects” naming conventions can be a little confusing.
-
-
-        To report an issue with another area of the GitHub, use the correct product category, if one does not exist, use the General category. To ensure you receive a timely response and connect with the proper team(s) make sure you are posting  in the correct category.
+        Kanban boards, to track your work. NOT projects on GitHub. To ensure you receive a timely response by the correct team(s), make sure you are posting in the right category.
     validations:
       required: true
   - type: checkboxes
