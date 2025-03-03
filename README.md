@@ -6,26 +6,26 @@ In this repository, you will find categories for various product areas. Feel fre
 
 | **Feedback Category** | **About the Product** 	|
 |---	|---	|
-| 👍 [Accessibility](https://github.com/orgs/community/discussions/categories/accessibility) 	| [About Accessibility](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-personal-account-settings/managing-accessibility-settings#about-accessibility-settings) |
-| 🚢 [Actions](https://github.com/orgs/community/discussions/categories/actions) 	| [GitHub Actions](https://github.com/features/actions) |
-| 🔁 [API and Webhooks](https://github.com/orgs/community/discussions/categories/api-and-webhooks) 	| [GitHub API](https://docs.github.com/en/rest) and [GitHub Webhooks](https://docs.github.com/en/developers/webhooks-and-events/webhooks/about-webhook) |
-| 🔎 [Code Search & Navigation](https://github.com/orgs/community/discussions/categories/code-search-and-navigation) 	| [Code Search & Navigation](https://cs.github.com/about) 	|
-| 💻 [Codespaces](https://github.com/orgs/community/discussions/categories/codespaces) 	| [GitHub Codespaces](https://github.com/features/codespaces) 	|
-| 👩‍✈️ [Copilot](https://github.com/orgs/community/discussions/categories/copilot)   	| [GitHub Copilot](https://copilot.github.com/) 	|
-| 🤖 [Code Security](https://github.com/orgs/community/discussions/categories/code-security) 	| [GitHub Code Security](https://github.com/features/security) 	|
-| 🗣️ [Discussions](https://github.com/orgs/community/discussions/categories/discussions)  	| [GitHub Discussions](https://docs.github.com/en/discussions) 	|
-| 🌐 [Feed](https://github.com/orgs/community/discussions/categories/feed)  	| [GitHub Feed](https://github.blog/2022-03-22-improving-your-github-feed/) 	|
-| 🎒 [GitHub Education](https://github.com/orgs/community/discussions/categories/github-education)  	| [GitHub Education](https://education.github.com/) 	|
-| ⭐ [Lists](https://github.com/orgs/community/discussions/categories/lists) 	| [GitHub Lists](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars#organizing-starred-repositories-with-lists) (Public Beta) 	|
+| 👍 [Accessibility](https://github.com/szabonick/community/discussions/categories/accessibility) 	| [About Accessibility](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-personal-account-settings/managing-accessibility-settings#about-accessibility-settings) |
+| 🚢/community/discussions/categories/actions) 	| [GitHub Actions](https://github.com/features/actions) |
+| 🔁 [API and Webhooks](https://github.com/szabonick/community/discussions/categories/api-and-webhooks) 	| [GitHub API](https://docs.github.com/en/rest) and [GitHub Webhooks](https://docs.github.com/en/developers/webhooks-and-events/webhooks/about-webhook) |
+| 🔎 [Code Search & Navigation](https://github.com/szabonick/community/discussions/categories/code-search-and-navigation) 	| [Code Search & Navigation](https://cs.github.com/about) 	|
+| 💻 [Codespaces](https://github.com/szabonick/community/discussions/categories/codespaces) 	| [GitHub Codespaces](https://github.com/features/codespaces) 	|
+| 👩‍✈️ [Copilot](https://github.com/szabonick/community/discussions/categories/copilot)   	| [GitHub Copilot](https://copilot.github.com/) 	|
+| 🤖 [Code Security](https://github.com/szabonick/community/discussions/categories/code-security) 	| [GitHub Code Security](https://github.com/features/security) 	|
+| 🗣️ [Discussions](https://github.com/szabonick/community/discussions/categories/discussions)  	| [GitHub Discussions](https://docs.github.com/en/discussions) 	|
+| 🌐 [Feed](https://github.com/szabonick/community/discussions/categories/feed)  	| [GitHub Feed](https://github.blog/2022-03-22-improving-your-github-feed/) 	|
+| 🎒 [GitHub Education](https://github.com/szabonick/community/discussions/categories/github-education)  	| [GitHub Education](https://education.github.com/) 	|
+| ⭐ [Lists](https://github.com/szabonick/community/discussions/categories/lists) 	| [GitHub Lists](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars#organizing-starred-repositories-with-lists) (Public Beta) 	|
 | 📱 [Mobile](https://github.com/orgs/community/discussions/categories/mobile) 	| [GitHub Mobile](https://github.com/mobile) 	|
-| 📦 [Packages](https://github.com/orgs/community/discussions/categories/packages) 	| [GitHub Packages](https://github.com/features/packages) |
-| 🗒️ [Pages](https://github.com/orgs/community/discussions/categories/pages)    | [GitHub Pages](https://docs.github.com/en/pages)  |
-| 🖼️ [Profile](https://github.com/orgs/community/discussions/categories/profile)  	| [GitHub Profile](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile) 	|
-| 🐙 [Projects and Issues](https://github.com/orgs/community/discussions/categories/projects-and-issues) 	| [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects) / [GitHub Issues](https://github.com/features/issues) 	|
-| ✔️ [Pull Requests](https://github.com/orgs/community/discussions/categories/pull-requests) 	| [GitHub Pull Requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) 	|
-| 🗳️ [Repositories](https://github.com/orgs/community/discussions/categories/repositories)  	| [GitHub Repositories](https://docs.github.com/en/repositories) 	|
-| 💖 [Sponsors](https://github.com/orgs/community/discussions/categories/sponsors) 	| [GitHub Sponsors](https://github.com/sponsors) 	|
-| :octocat: [General Feedback](https://github.com/orgs/community/discussions/categories/general) 	| [GitHub Docs](https://docs.github.com/en) |
+| 📦 [Packages](https://github.com/szabonick/community/discussions/categories/packages) 	| [GitHub Packages](https://github.com/features/packages) |
+| 🗒️ [Pages](https://github.com/szabonick/community/discussions/categories/pages)    | [GitHub Pages](https://docs.github.com/en/pages)  |
+| 🖼️ [Profile](https://github.com/orgs/community/discussions/categories/profile)  	| [GitHub Profile](https://docs.github.com/en/szabonick/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile) 	|
+| 🐙 [Projects and Issues](https://github.com/szabonick/community/discussions/categories/projects-and-issues) 	| [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects) / [GitHub Issues](https://github.com/features/issues) 	|
+| ✔️ [Pull Requests](https://github.com/szabonick/community/discussions/categories/pull-requests) 	| [GitHub Pull Requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) 	|
+| 🗳️ [Repositories](https://github.com/szabonick/community/discussions/categories/repositories)  	| [GitHub Repositories](https://docs.github.com/en/repositories) 	|
+| 💖 [Sponsors](https://github.com/szabonick/community/discussions/categories/sponsors) 	| [GitHub Sponsors](https://github.com/sponsors) 	|
+| :octocat: [General Feedback](https://github.com/szabonick/community/discussions/categories/general) 	| [GitHub Docs](https://docs.github.com/en) |
 
 These discussions are where you can share suggestions for how the products should be improved and discuss those improvements with the community, including members of the GitHub product team. Check out [Making suggestions](#making-suggestions) to learn how to provide feedback.
 
@@ -44,11 +44,11 @@ You will also find previous Discourse Community Forum categories that have since
 
 When creating a new post, make sure to choose the predetermined category that best fits your topic. This will ensure that conversations are indexed by their corresponding product or feature, to help community members quickly find answers to their questions.
 
-This repository works in conjunction with the [GitHub public product roadmap](https://github.com/github/roadmap), which is where you can learn about what features we're working on, and when they'll be available. Accordingly, the Issues feature of this repository has been disabled. Discussion categories have been established for specific features listed above, as well as a general category for other topics. Additional categories may be added in the future. In the meantime, topics outside of the listed categories above, will be transferred into the General category. Please review the [CODE OF CONDUCT](https://docs.github.com/en/site-policy/github-terms/github-community-forum-code-of-conduct) before participating in discussions.
+This repository works in conjunction with the [GitHub public product roadmap](https://github.com/szabonick/roadmap), which is where you can learn about what features we're working on, and when they'll be available. Accordingly, the Issues feature of this repository has been disabled. Discussion categories have been established for specific features listed above, as well as a general category for other topics. Additional categories may be added in the future. In the meantime, topics outside of the listed categories above, will be transferred into the General category. Please review the [CODE OF CONDUCT](https://docs.github.com/en/site-policy/github-terms/github-community-forum-code-of-conduct) before participating in discussions.
 
 ## Making suggestions
 
-We encourage you to [open a discussion](https://github.com/orgs/community/discussions) if you have suggestions for how we can improve our products. You don't need to have a solution to the problem you are facing to kick off a discussion. 
+We encourage you to [open a discussion](https://github.com/szabonick/community/discussions) if you have suggestions for how we can improve our products. You don't need to have a solution to the problem you are facing to kick off a discussion. 
 
 Prior to creating a new discussion, please take a look at previous discussions to see if someone else has already shared your suggestion(s). If you find a similar discussion, reply with additional details or upvote the discussion to signal your support rather than creating a new one.
 
