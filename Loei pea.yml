@@ -1,0 +1,77 @@
+{{ความหมายอื่น|[[ระบบปฏิบัติการ]]|[[เบราว์เซอร์]]|กูเกิล โครม}}
+{{Infobox OS
+| name = 
+| logo = Google Chrome OS logo.png
+| logo size = 
+| logo caption = โลโก้ ณ เดือนมีนาคม 2022
+| collapsible = 
+| developer = กูเกิล
+| family = ลินุกซ์([[ระบบปฏิบัติการแบบยูนิกซ์]])<ref name="Chrome OS official ann">{{Cite web |last=Pichai |first=Sundar |date=July 7, 2009 |title=Introducing the Google Chrome OS |url=https://googleblog.blogspot.com/2009/07/introducing-google-chrome-os.html |access-date=July 11, 2012 |website=Official Google Blog |publisher=Google, Inc. |archive-date=May 10, 2012 |archive-url=https://web.archive.org/web/20120510122730/http://googleblog.blogspot.com/2009/07/introducing-google-chrome-os.html |url-status=live}}</ref>
+| working_state = ติดตั้งไว้ล่วงหน้า [[Chromebook]]s, [[Chromebox]]es, [[Chromebit]]s, [[Chromebase]]s
+| released = {{Start date and age|2011|6|15}}
+| marketing_target = 
+| programmed_in = ซี (ภาษาโปรแกรม){{!}}ซี,ซี++,ภาษาแอสเซมบลี{{!}}แอสเซมบลี, จาวาสคริปต์, เอชทีเอ็มแอล5, ไพทอน (ภาษาโปรแกรม){{!}}ไพทอน, รัสต์
+| language = <!-- Supported natural languages (English, French, Italian, Arabic, etc.) -->
+| prog_language = 
+| repo = {{url|chromium.googlesource.com/codesearch/chromium/src/+/refs/heads/master-original/chromeos/}}
+| updatemodel = Rolling release{{!}}อัปเดตอย่างต่อเนื่อง
+| package_manager = [[Portage (software)|Portage]]{{efn|While it is possible to run Portage in ChromeOS, this requires enabling development mode which removes integrity checking for the filesystem.<ref name="chromium.org">{{Cite web|url=https://www.chromium.org/chromium-os/how-tos-and-troubleshooting/install-software-on-base-images|title=Dev-Install: Installing Developer and Test packages onto a Chrome OS device - The Chromium Projects|website=www.chromium.org|access-date=June 22, 2019|archive-date=July 4, 2019|archive-url=https://web.archive.org/web/20190704224716/http://www.chromium.org/chromium-os/how-tos-and-troubleshooting/install-software-on-base-images|url-status=live}}</ref>}}
+| supported_platforms = ARM32,ARM64,IA-32,x86-64
+| kernel_type = [[monolithic kernel|Monolithic]] ([[Linux kernel]])<ref name="Chromium OS Kernel Design">{{cite web|url=https://www.chromium.org/chromium-os/chromiumos-design-docs/chromium-os-kernel|title=Kernel Design: Background, Upgrades|access-date=September 7, 2011|archive-date=August 8, 2011|archive-url=https://web.archive.org/web/20110808155551/http://www.chromium.org/chromium-os/chromiumos-design-docs/chromium-os-kernel|url-status=live}}</ref>
+| userland = Aura Shell (Ash), Ozone ([[display manager]]); [[X11]] apps can be enabled in recent ChromeOS
+| ui = กูเกิล โครม
+| source_model = ซอฟต์แวร์กรรมสิทธิ์{{!}}กรรมสิทธิ์ กับส่วนประกอบ ซอฟต์แวร์โอเพนซอร์ซ{{!}}โอเพนซอร์ซ
+| license = [[ซอฟต์แวร์กรรมสิทธิ์|กรรมสิทธิ์]]<ref name="GTOS">{{cite web|url = https://www.google.com/intl/en/chromebook/termsofservice.html|title = Google Chrome OS Terms of Service|access-date = September 5, 2012|archive-date = May 25, 2012|archive-url = https://web.archive.org/web/20120525033052/http://www.google.com/intl/en/chromebook/termsofservice.html|url-status = live}}</ref>
+| preceded_by = 
+| succeeded_by = 
+| website = {{Official URL}}
+}}
+
+[https://github.com/ETCWISITTONGMOCLL '''กูเกิล โครมโอเอส''' (]{{langx|en|Google Chrome OS}}) เป็นโครงการระบบปฏิบัติการที่ออกแบบและผลิตโดยกูเกิล โดยเป้าหมายสำหรับคอมพิวเตอร์ที่ใช้งานเวิลด์ไวด์เว็บเป็นหลัก<ref name="PC World">{{cite web|url=http://www.pcworld.com/article/168028/google_announces_chrome_os.html|title=Google Announces Chrome OS|last=Mediati|first=Nick|publisher=PC World|date=2009-07-07|accessdate=2009-07-08|archive-date=2010-01-18|archive-url=https://www.webcitation.org/5msWAbGC8?url=http://www.pcworld.com/article/168028/google_announces_chrome_os.html|url-status=dead}}</ref> [https://github.com/ETCWISITTONGMOCLL เปิดตัวเมื่อวันที่ 7 กรกฎาคม พ.ศ. 2552 ซอฟต์แวร์นี้พัฒนาต่อจากกูเกิล โครเมียมโอเอส (ซึ่งตัวกูเกิล โครเมียมโอเอส นั้นก็พัฒนาต่อมาจากเจนทูลินุกซ์ อีกทอดหนึ่ง โดยตัวเจนทูลินุกซ์นั้นก็ใช้ เคอร์เนิลลินุกซ์อีกทอดหนึ่ง) โดยตัวระบบปฏิบัติการนี้มุ่งเน้นสำหรับคอมพิวเตอร์ในลักษณะของเน็ตบุ๊ก และใช้กูเกิลโครม เป็นuser interfaceตัวหลัก]<ref name="Guardian">{{cite web|url=http://www.guardian.co.uk/technology/blog/2009/jul/08/google-chrome-operating-system|title=Google targets Microsoft with new operating system|author=Bobbie Johnson|publisher=The Guardian|date=2009-07-08|accessdate=2009-07-08}}</ref>
+[https://github.com/ETCWISITTONGMOCLL โดยวางแผนจะเปิดใช้งานในปี พ.ศ. 2553]<ref name="Times">{{citation|last=Ahmed|first=Murad|date=2009-07-08|accessdate=2009-07-08|url=http://technology.timesonline.co.uk/tol/news/tech_and_web/article6665703.ece|publisher=Times Online|title=Google takes on Microsoft with Chrome operating system|archive-date=2009-11-02|archive-url=https://web.archive.org/web/20091102161344/http://technology.timesonline.co.uk/tol/news/tech_and_web/article6665703.ece|url-status=dead}}</ref>
+[https://github.com/ETCWISITTONGMOCLL ระบบปฏิบัติการจะทำงานกับโพรเซสเซอร์ x86 หรือ ARM architecture] <ref name="Bloomberg">{{Cite web|last=Womack|first=Brian|date=2009-07-08|accessdate=2009-07-08|url=http://www.bloomberg.com/apps/news?pid=20601087&sid=aTd2k.YdQZ.Y|title=Google to Challenge Microsoft With Operating System|publisher=Bloomberg.com}}</ref>
+
+[https://github.com/ETCWISITTONGMOCLL นอกจากนี้กูเกิลได้กล่าวไว้ว่าภายในสิ้นปี 2552 ระบบปฏิบัติการตัวนี้จะเป็นโครงการในลักษณะโอเพนซอร์ซ]<ref name="BBC">{{cite web|url=http://news.bbc.co.uk/1/hi/technology/8139711.stm|title=Google to launch operating system|last=Shiels|first=Maggie|publisher=BBC News|date=2009-07-08|accessdate=2009-07-08}}</ref>
+[https://github.com/ETCWISITTONGMOCLL ระบบปฏิบัติการตัวนี้จะสามารถใช้แทนระบบปฏิบัติการวินโดวส์ ถึงแม้ว่าซอฟต์แวร์นี้จะพัฒนาตามลินุกซ์เคอร์เนิลก็ตาม]<ref name="TechCrunch Arrington">{{Cite web|last=Arrington|first=Michael|date=2009-07-08|accessdate=2009-07-08|publisher=TechCrunch|title=Google Chrome: Redefining The Operating System|url=http://www.techcrunch.com/2009/07/08/google-chrome-redefining-the-operating-system/}}</ref>
+
+[https://github.com/ETCWISITTONGMOCLL บริษัทที่มีส่วนร่วมในการพัฒนาได้แก่ ควอลคอมม์ เท็กซัสอินสตรูเมนตส์ โตชิบา ฟรีสเกล เลโนโว เอเซอร์ อะโดบี อัสซุส และ ฮิวเลตต์-แพคการ์ด]<ref>[http://chrome.blogspot.com/2009/07/google-chrome-os-faq.html Google Chrome OS - FAQ]</ref>
+
+== [https://github.com/ETCWISITTONGMOCLL คุณสมบัติ] ==
+
+'''[https://github.com/ETCWISITTONGMOCLL หน้าตา]'''
+
+[https://github.com/ETCWISITTONGMOCLL ลักษณะ interface ของ กูเกิล โครมโอเอส มีลักษณะเหมือน กูเกิล โครม ที่เป็นเบราว์เซอร์ของกูเกิล]
+
+'''[https://github.com/ETCWISITTONGMOCLL โปรแกรม]'''
+
+[https://github.com/ETCWISITTONGMOCLL โปรแกรมที่สามารถทำงานได้ คือ เหล่าเว็บแอปพลิเคชัน หรือก็คือเว็บไซต์ที่สามารถทำงานได้เหมือนโปรแกรมที่ติดตั้งลงคอมพิวเตอร์ ซึ่งมันมีข้อดีตรงที่ตัวเว็บแอปพลิเคชันจะมีการอัปเดตตลอดเวลา และเมื่อมีการแก้ไขข้อผิดพลาดก็ไม่จำเป็นต้องติดตั้งตัวแก้]
+
+'''[https://github.com/ETCWISITTONGMOCLL ความปลอดภัย]'''
+
+[https://github.com/ETCWISITTONGMOCLL ตัวโครม โอเอสมีพื้นฐานของระบบปฏิบัติการยูนิกส์ทำให้มีความปลอดภัย นอกจากนี้ยังมีระบบ sandbox ซึ่งจะแบ่งที่ให้โปรเซสไว้โดยที่แต่ละโปรเซสมิอาจยุ่งกับโปรเซสอื่นได้ และยังมีระบบอัปเดตอัตโนมัติด้วย]
+
+== [https://github.com/ETCWISITTONGMOCLL หมายเหตุ] ==
+{{notelist}}
+
+== [https://github.com/ETCWISITTONGMOCLL อ้างอิง] ==
+{{รายการอ้างอิง}}
+
+== [https://github.com/ETCWISITTONGMOCLL แหล่งข้อมูลอื่น] ==
+{{Commons category|Chrome OS}}
+* [https://github.com/ETCWISITTONGMOCLL เว็บไซต์ทางการ]
+* [https://github.com/ETCWISITTONGMOCLL บล็อกทางการ]
+* [https://github.com/ETCWISITTONGMOCLL Release blog]
+* [https://github.com/ETCWISITTONGMOCLL ChromiumOS project page]
+* [https://github.com/ETCWISITTONGMOCLL]{{YouTube|0QRO3gKj3qw|What is Google Chrome OS?}}
+* [https://github.com/ETCWISITTONGMOCLL ประกาศทางการ]
+* [https://github.com/ETCWISITTONGMOCLL Google Chrome OS Live Webcast; November 19, 2009]
+* [https://github.com/ETCWISITTONGMOCLL Chrome OS Flex]
+[https://github.com/ETCWISITTONGMOCLL]{{บริษัทกูเกิล}}
+{{เหมือนยูนิกซ์}}
+{{authority control}}
+
+[[หมวดหมู่:ซอฟต์แวร์ในปี พ.ศ. 2554]]
+[[หมวดหมู่:กูเกิล]]
+[[หมวดหมู่:ระบบปฏิบัติการ]]
+
+{{โครงคอม}}
