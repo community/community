@@ -3,7 +3,7 @@ body:
 - type: dropdown
   attributes:
     label: Select Topic Area
-    description: What would you like to discuss?
+    description: What would you like to discuss about GitHub Copilot?
     options:
       - "Question"
       - "Product Feedback"
@@ -13,8 +13,11 @@ body:
   validations:
     required: true
 - type: textarea
-  attributes:
-    label: Body
-    description: Start your discussion!
-  validations:
-    required: true
+    attributes:
+      label: Body
+      description: Start your discussion!
+      placeholder: >-
+        💬 Note! If your query is related to Visual Studio Code in Copilot, please open an issue in the [Visual Studio Code repo](https://github.com/microsoft/vscode-copilot-release/issues) for better assistance from our team. 
+    
+ 
+   
