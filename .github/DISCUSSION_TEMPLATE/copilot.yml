@@ -5,19 +5,17 @@ body:
     label: Select Topic Area
     description: What would you like to discuss about GitHub Copilot?
     options:
-      - "Question"
-      - "Product Feedback"
-      - "Bug"
-      - "Show & Tell"
-      - "General"
+      - Question
+      - Product Feedback
+      - Bug
+      - General
   validations:
     required: true
 - type: textarea
-    attributes:
-      label: Body
-      description: Start your discussion!
-      placeholder: >-
-        💬 Note! If your query is related to Visual Studio Code in Copilot, please open an issue in the [Visual Studio Code repo](https://github.com/microsoft/vscode-copilot-release/issues) for better assistance from our team. 
-    
- 
-   
+  attributes:
+    label: Body
+    description: Start your discussion!
+    placeholder: >-
+      Note! If your query is related to Visual Studio Code in Copilot, please open an issue in the [Visual Studio Code repo](https://github.com/microsoft/vscode-copilot-release/issues) for better assistance from our team. 
+  validations:
+    required: true
