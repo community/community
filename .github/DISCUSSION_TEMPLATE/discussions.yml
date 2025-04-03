@@ -41,8 +41,3 @@ body:
       pattern: "^.{1000,}$"
       regexFlags: "s"
       note: "Must have at least 1000 characters"
-  - type: markdown
-    attributes:
-      value: 'I understand the terms of this agreement.'
-    validations:
-      required: true
