@@ -1,28 +1,48 @@
+title: "<Your question or feedback about the GitHub Discussions product>"
 labels: [Discussions]
 body:
-- type: markdown
-  attributes: 
-   value: |
-     ⚠️ This category is solely for discussions and feedback on [the GitHub Discussions product](https://github.com/features/discussions). ⚠️
+  - type: markdown
+    attributes: 
+      value: |
+        ⚠️ This category is solely for discussions and feedback on [the GitHub Discussions product](https://github.com/features/discussions). ⚠️
 
-     The Discussions category is NOT meant to be a place for any old discussion regarding GitHub or programming — [the General category](https://github.com/orgs/community/discussions/categories/general) is a more appropriate space for misc topics. To ensure you receive a timely response and connect with the proper team(s), please post in the correct category by using the corresponding product category. 
+        [GitHub Discussions](https://github.com/features/discussions) is a product within GitHub that allows users to talk, ask questions, and share ideas. Discussions are meant for open-ended conversations.
 
-     NOTE: If you post in this category about topics other than GitHub Discussions, your post may be moved or deleted without warning. Users who post spam or violate of our [Code of Conduct](https://github.com/github/.github/blob/95e9dcb0b8b70a25cdb75de29f600812a07eb996/CODE_OF_CONDUCT.md) will be blocked.
-- type: dropdown
-  attributes:
-    label: Select Topic Area
-    description: What would you like to discuss?
-    options:
-      - "Question"
-      - "Product Feedback"
-      - "Bug"
-      - "Show & Tell"
-      - "General"
-  validations:
-    required: true
-- type: textarea
-  attributes:
-    label: Body
-    description: Start your discussion!
-  validations:
-    required: true
+        ### ✅ Dos - Use this category if your post is about
+        - How to enable or configure **GitHub Discussions** in a repository or organization
+        - Questions about **GitHub Discussions** features, such as marking answers, organizing threads or using moderation tools.
+        - Bugs or issues specifically related to **GitHub Discussions** 🐞
+        - Suggestions or feedback to improve the **GitHub Discussions** product 💬
+
+        ### 🚫 Dont's - Please, don't use this category for:
+        - General troubleshooting, water cooler conversations or off-topic questions - have you tried General or Programming Help?
+        - Feedback that doesn't directly relate to _GitHub Discussions_, that feedback belong somewhere else, use this [quick guide](https://github.com/orgs/community/discussions/151702) to help.
+
+        ### 📚 Need help understanding how GitHub Discussions works?  
+        Read the official documentation: [GitHub Discussions Docs](https://docs.github.com/en/discussions)
+
+  - type: dropdown
+    attributes:
+      label: "Discussion Type"
+      description: What would you like to discuss?
+      options:
+        - "Product Feedback"
+        - "Question"
+        - "Bug"
+        - "Show & Tell"
+        - "General"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Discussion Content"
+      description: Start your discussion!
+    validations:
+      pattern: "^.{1000,}$"
+      regexFlags: "s"
+      note: "Must have at least 1000 characters"
+  - type: markdown
+    attributes:
+      value: 'I understand the terms of this agreement.'
+    validations:
+      required: true
