@@ -28,9 +28,8 @@ jobs:
               }
             }' > discussion_data.json
 
-          echo 'DISCUSSION_BODY_HTML='$(jq '.data.repository.discussion.bodyHTML' discussion_data.json) >> $GITHUB_ENV
-          echo 'DISCUSSION_ID='$(jq '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
-
+          echo 'DISCUSSION_BODY_HTML='$(jq -r '.data.repository.discussion.bodyHTML' discussion_data.json) >> $GITHUB_ENV
+          echo 'DISCUSSION_ID='$(jq -r '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
       - run: npm install jsdom
       
       - name: Get selected Copilot feature area
