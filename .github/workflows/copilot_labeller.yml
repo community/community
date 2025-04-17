@@ -121,10 +121,14 @@ jobs:
               }
             }' > repository_label_data.json
 
-          echo 'LABEL_ID='$(jq '.data.repository.labels.edges[].node | .id ' repository_label_data.json) >> $GITHUB_ENV
+          LABEL_ID=$(jq -r '.data.repository.labels.edges[0]?.node?.id // empty' repository_label_data.json)
+          if [ -z "$LABEL_ID" ]; then
+            echo "No matching label found for the selected area. Skipping labeling step."
+          fi
+          echo "LABEL_ID=$LABEL_ID" >> $GITHUB_ENV
           
       - name: Label the discussion
-        if: ${{ steps.get_selected_feature_area.outputs.result != '' }}
+        if: ${{ steps.get_selected_feature_area.outputs.result != '' && env.LABEL_ID != '' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
