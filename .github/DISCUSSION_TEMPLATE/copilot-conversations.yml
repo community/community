@@ -4,7 +4,7 @@ body:
     value: |
       #### Explore our [Copilot FAQs](https://github.com/orgs/community/discussions/144674) and [GitHub Docs](https://docs.github.com/en/copilot) for comprehensive guidance!
       - 💡 **Quick Tip:** For general development questions or detailed code issues, try [Chat with Copilot](https://docs.github.com/en/enterprise-cloud@latest/copilot/using-github-copilot/copilot-chat/asking-github-copilot-questions-in-github) first, it might have the answer you need before posting here.
-      - 🛠️ For bugs and feature requests related to Copilot in VS Code, please open an issue in our [VS Code](https://github.com/microsoft/vscode-copilot-release/issues).
+      - 🛠️ For bugs and feature requests related to Copilot in VS Code, please open an issue in our [VS Code Copilot repo](https://github.com/microsoft/vscode-copilot-release/issues).
       - 🔍 Are you a student/teacher looking to enable Copilot Pro? [Read our guide](https://gh.io/faq-nd-copilot)
 - type: dropdown
   attributes:
