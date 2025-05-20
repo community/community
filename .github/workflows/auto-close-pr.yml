@@ -1,5 +1,5 @@
 name: Auto Close PRs
-
+Romeo Rosete
 on:
   pull_request_target:
     types: [opened, reopened]
