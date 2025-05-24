@@ -5,6 +5,10 @@ on:
   discussion:
     types: [created]
 
+permissions:
+  contents: read
+  discussions: write
+
 jobs:
   check_labels:
     name: Check labels
