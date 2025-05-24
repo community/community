@@ -1,6 +1,9 @@
 # This is a basic workflow that is manually triggered
 
 name: Recategorize labeled discussions
+permissions:
+  contents: read
+  discussions: write
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
