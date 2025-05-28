@@ -1,0 +1,303 @@
+name: Auto-Label Discussions for Actions Category
+
+on:
+  discussion:
+    types: [created]
+
+jobs:
+  label-actions-discussion:
+    if: ${{ contains(github.event.discussion.category.name, 'Actions') }}
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Global authentication for gh CLI
+    steps:
+      - name: Get discussion body html
+        id: get_discussion_body_html
+        env: 
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
+        run: |
+          gh api graphql -F owner=$OWNER -F name=$REPO -F number=$DISCUSSION_NUMBER  -f query='
+            query($owner: String!, $name: String!, $number: Int!) {
+              repository(owner: $owner, name: $name){
+                discussion(number: $number) {
+                  bodyHTML
+                  id
+                }
+              }
+            }' > discussion_data.json
+
+          echo 'DISCUSSION_BODY_HTML='$(jq -r '.data.repository.discussion.bodyHTML' discussion_data.json) >> $GITHUB_ENV
+          echo 'DISCUSSION_ID='$(jq -r '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
+      
+      - run: npm install jsdom
+
+
+      - name: Extract Title and Body Text
+        id: extract_text
+        uses: actions/github-script@v6
+        env:
+          DISCUSSION_BODY_HTML: ${{ env.DISCUSSION_BODY_HTML }}
+          DISCUSSION_TITLE: ${{ github.event.discussion.title }}
+        with:
+          result-encoding: string
+          script: |
+            const jsdom = require('jsdom');
+            const { JSDOM } = jsdom;
+            const { DISCUSSION_BODY_HTML } = process.env;
+            const fragment = JSDOM.fragment(DISCUSSION_BODY_HTML);
+            let body = '';
+            // Find all <h3> and <p> pairs
+            const h3s = Array.from(fragment.querySelectorAll('h3'));
+            h3s.forEach(h3 => {
+              const heading = h3.textContent.trim();
+              let p = h3.nextElementSibling;
+              while (p && p.tagName !== 'P') p = p.nextElementSibling;
+              if (!p) return;
+              if (heading === 'Discussion Details') {
+                body = p.textContent.trim();
+              }
+            });
+            // Remove leading/trailing quotes from body
+            body = body.replace(/^['\"]+|['\"]+$/g, '');
+            const title = process.env.DISCUSSION_TITLE || '';
+            core.info(`Extracted title: ${title}`);
+            core.info(`Extracted body: ${body}`);
+            return JSON.stringify({ title, body });
+
+      - name: Extract Primary and Secondary Topic Areas
+        id: extract_topics
+        uses: actions/github-script@v6
+        with:
+          result-encoding: string
+          script: |
+            const jsdom = require('jsdom');
+            const { JSDOM } = jsdom;
+            const { DISCUSSION_BODY_HTML } = process.env;
+            const fragment = JSDOM.fragment(DISCUSSION_BODY_HTML);
+            let primary = '';
+            let secondary = '';
+            // Find all <h3> and <p> pairs (form headings as h3, answers as p)
+            const h3s = Array.from(fragment.querySelectorAll('h3'));
+            h3s.forEach(h3 => {
+              const heading = h3.textContent.trim();
+              // Look for the next <p> sibling after each heading
+              let p = h3.nextElementSibling;
+              while (p && p.tagName !== 'P') p = p.nextElementSibling;
+              if (!p) return;
+              if (heading === 'Why are you starting this discussion?') {
+                primary = p.textContent.trim();
+              }
+              if (heading === 'What GitHub Actions topic or product is this about?') {
+                secondary = p.textContent.trim();
+              }
+            });
+            core.info(`Extracted primary topic: ${primary}`);
+            core.info(`Extracted secondary topic: ${secondary}`);
+            return JSON.stringify({ primary, secondary });
+
+      - name: Auto-label by keyword search
+        id: auto_label_keywords
+        uses: actions/github-script@v6
+        with:
+          result-encoding: string
+          script: |
+            // Keyphrase to label mapping
+            const labelMap = [
+              {
+                label: 'Workflow Deployment',
+                keywords: [
+                    "deployment error",
+                    "publish artifact",
+                    "release failure",
+                    "deployment target",
+                    "github pages",
+                    "deployment issue",
+                    "release workflow",
+                    "target environment"
+                  ]
+              },
+              {
+                label: 'Workflow Configuration',
+                keywords: [
+                    "yaml syntax",
+                    "job dependency",
+                    "setup error",
+                    "workflow file",
+                    "configuration issue",
+                    "matrix strategy",
+                    "define env",
+                    "secret management",
+                    "environment setup",
+                    "config job"
+                  ]
+              },
+              {
+                label: 'Schedule & Cron Jobs',
+                keywords: [
+                    "cron job",
+                    "scheduled workflow",
+                    "timing issue",
+                    "delay trigger",
+                    "timezone error",
+                    "periodic run",
+                    "recurring schedule",
+                    "interval workflow",
+                    "scheduled trigger",
+                    "cron expression"
+                  ]
+              },
+              {
+                label: 'Metrics & Insights',
+                keywords: [
+                    "usage metrics",
+                    "performance trend",
+                    "analytics graph",
+                    "stats dashboard",
+                    "timeseries graph",
+                    "insight report",
+                    "metric tracking",
+                    "workflow analytics",
+                    "performance metric",
+                    "statistics report"
+                  ]
+              }
+            ];
+            const miscLabel = 'Misc';
+            let title = '';
+            let body = '';
+            try {
+              const parsed = JSON.parse(`${{ steps.extract_text.outputs.result }}`);
+              title = parsed.title || '';
+              body = parsed.body || '';
+            } catch (e) {}
+            const text = (title + ' ' + body).toLowerCase();
+            let foundLabel = miscLabel;
+            core.info(`Auto-label debug: text to match: '${text}'`);
+            for (const map of labelMap) {
+              core.info(`Auto-label debug: checking label '${map.label}' with keywords: ${map.keywords.join(', ')}`);
+              for (const k of map.keywords) {
+                if (text.includes(k)) {
+                  core.info(`Auto-label debug: matched keyword '${k}' for label '${map.label}'`);
+                  foundLabel = map.label;
+                  break;
+                }
+              }
+              if (foundLabel !== miscLabel) break;
+            }
+            core.info(`Auto-label debug: selected label: '${foundLabel}'`);
+            return foundLabel;
+      - name: Fetch label ID for primary topic
+        id: fetch_primary_label_id
+        env:
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          TOPIC: ${{ fromJson(steps.extract_topics.outputs.result).primary }}
+        run: |
+          echo "DEBUG: Fetching label for primary topic: $TOPIC"
+          gh api graphql -F owner=$OWNER -F name=$REPO -F topic="$TOPIC" -f query='
+            query($owner: String!, $name: String!, $topic: String) {
+              repository(owner: $owner, name: $name) {
+                labels(first: 1, query: $topic) {
+                  edges {
+                    node {
+                      id
+                      name
+                    }
+                  }
+                }
+              }
+            }
+          ' > primary_label_data.json
+
+          PRIMARY_LABEL_ID=$(jq -r '.data.repository.labels.edges[0]?.node?.id // empty' primary_label_data.json)
+          echo "PRIMARY_LABEL_ID=$PRIMARY_LABEL_ID" >> $GITHUB_ENV
+
+      - name: Fetch label ID for secondary topic
+        id: fetch_secondary_label_id
+        env:
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          TOPIC: ${{ fromJson(steps.extract_topics.outputs.result).secondary }}
+        run: |
+          echo "DEBUG: Fetching label for secondary topic: $TOPIC"
+          gh api graphql -F owner=$OWNER -F name=$REPO -F topic="$TOPIC" -f query='
+            query($owner: String!, $name: String!, $topic: String) {
+              repository(owner: $owner, name: $name) {
+                labels(first: 1, query: $topic) {
+                  edges {
+                    node {
+                      id
+                      name
+                    }
+                  }
+                }
+              }
+            }
+          ' > secondary_label_data.json
+
+          SECONDARY_LABEL_ID=$(jq -r '.data.repository.labels.edges[0]?.node?.id // empty' secondary_label_data.json)
+          echo "SECONDARY_LABEL_ID=$SECONDARY_LABEL_ID" >> $GITHUB_ENV
+      - name: Fetch label ID for auto-label
+        id: fetch_auto_label_id
+        env:
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          TOPIC: ${{ steps.auto_label_keywords.outputs.result }}
+        run: |
+          gh api graphql -F owner=$OWNER -F name=$REPO -F topic="$TOPIC" -f query='
+            query($owner: String!, $name: String!, $topic: String) {
+              repository(owner: $owner, name: $name) {
+                labels(first: 1, query: $topic) {
+                  edges {
+                    node {
+                      id
+                      name
+                    }
+                  }
+                }
+              }
+            }' > auto_label_data.json
+
+          AUTO_LABEL_ID=$(jq -r '.data.repository.labels.edges[0]?.node?.id // empty' auto_label_data.json)
+          echo "AUTO_LABEL_ID=$AUTO_LABEL_ID" >> $GITHUB_ENV
+
+      - name: Apply labels to discussion
+        if: ${{ env.PRIMARY_LABEL_ID != '' || env.SECONDARY_LABEL_ID != '' || env.AUTO_LABEL_ID != '' }}
+        run: |
+          echo "DEBUG: PRIMARY_LABEL_ID=$PRIMARY_LABEL_ID"
+          echo "DEBUG: SECONDARY_LABEL_ID=$SECONDARY_LABEL_ID"
+          echo "DEBUG: AUTO_LABEL_ID=$AUTO_LABEL_ID"
+          LABEL_IDS=()
+          if [ -n "$PRIMARY_LABEL_ID" ]; then
+            LABEL_IDS+=("$PRIMARY_LABEL_ID")
+          fi
+          if [ -n "$SECONDARY_LABEL_ID" ]; then
+            LABEL_IDS+=("$SECONDARY_LABEL_ID")
+          fi
+          if [ -n "$AUTO_LABEL_ID" ]; then
+            LABEL_IDS+=("$AUTO_LABEL_ID")
+          fi
+
+          # Deduplicate LABEL_IDS
+          LABEL_IDS=($(printf "%s\n" "${LABEL_IDS[@]}" | awk '!seen[$0]++'))
+          echo "DEBUG: LABEL_IDS to apply: ${LABEL_IDS[@]}"
+
+          # Apply labels
+          gh api graphql -f query='
+            mutation($labelableId: ID!, $labelIds: [ID!]!) {
+              addLabelsToLabelable(input: {labelableId: $labelableId, labelIds: $labelIds}) {
+                labelable {
+                  labels(first: 10) {
+                    edges {
+                      node {
+                        id
+                        name
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ' -f labelableId=$DISCUSSION_ID $(printf -- "-f labelIds[]=%s " "${LABEL_IDS[@]}")
