@@ -1,5 +1,9 @@
 name: Copilot Templated Discussions
 
+permissions:
+  contents: read
+  discussions: write
+
 on:
   discussion:
     types: [created]
