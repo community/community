@@ -1,17 +1,26 @@
-# Configuration for Label Actions - remove label id
+name: Actions Labeller
 
-more information needed:
-  discussions:
-    # Remove labels
-    unlabel:
-      - 'more information needed'
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
 
-in backlog:
-  discussions:
-    unlabel:
-      - 'in backlog'
+jobs:
+  labeler:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-fixed:
-  discussions:
-    unlabel:
-      - 'fixed'
+      - name: Label PR based on files changed
+        uses: actions/labeler@v5
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          configuration-path: .github/labeler.yml
+          sync-labels: true
+
+      - name: Add additional labels
+        if: github.event.action == 'opened'
+        run: |
+          gh pr edit ${{ github.event.pull_request.number }} --add-label "needs-triage, review-requested"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
