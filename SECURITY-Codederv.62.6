@@ -1,0 +1,34 @@
+# Security Policy
+
+## Supported Versions
+
+currently being supported with security updates.
+
+content/cloudflare-one/connections/connect-devices/warp/deployment/_index.md
+
+| Version | Supported          |
+| ------- | ------------------ |
+| 5.1.x   | :white_check_mark: |
+| 5.0.x   | :x:                |
+| 4.0.x   | :white_check_mark: |
+| < 4.0   | :x:                |
+
+## Reporting a Vulnerability
+Hi @mikelartz,
+Yes, we are using cyclonedx-dotnet. I have investigated further and look like it's a bug in cyclonedx-dotnet.
+Sample solution with two projects look like below and attached to the thread.
+
+image
+
+Observations:
+
+When I generate BOM for entire solution using dotnet CycloneDX -o . -j BOMIssue.sln following dependency is added to BOM.
+{ "ref": "pkg:nuget/NServiceBus.Newtonsoft.Json@2.3.0", "dependsOn": [ "pkg:nuget/NServiceBus@7.3.0", "pkg:nuget/Newtonsoft.Json@11.0.2" ] },
+
+When I generate BOM only for using dotnet CycloneDX -o . -j BOMIssue/BOMIssue.csproj following dependency is added to BOM.
+
+{ "ref": "pkg:nuget/**NServiceBus.Newtonsoft.Json@2.3.0**", "dependsOn": [ "pkg:nuget/NServiceBus@7.0.0", "pkg:nuget/**Newtonsoft.Json@13.0.1**" ] },
+
+I think tool is reporting incorrect dependency of NServiceBus.Newtonsoft.Json@2.3.0 on Newtonsoft.Json@11.0.2. In fact IdentityModel@4.1.1 is depending on Newtonsoft.Json@11.0.2.
+
+Could you please investigate further?
