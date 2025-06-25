@@ -1,20 +1,52 @@
 labels: [Code Security]
 body:
+- type: markdown
+  attributes:
+    value: |
+      🔐 **Welcome to the Code Security Category!**
+
+      Build [security]() into your GitHub workflow with features like [Secret Scanning](https://docs.github.com/en/code-security/secret-scanning), [Code Scanning](https://docs.github.com/en/code-security/code-scanning) and [Dependabot](https://docs.github.com/en/code-security/dependabot) to keep secrets and vulnerabilities out of your codebase, and to maintain your [software supply chain](https://docs.github.com/en/code-security/supply-chain-security).
+
+      The Code Security category is for discussions about GitHub’s security-related products and features, such as:
+       - Dependabot alerts & updates
+       - Secret scanning
+       - Code scanning (e.g., GitHub Advanced Security, CodeQL)
+       - Supply chain security (e.g., dependency insights)
+       - Security advisories & vulnerability management
+       - Security policy best practices on GitHub
+       - Integrations with third-party security tools
+     
+      Examples of questions that belong in this category:
+       - Questions about how to use CodeQL, secret scanning, or security alerts
+       - Discussions about interpreting scan results or fixing vulnerabilities
+       - Feature requests or bug reports for GitHub security products
+       - Sharing tips, workflows, or best practices for code security on GitHub
+
+      Discussions that do NOT belong in Code Security include:
+       - General programming help (language syntax, debugging, unrelated bugs)
+       - Non-GitHub security questions (OS, network, or unrelated app security)
+       - Questions about malware removal, antivirus, or personal device security
+       - Account/password recovery issues (these go to GitHub Support)
+       - Generic “how do I get a job in security?” or “what is cybersecurity?” posts. Be specific!
 - type: dropdown
   attributes:
     label: Select Topic Area
     description: What would you like to discuss?
     options:
-      - "Question"
-      - "Product Feedback"
-      - "Bug"
+      - "I Have a Question"
+      - "I Have Product Feedback to Share"
+      - "I Want to Report a Bug"
       - "Show & Tell"
-      - "General"
   validations:
     required: true
 - type: textarea
   attributes:
     label: Body
-    description: Start your discussion!
+    description: Start your discussion here! If you are reporting a bug or other issue, providing the following information will help us help you: 
+     - A clear description of the problem you’re facing
+     - Any error messages you’re seeing (if applicable)
+     - The steps you took before encountering the issue
+     - The device, browser, or software version you’re using (if relevant)
+     - Any troubleshooting steps you’ve already tried
   validations:
     required: true
