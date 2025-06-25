@@ -69,6 +69,7 @@ jobs:
                 "copilot workspace": "Copilot Workspace",
                 "copilot edits and code review": "Copilot Edits and Code Review",
                 "copilot agent mode": "Copilot Agent Mode",
+                "copilot coding agent": "Copilot Coding Agent",
                 "copilot enterprise": "Copilot Enterprise",
                 "copilot billing or account‑related": "Copilot Billing or Account‑Related",
                 "other copilot areas": "Other Copilot Areas"
