@@ -71,6 +71,7 @@ jobs:
                 "copilot agent mode": "Copilot Agent Mode",
                 "copilot enterprise": "Copilot Enterprise",
                 "copilot billing or account‑related": "Copilot Billing or Account‑Related",
+                "copilot coding agent": "Copilot Coding Agent",
                 "other copilot areas": "Other Copilot Areas"
               };
               
