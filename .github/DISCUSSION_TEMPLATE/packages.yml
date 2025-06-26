@@ -1,0 +1,20 @@
+labels: [Packages]
+body:
+- type: dropdown
+  attributes:
+    label: Select Topic Area
+    description: What would you like to discuss?
+    options:
+      - "Question"
+      - "Product Feedback"
+      - "Bug"
+      - "Show & Tell"
+      - "General"
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Body
+    description: Start your discussion!
+  validations:
+    required: true

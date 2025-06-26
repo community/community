@@ -1,0 +1,28 @@
+labels: [General]
+body:
+- type: markdown
+  attributes:
+   value:
+    ⚠️ The Community can not help with account-related issues, such as reinstatement requests or help to escalate your [GitHub Support](https://support.github.com/contact) tickets. ⚠️
+- type: markdown
+  attributes:
+    value:
+     📛 We made the decision to disable the ability to earn Achievements in our Community in order to discourage users from participating in coordinated or inauthentic activity like rapid questions and answers in order to earn badges. You can learn more about this decision in our announcement post here [Achievements will no longer be available in the Community](https://github.com/orgs/community/discussions/106536) 📛
+- type: dropdown
+  attributes:
+    label: Select Topic Area
+    description: What would you like to discuss?
+    options:
+      - "Question"
+      - "Product Feedback"
+      - "Bug"
+      - "Show & Tell"
+      - "General"
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Body
+    description: Start your discussion!
+  validations:
+    required: true

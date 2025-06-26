@@ -1,0 +1,30 @@
+name: Open a new discussion when an incident is declared
+
+on:
+  repository_dispatch:
+    types: [incident-declared]
+
+jobs:
+  open_discussion:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      discussions: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@7bae1d00b5db9166f4f0fc47985a3a5702cb58f0
+
+      - name: Bundle install
+        run: bundle install
+
+      - name: Open discussion
+        id: open_discussion
+        run: .github/actions/open_incident_discussion.rb
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLIC_TITLE: ${{ github.event.client_payload.publicTitle }}
+          INCIDENT_URL: ${{ github.event.client_payload.incidentLink }}

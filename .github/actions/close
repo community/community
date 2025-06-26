@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative "../lib/github"
+
+stale_label_id = "LA_kwDOEfmk4M8AAAABYVCU-g"
+owner = "community"
+repo = "community"
+
+discussions = Discussion.to_be_closed(owner:, repo:)
+puts "All: #{discussions.count}"
+
+discussions.each do |discussion|
+  puts "#{discussion.url} - #{discussion.title}"
+  result = discussion.close_as_outdated
+  if errors = result.dig("errors")
+    puts "#{errors.dig(0, "type")}: #{errors.dig(0, "message")}"
+    exit
+  end
+
+  sleep 10
+end

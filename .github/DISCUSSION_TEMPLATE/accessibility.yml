@@ -1,0 +1,70 @@
+labels: [Accessibility]
+body: 
+- type: markdown
+  attributes: 
+   value: 
+    ⚠️ This category is solely for discussions and feedback on [the digital accessibility of GitHub products](https://accessibility.github.com/). ⚠️
+
+    Please use this space for questions, bug reports, opportunities, and feedback related to making GitHub features accessible to users of all abilities. 
+    
+    To ensure you receive a timely response and connect with the proper team(s), please post in the correct category, questions about access, 2FA, and SMS belong in the [General category](https://github.com/orgs/community/discussions/categories/general?discussions_q=is%3Aopen+category%3AGeneral). Discussions that are posted in the wrong category may be moved. Users who post spam or violate of our [Code of Conduct](https://github.com/github/.github/blob/95e9dcb0b8b70a25cdb75de29f600812a07eb996/CODE_OF_CONDUCT.md) will be blocked.
+- type: dropdown
+  attributes:
+    label: Select Topic Area
+    description: What would you like to discuss?
+    options:
+      - "Question"
+      - "Product Feedback"
+      - "Bug"
+      - "Show & Tell"
+      - "General"
+  validations:
+    required: true
+- type: dropdown 
+  attributes: 
+      label: GitHub Feature Area
+      description: >
+        What GitHub product/feature area is your Accessibility post related to? 
+      options:
+        - Actions
+        - APIs and Webhooks
+        - Code Scanning
+        - Code Search and Navigation
+        - Code Security
+        - Codespaces
+        - Command Palette
+        - Copilot
+        - Dependabot
+        - Discussions
+        - Enterprise
+        - Feed
+        - GHAS
+        - Gists
+        - GitHub Desktop
+        - GitHub Education
+        - Issues
+        - Lists
+        - Markdown
+        - Mobile
+        - Notifications
+        - Packages
+        - Pages
+        - Profile
+        - Projects
+        - Pull Requests
+        - Repositories
+        - Security and Privacy
+        - Sponsors
+        - UI/UX
+        - Visual Studio
+        - VSCode
+        - Wiki
+        - Other
+  validations:
+      required: true
+- type: textarea
+  attributes:
+    label: Body
+    description: Start your discussion!
+  validations:
+    required: true

@@ -1,0 +1,28 @@
+name: Comment on dormant discussions
+
+on:
+  workflow_dispatch:
+  schedule:
+    # At 03:23 every day
+    - cron: '23 3 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      discussions: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+
+      - name: Bundle install
+        run: bundle install
+
+      - name: Comment on discussions
+        run: .github/actions/comment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

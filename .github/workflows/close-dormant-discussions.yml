@@ -1,0 +1,29 @@
+name: Close out dormant discussions
+
+on:
+  workflow_dispatch:
+  schedule:
+    # At 01:23 every day
+    - cron: '23 1 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      discussions: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+
+      - name: Bundle install
+        run: bundle install
+
+      - name: Close out discussions
+        run: .github/actions/close
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

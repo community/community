@@ -1,0 +1,111 @@
+name: Label Templated Discussions
+
+on:
+  discussion:
+    types: [created]
+
+jobs:
+  label-templated-discussion:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get discussion body html
+        id: get_discussion_body_html
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
+        run: |
+          gh api graphql -F owner=$OWNER -F name=$REPO -F number=$DISCUSSION_NUMBER  -f query='
+            query($owner: String!, $name: String!, $number: Int!) {
+              repository(owner: $owner, name: $name){
+                discussion(number: $number) {
+                  bodyHTML
+                  id
+                }
+              }
+            }' > discussion_data.json
+            
+          echo 'DISCUSSION_BODY_HTML='$(jq '.data.repository.discussion.bodyHTML' discussion_data.json) >> $GITHUB_ENV
+          echo 'DISCUSSION_ID='$(jq '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
+          
+      - run: npm install jsdom
+      
+      - name: Get selected topic
+        id: get_selected_topic
+        uses: actions/github-script@v7
+        with:
+          result-encoding: string
+          script: |
+            try {
+              const jsdom = require('jsdom');
+              const { JSDOM } = jsdom;
+              const { DISCUSSION_BODY_HTML } = process.env
+              
+              const fragment = JSDOM.fragment(DISCUSSION_BODY_HTML);
+              const selectTopicHeader = fragment.querySelector("h3");
+              const templated = selectTopicHeader.textContent === 'Select Topic Area';
+              if (!templated) {
+                return "";
+              }
+              
+              const selectedTopicElement = selectTopicHeader.nextElementSibling;
+              if (!selectedTopicElement) {
+                return "";
+              }
+              
+              const selectedTopic = selectedTopicElement.textContent.trim().toLowerCase();
+              const validTopics = ["product feedback", "question", "bug", "show & tell", "general"];
+              return validTopics.includes(selectedTopic) ? selectedTopic : "";
+              
+            } catch (error) {
+              return "";
+            }
+            
+      - name: Fetch label id for selected topic
+        id: fetch_label_id
+        if: ${{ steps.get_selected_topic.outputs.result != '' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          TOPIC: ${{ steps.get_selected_topic.outputs.result }}
+        run: |
+          gh api graphql -F owner=$OWNER -F name=$REPO -F topic="$TOPIC"  -f query='
+            query($owner: String!, $name: String!, $topic: String) {
+              repository(owner: $owner, name: $name){
+                labels(first: 1, query: $topic) {
+                  edges {
+                    node {
+                      id
+                      name
+                    }
+                  }
+                }
+              }
+            }' > repository_label_data.json
+            
+          echo 'LABEL_ID='$(jq '.data.repository.labels.edges[].node | .id ' repository_label_data.json) >> $GITHUB_ENV
+          
+      - name: Label the discussion
+        if: ${{ steps.get_selected_topic.outputs.result != '' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api graphql -f query='
+            mutation($labelableId: ID!, $labelIds: [ID!]!) {
+              addLabelsToLabelable(input: {labelableId: $labelableId, labelIds: $labelIds}) {
+                labelable {
+                  labels(first: 10) {
+                    edges {
+                      node {
+                        id
+                        name
+                      }
+                    }
+                  }
+                }
+              }
+            }' -f labelableId=$DISCUSSION_ID -f labelIds=$LABEL_ID
+            
