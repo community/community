@@ -1,0 +1,70 @@
+labels: [Modding & Extensions]
+body:
+- type: markdown
+  attributes:
+    value: |
+      🔧 **Welcome to Modding & Extensions!** 🔧
+      
+      This category is for discussions about game modding, plugin development, and extending existing platforms and applications. Share your projects, get help with development, and collaborate with fellow modders!
+      
+- type: markdown
+  attributes:
+    value: |
+      📋 **Please Note:** Before posting, search existing discussions to see if your topic has already been covered. Be specific about your platform (Minecraft, other games, etc.) and include relevant details like versions and error messages.
+      
+- type: dropdown
+  attributes:
+    label: Select Topic Area
+    description: What would you like to discuss?
+    options:
+      - "Question"
+      - "Plugin Development"
+      - "Mod Development"
+      - "Tutorial/Guide"
+      - "Bug Report"
+      - "Feature Request"
+      - "Show & Tell"
+      - "Collaboration"
+      - "General"
+  validations:
+    required: true
+    
+- type: dropdown
+  attributes:
+    label: Platform/Game
+    description: Which platform or game are you working with?
+    options:
+      - "Minecraft (Bukkit/Spigot/Paper)"
+      - "Minecraft (Forge)"
+      - "Minecraft (Fabric)"
+      - "Minecraft (NeoForge)"
+      - "Minecraft (Other)"
+      - "Other Game"
+      - "General/Multiple"
+      - "Not Applicable"
+  validations:
+    required: true
+    
+- type: input
+  attributes:
+    label: Version Information
+    description: What version are you working with? (e.g., Minecraft 1.20.1, Forge 47.2.0)
+    placeholder: "e.g., Minecraft 1.20.1, Spigot 1.20.1"
+  validations:
+    required: false
+    
+- type: textarea
+  attributes:
+    label: Description
+    description: Describe your question, project, or issue in detail. Include code snippets, error messages, or screenshots if relevant.
+    placeholder: "Please provide a clear description of what you're working on or need help with..."
+  validations:
+    required: true
+    
+- type: textarea
+  attributes:
+    label: Additional Context
+    description: Any additional information, links, or context that might be helpful
+    placeholder: "Links to documentation, related projects, etc."
+  validations:
+    required: false
