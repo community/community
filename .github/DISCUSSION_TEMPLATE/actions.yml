@@ -3,23 +3,62 @@ body:
 - type: markdown
   attributes:
     value: |
-      ### Important News for Actions users 📣 👀
-      #### ⚠️ [Upcoming deprecation of v3 of the artifact actions](https://github.com/orgs/community/discussions/142581) - upgrade to v4 as soon as possible.
+      🚀 **Welcome to the Actions Category!** 🚀
+
+      Automate, customize, and execute your software development workflows right in your repository with [GitHub Actions](https://docs.github.com/en/actions)!
+
+      **Why are you here?**
+      - **Have a Question?** Maybe you're stuck on workflow syntax, curious about best practices, or want to know how to use a specific GitHub Actions feature. Select "Question" to get help from the community!
+      - **Product Feedback?** Do you have ideas to improve GitHub Actions, or want to share what works (or doesn't) for you? Select "Product Feedback" to help shape the future of GitHub Actions.
+      - **Found a Bug?** If something isn't working as expected, let us know by selecting "Bug" so we can investigate and improve the platform.
+
+      After choosing your reason, pick the topic or product area that best matches your discussion.
+
+      **Quick links:** [Actions Documentation](https://docs.github.com/en/actions), [Workflow Syntax Guide](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions), [Example Workflows](https://docs.github.com/en/actions/use-cases-and-examples), and [Security Best Practices](https://docs.github.com/en/actions/security-for-github-actions)
+      
+      **Recent News:**
+      - [Latest Breaking Changes](https://github.blog/changelog/label/actions)
+
 - type: dropdown
+  id: reason
   attributes:
-    label: Select Topic Area
-    description: What would you like to discuss?
+    label: Why are you starting this discussion?
+    description: Tell us your goal! Are you asking a question, giving feedback, reporting a bug, or sharing something cool?
     options:
       - "Question"
       - "Product Feedback"
       - "Bug"
-      - "Show & Tell"
-      - "General"
+    default: 0
   validations:
     required: true
+- type: dropdown
+  id: topic
+  attributes:
+    label: What GitHub Actions topic or product is this about?
+    description: |
+      Choose the single topic or product area most relevant to your discussion. Only one can be selected here.
+      
+      If your post covers additional themes or topics, don't worry! Our team and automation will do our best to add extra labels based on the content of your discussion details.
+      
+      This helps us get you the best answers and feedback!
+    options:
+      - "ARC (Actions Runner Controller)"
+      - "Actions Runner Image"
+      - "Actions Runner"
+      - "Actions Checkout"
+      - "Actions Cache"
+      - "Workflow Deployment"
+      - "Workflow Configuration"
+      - "Schedule & Cron Jobs"
+      - "Metrics & Insights"
+      - "Misc"
+    default: 9
+  validations:
+    required: false
 - type: textarea
   attributes:
-    label: Body
-    description: Start your discussion!
+    label: Discussion Details
+    description: >-
+      Share your question, feedback, or story! Include links, code, or screenshots for more context. Tip: Reference the docs https://docs.github.com/en/actions or relevant changelogs for details.
   validations:
-    required: true
+      required: true
