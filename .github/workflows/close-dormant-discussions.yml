@@ -3,8 +3,8 @@ name: Close out dormant discussions
 on:
   workflow_dispatch:
   schedule:
-    # At 01:23 every day
-    - cron: '23 1 * * *'
+    # At 01:25 every day
+    - cron: '25 1 * * *'
 
 jobs:
   build:
