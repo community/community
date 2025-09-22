@@ -1,0 +1,108 @@
+name: Mobile Templated Discussions
+
+on:
+  discussion:
+    types: [created]
+
+jobs:
+  label-mobile-discussion:
+    runs-on: ubuntu-latest
+    if: ${{ contains(github.event.discussion.category.name, 'Mobile') }}
+    steps:
+      - name: Get discussion body html
+        id: get_discussion_body_html
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
+        run: |
+          gh api graphql -F owner=$OWNER -F name=$REPO -F number=$DISCUSSION_NUMBER -f query='
+            query($owner: String!, $name: String!, $number: Int!) {
+              repository(owner: $owner, name: $name){
+                discussion(number: $number) {
+                  bodyHTML
+                  id
+                }
+              }
+            }' > discussion_data.json
+          echo 'DISCUSSION_BODY_HTML='$(jq -r '.data.repository.discussion.bodyHTML' discussion_data.json) >> $GITHUB_ENV
+          echo 'DISCUSSION_ID='$(jq -r '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
+
+      - run: npm install jsdom@22
+
+      - name: Get selected Mobile feature area
+        id: get_selected_feature_area
+        uses: actions/github-script@v6
+        with:
+          result-encoding: string
+          script: |
+            try {
+              const { JSDOM } = require('jsdom');
+              const { DISCUSSION_BODY_HTML } = process.env;
+              const fragment = JSDOM.fragment(DISCUSSION_BODY_HTML || '');
+              const featureAreaHeaders = fragment.querySelectorAll('h3');
+              // For Mobile we look for a heading containing 'Feature Area' (case-insensitive)
+              const featureAreaHeader = Array.from(featureAreaHeaders).find(h => h.textContent.trim().toLowerCase().includes('feature area'));
+              if (!featureAreaHeader) return '';
+              const selectedAreaElement = featureAreaHeader.nextElementSibling;
+              if (!selectedAreaElement) return '';
+              const selectedArea = selectedAreaElement.textContent.trim();
+              if (!selectedArea) return '';
+
+              // Valid Mobile feature areas (case sensitive match preference; we also allow case-insensitive fallback)
+              const validAreas = {
+                'Android': 'Android',
+                'iOS': 'iOS',
+                'General': 'General'
+              };
+
+              if (validAreas[selectedArea]) {
+                return validAreas[selectedArea];
+              }
+              // Fallback case-insensitive search
+              const lower = selectedArea.toLowerCase();
+              for (const key of Object.keys(validAreas)) {
+                if (lower === key.toLowerCase()) return validAreas[key];
+              }
+              return selectedArea; // Return raw if unmatched; label lookup query may still find a substring match
+            } catch (e) {
+              console.error(e);
+              return '';
+            }
+
+      - name: Fetch label id for selected area
+        id: fetch_label_id
+        if: ${{ steps.get_selected_feature_area.outputs.result != '' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          AREA: ${{ steps.get_selected_feature_area.outputs.result }}
+        run: |
+          gh api graphql -F owner=$OWNER -F name=$REPO -F topic="$AREA" -f query='
+            query($owner: String!, $name: String!, $topic: String) {
+              repository(owner: $owner, name: $name){
+                labels(first: 1, query: $topic) {
+                  edges { node { id name } }
+                }
+              }
+            }' > repository_label_data.json
+          LABEL_ID=$(jq -r '.data.repository.labels.edges[0]?.node?.id // empty' repository_label_data.json)
+          if [ -z "$LABEL_ID" ]; then
+            echo "No matching label found for the selected area. Skipping labeling step.";
+          fi
+          echo "LABEL_ID=$LABEL_ID" >> $GITHUB_ENV
+
+      - name: Label the discussion
+        if: ${{ steps.get_selected_feature_area.outputs.result != '' && env.LABEL_ID != '' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api graphql -f query='
+            mutation($labelableId: ID!, $labelIds: [ID!]!) {
+              addLabelsToLabelable(input: {labelableId: $labelableId, labelIds: $labelIds}) {
+                labelable { __typename }
+              }
+            }' -f labelableId=$DISCUSSION_ID -f labelIds[]=$LABEL_ID
+          echo "Label applied for area: $LABEL_ID"
