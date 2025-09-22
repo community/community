@@ -443,7 +443,7 @@ Discussion = Struct.new(
 
     return nil if comments.empty?
 
-    filtered_comments = comments.keep_if { |comment| comment["author"]["login"] == actor_login }
+    filtered_comments = comments.keep_if { |comment| comment["author"] && comment["author"]["login"] == actor_login }
                         &.sort_by { |comment| comment["createdAt"] }
                         .reverse
 
