@@ -1,20 +1,41 @@
-labels: [Mobile]
 body:
+- type: markdown
+  attributes:
+    value: |
+      #### Explore our [GitHub Mobile sign in & troubleshooting guide](https://github.com/orgs/community/discussions/68753) for comprehensive guidance!
+      - 💡 **Quick Tip:** For general development questions or detailed code issues, try [Chat with Copilot](https://docs.github.com/en/enterprise-cloud@latest/copilot/using-github-copilot/copilot-chat/asking-github-copilot-questions-in-github) first, it might have the answer you need before posting here.
+      - 🛠️ **Stay Updated:** To ensure you’re always on the latest available version of GitHub Mobile, enable auto updates in the [Google Play Store](https://play.google.com/store/apps/details?id=com.github.android) or [App Store](https://apps.apple.com/app/github/id1477376905?ls=1)..
 - type: dropdown
   attributes:
     label: Select Topic Area
-    description: What would you like to discuss?
+    description: What would you like to discuss about GitHub Mobile? Choose your topic area. 
     options:
-      - "Question"
-      - "Product Feedback"
-      - "Bug"
-      - "Show & Tell"
-      - "General"
+      - Question
+      - Product Feedback
+      - Bug 
+      - General
+  validations:
+    required: true
+- type: dropdown
+  id: feature-area
+  attributes:
+    label: Feature Area
+    description: Which GitHub Mobile feature or product area is your discussion related to?
+    options:
+      - General
+      - Android
+      - iOS
   validations:
     required: true
 - type: textarea
   attributes:
     label: Body
     description: Start your discussion!
+    placeholder: >-
+      Provide a detailed description of your discussion (e.g., What issue are you facing? What feedback do you have? What question do you need answered?). Please include logs whereever possible.
   validations:
     required: true
+- type: markdown
+  attributes:
+    value: |
+      #### Don't forget to mark an [answer as "solved"](https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/participating-in-a-discussion#marking-a-comment-as-an-answer) to help others with similar questions. ✅
