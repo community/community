@@ -32,7 +32,7 @@ body:
     label: Body
     description: Start your discussion!
     placeholder: >-
-      Provide a detailed description of your discussion (e.g., What issue are you facing? What feedback do you have? What question do you need answered?). Please include logs whereever possible.
+      Provide a detailed description of your discussion (e.g., What issue are you facing? What feedback do you have? What question do you need answered?). Please include logs wherever possible.
   validations:
     required: true
 - type: markdown
