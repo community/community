@@ -1,0 +1,182 @@
+WP.COM API
+v1
+GET
+/
+m
+e
+t
+a
+/
+s
+h
+a
+r
+i
+n
+g
+-
+b
+u
+t
+t
+o
+n
+s
+Sign OutAvatar
+Query
+context	
+http_envelope	
+pretty	
+meta	
+fields	
+callback	
+Body
+WP.COM API
+GET
+v1/meta/sharing-buttons
+Tree view
+Raw JSON
+198ms
+{
+  "services": {
+    "print": {
+      "ID": "print",
+      "name": "Print",
+      "shortname": "print",
+      "genericon": "\\f469",
+      "preview_smart": "<a rel=\"nofollow noopener noreferrer\"\n\t\t\t\tdata-shared=\"sharing-print-23937\"\n\t\t\t\tclass=\"share-print sd-button\"\n\t\t\t\thref=\"http://en.blog.wordpress.com/2014/02/10/new-sharing-reblogging/?share=print\"\n\t\t\t\ttarget=\"_blank\"\n\t\t\t\taria-labelledby=\"sharing-print-23937\"\n\t\t\t\t>\n\t\t\t\t<span id=\"sharing-print-23937\" hidden>Click to print (Opens in new window)</span>\n\t\t\t\t<span>Print</span>\n\t\t\t</a>",
+      "preview_smart_js": ""
+    },
+    "email": {
+      "ID": "email",
+      "name": "Email",
+      "shortname": "email",
+      "genericon": "\\f410",
+      "preview_smart": "<a rel=\"nofollow noopener noreferrer\"\n\t\t\t\tdata-shared=\"sharing-email-23937\"\n\t\t\t\tclass=\"share-email sd-button\"\n\t\t\t\thref=\"mailto:?subject=%5BShared%20Post%5D%20A%20New%20Design%20for%20Sharing%20and%20Reblogging&#038;body=http%3A%2F%2Fwordpress.com&#038;share=email\"\n\t\t\t\ttarget=\"_blank\"\n\t\t\t\taria-labelledby=\"sharing-email-23937\"\n\t\t\t\tdata-email-share-error-title=\"Do you have email set up?\" data-email-share-error-text=\"If you&#039;re having problems sharing via email, you might not have email set up for your browser. You may need to create a new email yourself.\" data-email-share-nonce=\"c6213a8ca7\" data-email-share-track-url=\"http://en.blog.wordpress.com/2014/02/10/new-sharing-reblogging/?share=email\">\n\t\t\t\t<span id=\"sharing-email-23937\" hidden>Click to email a link to a friend (Opens in new window)</span>\n\t\t\t\t<span>Email</span>\n\t\t\t</a>",
+      "preview_smart_js": ""
+    },
+    "facebook": {
+      "ID": "facebook",
+      "name": "Facebook",
+      "shortname": "facebook",
+      "genericon": "\\f204",
+      "preview_smart": "<div class=\"fb-share-button\" data-href=\"http://wordpress.com\" data-layout=\"button_count\"></div>",
+      "preview_smart_js": "\t\t\t<div id=\"fb-root\"></div>\n\t\t\t<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;appId=249643311490&version=v2.3'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>\n\t\t\t<script>\n\t\t\tdocument.body.addEventListener( 'is.post-load', function() {\n\t\t\t\tif ( 'undefined' !== typeof FB ) {\n\t\t\t\t\tFB.XFBML.parse();\n\t\t\t\t}\n\t\t\t} );\n\t\t\t</script>\n\t\t\t"
+    },
+    "linkedin": {
+      "ID": "linkedin",
+      "name": "LinkedIn",
+      "shortname": "linkedin",
+      "genericon": "\\f207",
+      "preview_smart": "<div class=\"linkedin_button\"><script type=\"in/share\" data-url=\"http://wordpress.com\" data-counter=\"right\"></script></div>",
+      "preview_smart_js": "\t\t\t<script type=\"text/javascript\">\n\t\t\t\t( function () {\n\t\t\t\t\tvar currentScript = document.currentScript;\n\n\t\t\t\t\t// Helper function to load an external script.\n\t\t\t\t\tfunction loadScript( url, cb ) {\n\t\t\t\t\t\tvar script = document.createElement( 'script' );\n\t\t\t\t\t\tvar prev = currentScript || document.getElementsByTagName( 'script' )[ 0 ];\n\t\t\t\t\t\tscript.setAttribute( 'async', true );\n\t\t\t\t\t\tscript.setAttribute( 'src', url );\n\t\t\t\t\t\tprev.parentNode.insertBefore( script, prev );\n\t\t\t\t\t\tscript.addEventListener( 'load', cb );\n\t\t\t\t\t}\n\n\t\t\t\t\tfunction init() {\n\t\t\t\t\t\tloadScript( 'https://platform.linkedin.com/in.js?async=true', function () {\n\t\t\t\t\t\t\tif ( typeof IN !== 'undefined' ) {\n\t\t\t\t\t\t\t\tIN.init();\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t} );\n\t\t\t\t\t}\n\n\t\t\t\t\tif ( document.readyState === 'loading' ) {\n\t\t\t\t\t\tdocument.addEventListener( 'DOMContentLoaded', init );\n\t\t\t\t\t} else {\n\t\t\t\t\t\tinit();\n\t\t\t\t\t}\n\n\t\t\t\t\tdocument.body.addEventListener( 'is.post-load', function() {\n\t\t\t\t\t\tif ( typeof IN !== 'undefined' ) {\n\t\t\t\t\t\t\tIN.parse();\n\t\t\t\t\t\t}\n\t\t\t\t\t} );\n\t\t\t\t} )();\n\t\t\t</script>\n\t\t\t"
+    },
+    "reddit": {
+      "ID": "reddit",
+      "name": "Reddit",
+      "shortname": "reddit",
+      "genericon": "\\f222",
+      "preview_smart": "<a rel=\"nofollow noopener noreferrer\"\n\t\t\t\tdata-shared=\"sharing-reddit-23937\"\n\t\t\t\tclass=\"share-reddit sd-button\"\n\t\t\t\thref=\"http://en.blog.wordpress.com/2014/02/10/new-sharing-reblogging/?share=reddit\"\n\t\t\t\ttarget=\"_blank\"\n\t\t\t\taria-labelledby=\"sharing-reddit-23937\"\n\t\t\t\t>\n\t\t\t\t<span id=\"sharing-reddit-23937\" hidden>Click to share on Reddit (Opens in new window)</span>\n\t\t\t\t<span>Reddit</span>\n\t\t\t</a>",
+      "preview_smart_js": ""
+    },
+    "twitter": {
+      "ID": "twitter",
+      "name": "X",
+      "shortname": "twitter",
+      "genericon": "\\f10e",
+      "preview_smart": "<a href=\"https://twitter.com/share\" class=\"twitter-share-button\" data-url=\"http://wordpress.com\" data-text=\"A New Design for Sharing and Reblogging\" data-via=\"wordpressdotcom\" data-related=\"wordpressdotcom\">Tweet</a>",
+      "preview_smart_js": "\t\t\t<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>\n\t\t\t"
+    },
+    "tumblr": {
+      "ID": "tumblr",
+      "name": "Tumblr",
+      "shortname": "tumblr",
+      "genericon": "\\f214",
+      "preview_smart": "<a class=\"tumblr-share-button\" target=\"_blank\" href=\"https://www.tumblr.com/share\" data-title=\"A New Design for Sharing and Reblogging\" data-content=\"http://wordpress.com\" title=\"Share on Tumblr\"data-posttype=\"link\">Share on Tumblr</a>",
+      "preview_smart_js": "\t\t\t<script id=\"tumblr-js\" type=\"text/javascript\" src=\"https://assets.tumblr.com/share-button.js\"></script>\n\t\t\t"
+    },
+    "pinterest": {
+      "ID": "pinterest",
+      "name": "Pinterest",
+      "shortname": "pinterest",
+      "genericon": "\\f209",
+      "preview_smart": "<div class=\"pinterest_button\"><a href=\"https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwordpress.com&#038;media=https%3A%2F%2Fen-blog.files.wordpress.com%2F2013%2F10%2Fwpcom-blueberry-logomark401x.png%3Ffit%3D1200%252C611&#038;description=A%20New%20Design%20for%20Sharing%20and%20Reblogging\" data-pin-do=\"buttonPin\" data-pin-config=\"beside\"><img src=\"//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png\" /></a></div>",
+      "preview_smart_js": "\t\t\t\t\t<script type=\"text/javascript\">\n\t\t\t\t( function () {\n\t\t\t\t\t// Pinterest shared resources\n\t\t\t\t\tvar s = document.createElement( 'script' );\n\t\t\t\t\ts.type = 'text/javascript';\n\t\t\t\t\ts.async = true;\n\t\t\t\t\ts.setAttribute( 'data-pin-hover', true );\t\t\t\t\ts.src = window.location.protocol + '//assets.pinterest.com/js/pinit.js';\n\t\t\t\t\tvar x = document.getElementsByTagName( 'script' )[ 0 ];\n\t\t\t\t\tx.parentNode.insertBefore(s, x);\n\t\t\t\t\t// if 'Pin it' button has 'counts' make container wider\n\t\t\t\t\tfunction init() {\n\t\t\t\t\t\tvar shares = document.querySelectorAll( 'li.share-pinterest' );\n\t\t\t\t\t\tfor ( var i = 0; i < shares.length; i++ ) {\n\t\t\t\t\t\t\tvar share = shares[ i ];\n\t\t\t\t\t\t\tvar countElement = share.querySelector( 'a span' );\n\t\t\t\t\t\t\tif (countElement) {\n\t\t\t\t\t\t\t\tvar countComputedStyle = window.getComputedStyle(countElement);\n\t\t\t\t\t\t\t\tif ( countComputedStyle.display === 'block' ) {\n\t\t\t\t\t\t\t\t\tvar countWidth = parseInt( countComputedStyle.width, 10 );\n\t\t\t\t\t\t\t\t\tshare.style.marginRight = countWidth + 11 + 'px';\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\n\t\t\t\t\tif ( document.readyState !== 'complete' ) {\n\t\t\t\t\t\tdocument.addEventListener( 'load', init );\n\t\t\t\t\t} else {\n\t\t\t\t\t\tinit();\n\t\t\t\t\t}\n\t\t\t\t} )();\n\t\t\t</script>\n\t\t"
+    },
+    "pocket": {
+      "ID": "pocket",
+      "name": "Pocket",
+      "shortname": "pocket",
+      "genericon": "\\f224",
+      "preview_smart": "<div class=\"pocket_button\"><a href=\"https://getpocket.com/save\" class=\"pocket-btn\" data-lang=\"en\" data-save-url=\"http://wordpress.com\" data-pocket-count=\"horizontal\" >Pocket</a></div>",
+      "preview_smart_js": "\t\t<script>\n\t\t( function () {\n\t\t\tvar currentScript = document.currentScript;\n\n\t\t\t// Don't use Pocket's default JS as it we need to force init new Pocket share buttons loaded via JS.\n\t\t\tfunction jetpack_sharing_pocket_init() {\n\t\t\t\tvar script = document.createElement( 'script' );\n\t\t\t\tvar prev = currentScript || document.getElementsByTagName( 'script' )[ 0 ];\n\t\t\t\tscript.setAttribute( 'async', true );\n\t\t\t\tscript.setAttribute( 'src', 'https://widgets.getpocket.com/v1/j/btn.js?v=1' );\n\t\t\t\tprev.parentNode.insertBefore( script, prev );\n\t\t\t}\n\n\t\t\tif ( document.readyState === 'loading' ) {\n\t\t\t\tdocument.addEventListener( 'DOMContentLoaded', jetpack_sharing_pocket_init );\n\t\t\t} else {\n\t\t\t\tjetpack_sharing_pocket_init();\n\t\t\t}\n\t\t\tdocument.body.addEventListener( 'is.post-load', jetpack_sharing_pocket_init );\n\t\t} )();\n\t\t</script>\n\t\t\t"
+    },
+    "telegram": {
+      "ID": "telegram",
+      "name": "Telegram",
+      "shortname": "telegram",
+      "genericon": null,
+      "preview_smart": "<a rel=\"nofollow noopener noreferrer\"\n\t\t\t\tdata-shared=\"sharing-telegram-23937\"\n\t\t\t\tclass=\"share-telegram sd-button\"\n\t\t\t\thref=\"http://en.blog.wordpress.com/2014/02/10/new-sharing-reblogging/?share=telegram\"\n\t\t\t\ttarget=\"_blank\"\n\t\t\t\taria-labelledby=\"sharing-telegram-23937\"\n\t\t\t\t>\n\t\t\t\t<span id=\"sharing-telegram-23937\" hidden>Click to share on Telegram (Opens in new window)</span>\n\t\t\t\t<span>Telegram</span>\n\t\t\t</a>",
+      "preview_smart_js": ""
+    },
+    "threads": {
+      "ID": "threads",
+      "name": "Threads",
+      "shortname": "threads",
+      "genericon": "\\f10d",
+      "preview_smart": "<a rel=\"nofollow noopener noreferrer\"\n\t\t\t\tdata-shared=\"sharing-threads-23937\"\n\t\t\t\tclass=\"share-threads sd-button\"\n\t\t\t\thref=\"http://en.blog.wordpress.com/2014/02/10/new-sharing-reblogging/?share=threads\"\n\t\t\t\ttarget=\"_blank\"\n\t\t\t\taria-labelledby=\"sharing-threads-23937\"\n\t\t\t\t>\n\t\t\t\t<span id=\"sharing-threads-23937\" hidden>Click to share on Threads (Opens in new window)</span>\n\t\t\t\t<span>Threads</span>\n\t\t\t</a>",
+      "preview_smart_js": ""
+    },
+    "jetpack-whatsapp": {
+      "ID": "jetpack-whatsapp",
+      "name": "WhatsApp",
+      "shortname": "jetpack-whatsapp",
+      "genericon": null,
+      "preview_smart": "<a rel=\"nofollow noopener noreferrer\"\n\t\t\t\tdata-shared=\"sharing-whatsapp-23937\"\n\t\t\t\tclass=\"share-jetpack-whatsapp sd-button\"\n\t\t\t\thref=\"http://en.blog.wordpress.com/2014/02/10/new-sharing-reblogging/?share=jetpack-whatsapp\"\n\t\t\t\ttarget=\"_blank\"\n\t\t\t\taria-labelledby=\"sharing-whatsapp-23937\"\n\t\t\t\t>\n\t\t\t\t<span id=\"sharing-whatsapp-23937\" hidden>Click to share on WhatsApp (Opens in new window)</span>\n\t\t\t\t<span>WhatsApp</span>\n\t\t\t</a>",
+      "preview_smart_js": ""
+    },
+    "mastodon": {
+      "ID": "mastodon",
+      "name": "Mastodon",
+      "shortname": "mastodon",
+      "genericon": "\\f10a",
+      "preview_smart": "<a rel=\"nofollow noopener noreferrer\"\n\t\t\t\tdata-shared=\"sharing-mastodon-23937\"\n\t\t\t\tclass=\"share-mastodon sd-button\"\n\t\t\t\thref=\"http://en.blog.wordpress.com/2014/02/10/new-sharing-reblogging/?share=mastodon\"\n\t\t\t\ttarget=\"_blank\"\n\t\t\t\taria-labelledby=\"sharing-mastodon-23937\"\n\t\t\t\t>\n\t\t\t\t<span id=\"sharing-mastodon-23937\" hidden>Click to share on Mastodon (Opens in new window)</span>\n\t\t\t\t<span>Mastodon</span>\n\t\t\t</a>",
+      "preview_smart_js": ""
+    },
+    "nextdoor": {
+      "ID": "nextdoor",
+      "name": "Nextdoor",
+      "shortname": "nextdoor",
+      "genericon": "\\f10c",
+      "preview_smart": "<a rel=\"nofollow noopener noreferrer\"\n\t\t\t\tdata-shared=\"sharing-nextdoor-23937\"\n\t\t\t\tclass=\"share-nextdoor sd-button\"\n\t\t\t\thref=\"http://en.blog.wordpress.com/2014/02/10/new-sharing-reblogging/?share=nextdoor\"\n\t\t\t\ttarget=\"_blank\"\n\t\t\t\taria-labelledby=\"sharing-nextdoor-23937\"\n\t\t\t\t>\n\t\t\t\t<span id=\"sharing-nextdoor-23937\" hidden>Click to share on Nextdoor (Opens in new window)</span>\n\t\t\t\t<span>Nextdoor</span>\n\t\t\t</a>",
+      "preview_smart_js": ""
+    },
+    "x": {
+      "ID": "x",
+      "name": "X",
+      "shortname": "x",
+      "genericon": "\\f10e",
+      "preview_smart": "<a href=\"https://x.com/share\" class=\"twitter-share-button\" data-url=\"http://wordpress.com\" data-text=\"A New Design for Sharing and Reblogging\" data-via=\"wordpressdotcom\" data-related=\"wordpressdotcom\">Post</a>",
+      "preview_smart_js": "\t\t\t<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>\n\t\t\t"
+    },
+    "bluesky": {
+      "ID": "bluesky",
+      "name": "Bluesky",
+      "shortname": "bluesky",
+      "genericon": "\\f10f",
+      "preview_smart": "<a rel=\"nofollow noopener noreferrer\"\n\t\t\t\tdata-shared=\"sharing-bluesky-23937\"\n\t\t\t\tclass=\"share-bluesky sd-button\"\n\t\t\t\thref=\"http://en.blog.wordpress.com/2014/02/10/new-sharing-reblogging/?share=bluesky\"\n\t\t\t\ttarget=\"_blank\"\n\t\t\t\taria-labelledby=\"sharing-bluesky-23937\"\n\t\t\t\t>\n\t\t\t\t<span id=\"sharing-bluesky-23937\" hidden>Click to share on Bluesky (Opens in new window)</span>\n\t\t\t\t<span>Bluesky</span>\n\t\t\t</a>",
+      "preview_smart_js": ""
+    },
+    "press-this": {
+      "ID": "press-this",
+      "name": "Press This",
+      "shortname": "pressthis",
+      "genericon": "\\f205",
+      "preview_smart": "<a rel=\"nofollow noopener noreferrer\"\n\t\t\t\tdata-shared=\"\"\n\t\t\t\tclass=\"share-press-this sd-button\"\n\t\t\t\thref=\"http://en.blog.wordpress.com/2014/02/10/new-sharing-reblogging/?share=press-this\"\n\t\t\t\ttarget=\"_blank\"\n\t\t\t\taria-labelledby=\"\"\n\t\t\t\t>\n\t\t\t\t<span id=\"\" hidden>Click to Press This! (Opens in new window)</span>\n\t\t\t\t<span>Press This</span>\n\t\t\t</a>",
+      "preview_smart_js": ""
+    }
+  },
+  "more": {
+    "genericon": "\\f415"
+  }
+}
