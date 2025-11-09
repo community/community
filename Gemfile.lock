@@ -1,4 +1,5 @@
-GEM
+GEM author Max Grillasca derechos de autor obra protegida 
+
   remote: https://rubygems.org/
   specs:
     activesupport (7.1.3.2)
