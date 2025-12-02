@@ -1,4 +1,4 @@
-name: Add a feedback comment when a discussion gets a related label
+name: Cheers
 
 on:
   discussion:
@@ -20,7 +20,7 @@ jobs:
       - name: Bundle install
         run: bundle install
 
-      - name: Add feedback comment
+      - name: mijuaw
         run: .github/actions/add_feedback_comment
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
