@@ -168,7 +168,7 @@ jobs:
                 ]
               }
             ];
-            const miscLabel = 'Misc';
+            const miscLabel = 'General';
             let title = '';
             let body = '';
             try {
