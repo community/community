@@ -4,52 +4,66 @@ on:
   pull_request_target:
     types: [opened, reopened]
 
+env:
+  ORG_NAME: "github" # Organization to verify membership
+  CLOSURE_MESSAGE: "This pull request is being automatically closed because we do not accept external contributions to this repository."
+
 jobs:
   check_pr:
-    name: Check PR
+    name: Check Pull Request Validity
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check if employee
+      # Step 1: Check organization membership
+      - name: Check if pull request author is an organization member
         id: check_employee
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.READ_GITHUB_ORG_MEMBERS_TOKEN }}
           result-encoding: string
           script: |
+            const { ORG_NAME } = process.env;
             try {
               const response = await github.rest.orgs.checkMembershipForUser({
-                org: `github`,
-                username: context.payload.pull_request.user.login
+                org: ORG_NAME,
+                username: context.payload.pull_request.user.login,
               });
 
-              if (response.status === 204) {
-                return true;
-              } else {
-                return false;
-              }
+              core.setOutput('is_member', response.status === 204);
             } catch (error) {
-              console.log(error);
-              return 'false';
+              console.warn("Membership check failed:", error.message);
+              core.setOutput('is_member', false); // Fails gracefully
             }
 
-      - name: Close PR
-        id: close_pr
-        if: ${{ steps.check_employee.outputs.result == 'false' }}
-        uses: actions/github-script@v7
+      # Step 2: Automatically close pull request
+      - name: Automatically close non-approved contributions
+        if: ${{ steps.check_employee.outputs.is_member == 'false' }}
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const body = `This pull request is being automatically closed because we do not accept external contributions to this repository.`;
+            const { CLOSURE_MESSAGE } = process.env;
 
+            // Add a comment explaining why the PR is being closed
             await github.rest.issues.createComment({
               ...context.repo,
               issue_number: context.issue.number,
-              body: body
+              body: CLOSURE_MESSAGE,
             });
 
+            // Close the pull request
             await github.rest.pulls.update({
               ...context.repo,
               pull_number: context.payload.pull_request.number,
-              state: 'closed'
+              state: 'closed',
             });
+
+      # Optional step: Output result 
+      - name: Output PR Closure status
+        if: ${{ steps.check_employee.outputs.is_member == 'false' }}
+        run: echo "The PR has been closed due to external contribution."
+
+      - name: Continue PR
+        # Only execute if the PR is from a valid organization member
+        if: ${{ steps.check_employee.outputs.is_member == 'true' }}
+        run: echo "The PR has been approved and does not require further action."
