@@ -36,7 +36,7 @@ body:
   attributes:
     label: What GitHub Actions topic or product is this about?
     description: |
-      Choose the single topic or product area most relevant to your discussion. Only one can be selected here.
+      Choose the single topic or product area most relevant to your discussion - [here is a list of label descriptions to help you decide which option fits best.](https://github.com/community/community/issues/labels?q=Action)
       
       If your post covers additional themes or topics, don't worry! Our team and automation will do our best to add extra labels based on the content of your discussion details.
       
@@ -47,12 +47,12 @@ body:
       - "Actions Runner"
       - "Actions Checkout"
       - "Actions Cache"
+      - "General"
+      - "Metrics & Insights"
       - "Workflow Deployment"
       - "Workflow Configuration"
       - "Schedule & Cron Jobs"
-      - "Metrics & Insights"
-      - "Misc"
-    default: 9
+    default: 5
   validations:
     required: false
 - type: textarea
