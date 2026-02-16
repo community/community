@@ -17,7 +17,7 @@ jobs:
           REPO: ${{ github.event.repository.name }}
           DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
         run: |
-          gh api graphql -F owner=$OWNER -F name=$REPO -F number=$DISCUSSION_NUMBER  -f query='
+          if ! gh api graphql -F owner=$OWNER -F name=$REPO -F number=$DISCUSSION_NUMBER  -f query='
             query($owner: String!, $name: String!, $number: Int!) {
               repository(owner: $owner, name: $name){
                 discussion(number: $number) {
@@ -25,7 +25,10 @@ jobs:
                   id
                 }
               }
-            }' > discussion_data.json
+            }' > discussion_data.json 2>&1; then
+            echo "Discussion #$DISCUSSION_NUMBER not found or inaccessible. Exiting gracefully."
+            exit 0
+          fi
             
           echo 'DISCUSSION_BODY_HTML='$(jq '.data.repository.discussion.bodyHTML' discussion_data.json) >> $GITHUB_ENV
           echo 'DISCUSSION_ID='$(jq '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
