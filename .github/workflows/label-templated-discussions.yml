@@ -29,6 +29,12 @@ jobs:
             echo "Discussion #$DISCUSSION_NUMBER not found or inaccessible. Exiting gracefully."
             exit 0
           fi
+          
+          # Verify the response contains valid discussion data
+          if ! jq -e '.data.repository.discussion' discussion_data.json > /dev/null; then
+            echo "Discussion #$DISCUSSION_NUMBER returned invalid data. Exiting gracefully."
+            exit 0
+          fi
             
           echo 'DISCUSSION_BODY_HTML='$(jq '.data.repository.discussion.bodyHTML' discussion_data.json) >> $GITHUB_ENV
           echo 'DISCUSSION_ID='$(jq '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
