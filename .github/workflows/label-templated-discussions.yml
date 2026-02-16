@@ -25,7 +25,7 @@ jobs:
                   id
                 }
               }
-            }' > discussion_data.json 2>&1; then
+            }' > discussion_data.json; then
             echo "Discussion #$DISCUSSION_NUMBER not found or inaccessible. Exiting gracefully."
             exit 0
           fi
