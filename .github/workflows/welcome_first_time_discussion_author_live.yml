@@ -1,0 +1,170 @@
+name: Welcome & Label First-Time Discussion Author
+
+on:
+  discussion:
+    types: [created]
+
+permissions:
+  contents: read
+  discussions: write
+  issues: write
+
+jobs:
+  label_welcome_discussion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check if GitHub employee (member of org "github")
+        id: check_employee
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.READ_GITHUB_ORG_MEMBERS_TOKEN }}
+          result-encoding: string
+          script: |
+            const username = (context.payload.discussion?.user?.login || "").trim();
+
+            if (!username) {
+              console.log("No username found in discussion payload; treating as not-employee.");
+              return "false";
+            }
+
+            try {
+              const response = await github.rest.orgs.checkMembershipForUser({
+                org: "github",
+                username
+              });
+
+              if (response.status === 204) {
+                console.log(`'${username}' IS a member of org 'github' (treat as employee).`);
+                return "true";
+              }
+
+              console.log(`Unexpected status ${response.status}; treating as not-employee.`);
+              return "false";
+            } catch (error) {
+              if (error.status === 404) {
+                console.log(`'${username}' is NOT a member of org 'github'.`);
+                return "false";
+              }
+
+              console.log("Employee check failed; treating as not-employee.");
+              return "false";
+            }
+
+      - name: Check first-time status (Python)
+        id: first_time
+        if: steps.check_employee.outputs.result != 'true'
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.event.discussion.user.login }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          CURRENT_DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
+        run: |
+          set -euo pipefail
+          python .github/workflows/scripts/first_time_discussion_author_live.py
+
+      - name: Resolve Discussion ID + Label ID ("Welcome 🎉")
+        id: ids
+        if: steps.check_employee.outputs.result != 'true' && steps.first_time.outputs.should_welcome == 'true'
+        uses: actions/github-script@v7
+        env:
+          LABEL_NAME: "Welcome 🎉"
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          result-encoding: string
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            const discussionNumber = context.payload?.discussion?.number;
+            if (!discussionNumber) {
+              core.setFailed("Missing discussion number in event payload.");
+              return "";
+            }
+
+            const labelName = process.env.LABEL_NAME;
+
+            // 1) Get Discussion node ID
+            const discussionResp = await github.graphql(
+              `
+              query($owner: String!, $repo: String!, $number: Int!) {
+                repository(owner: $owner, name: $repo) {
+                  discussion(number: $number) { id number url title }
+                }
+              }
+              `,
+              { owner, repo, number: discussionNumber }
+            );
+
+            const discussionNode = discussionResp?.repository?.discussion;
+            if (!discussionNode?.id) {
+              throw new Error(`Unable to resolve discussion node id for #${discussionNumber}`);
+            }
+
+            // 2) Paginate labels to find the correct label node
+            let cursor = null;
+            let foundLabel = null;
+
+            do {
+              const labelsResp = await github.graphql(
+                `
+                query($owner: String!, $repo: String!, $after: String) {
+                  repository(owner: $owner, name: $repo) {
+                    labels(first: 100, after: $after) {
+                      pageInfo { hasNextPage endCursor }
+                      nodes { name id }
+                    }
+                  }
+                }
+                `,
+                { owner, repo, after: cursor }
+              );
+
+              const labelsConnection = labelsResp?.repository?.labels;
+              const labels = labelsConnection?.nodes || [];
+
+              foundLabel = labels.find(l => l?.name === labelName);
+
+              const pageInfo = labelsConnection?.pageInfo;
+              cursor = pageInfo?.hasNextPage ? pageInfo.endCursor : null;
+            } while (!foundLabel && cursor);
+
+            if (!foundLabel) {
+              throw new Error(`Label "${labelName}" not found in ${owner}/${repo} (checked all pages)`);
+            }
+
+            core.setOutput("discussion_id", discussionNode.id);
+            core.setOutput("label_id", foundLabel.id);
+
+            return "ok";
+
+      - name: Apply label via GraphQL mutation
+        if: steps.check_employee.outputs.result != 'true' && steps.first_time.outputs.should_welcome == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Applying label via GraphQL mutation..."
+          gh api graphql -f query='
+            mutation($labelableId:ID!,$labelIds:[ID!]!) {
+              addLabelsToLabelable(input:{labelableId:$labelableId,labelIds:$labelIds}) {
+                labelable {
+                  ... on Discussion {
+                    number
+                    title
+                    labels(first:10) { nodes { name } }
+                  }
+                }
+              }
+            }
+          ' \
+            -F labelableId='${{ steps.ids.outputs.discussion_id }}' \
+            -F labelIds[]='${{ steps.ids.outputs.label_id }}'

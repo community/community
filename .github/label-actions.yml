@@ -1,0 +1,17 @@
+# Configuration for Label Actions - remove label id
+
+more information needed:
+  discussions:
+    # Remove labels
+    unlabel:
+      - 'more information needed'
+
+in backlog:
+  discussions:
+    unlabel:
+      - 'in backlog'
+
+fixed:
+  discussions:
+    unlabel:
+      - 'fixed'
