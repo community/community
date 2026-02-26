@@ -1,0 +1,120 @@
+< To get started with Dependabot version updates, you'll need to specify which
+package ecosystems to update and where the package manifests are located.
+Please see the documentation for all configuration options:
+https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: semver
+updates:
+  - package-ecosystem: "" # See documentation for possible values
+    directory: "(1:1)" # Location of package manifests
+    schedule:
+      interval: "daily"
+GitHub Docs
+Code security/Dependabot version updates
+Search topics, products...
+About Dependabot version updates
+In this article
+About Dependabot version updates
+Frequency of Dependabot pull requests
+Supported repositories and ecosystems
+About notifications for Dependabot version updates
+You can use Dependabot to keep the packages you use updated to the latest versions.
+
+Note: Dependabot security and version updates are currently in private beta and subject to change. To request access to the beta release, contact your account management team.
+
+Note: Your site administrator must set up Dependabot updates for your GitHub Enterprise Server instance before you can use this feature. For more information, see "Setting up Dependabot security and version updates on your enterprise."
+
+About Dependabot version updates
+Dependabot takes the effort out of maintaining your dependencies. You can use it to ensure that your repository automatically keeps up with the latest releases of the packages and applications it depends on.
+
+You enable Dependabot version updates by checking a configuration file into your repository. The configuration file specifies the location of the manifest, or of other package definition files, stored in your repository. Dependabot uses this information to check for outdated packages and applications. Dependabot determines if there is a new version of a dependency by looking at the semantic versioning (semver) of the dependency to decide whether it should update to that version. For certain package managers, Dependabot version updates also supports vendoring. Vendored (or cached) dependencies are dependencies that are checked in to a specific directory in a repository rather than referenced in a manifest. Vendored dependencies are available at build time even if package servers are unavailable. Dependabot version updates can be configured to check vendored dependencies for new versions and update them if necessary.
+
+When Dependabot identifies an outdated dependency, it raises a pull request to update the manifest to the latest version of the dependency. For vendored dependencies, Dependabot raises a pull request to replace the outdated dependency with the new version directly. You check that your tests pass, review the changelog and release notes included in the pull request summary, and then merge it. For more information, see "Enabling and disabling Dependabot version updates."
+
+If you enable security updates, Dependabot also raises pull requests to update vulnerable dependencies. For more information, see "About Dependabot security updates."
+
+When Dependabot raises pull requests, these pull requests could be for security or version updates:
+
+Dependabot security updates are automated pull requests that help you update dependencies with known vulnerabilities.
+Dependabot version updates are automated pull requests that keep your dependencies updated, even when they don’t have any vulnerabilities. To check the status of version updates, navigate to the Insights tab of your repository, then Dependency Graph, and Dependabot.
+Frequency of Dependabot pull requests
+You specify how often to check each ecosystem for new versions in the configuration file: daily, weekly, or monthly.
+
+When you first enable version updates, you may have many dependencies that are outdated and some may be many versions behind the latest version. Dependabot checks for outdated dependencies as soon as it's enabled. You may see new pull requests for version updates within minutes of adding the configuration file, depending on the number of manifest files for which you configure updates. Dependabot will also run an update on subsequent changes to the configuration file.
+
+Dependabot may also create pull requests when you change a manifest file after an update has failed. This is because changes to a manifest, such as removing the dependency that caused the update to fail, may cause the newly triggered update to succeed.
+
+To keep pull requests manageable and easy to review, Dependabot raises a maximum of five pull requests to start bringing dependencies up to the latest version. If you merge some of these first pull requests before the next scheduled update, remaining pull requests will be opened on the next update, up to that maximum. You can change the maximum number of open pull requests by setting the open-pull-requests-limit configuration option.
+
+If you've enabled security updates, you'll sometimes see extra pull requests for security updates. These are triggered by a Dependabot alert for a dependency on your default branch. Dependabot automatically raises a pull request to update the vulnerable dependency.
+
+Supported repositories and ecosystems
+You can configure version updates for repositories that contain a dependency manifest or lock file for one of the supported package managers. For some package managers, you can also configure vendoring for dependencies. For more information, see "Configuration options for dependency updates."
+
+When running security or version updates, some ecosystems must be able to resolve all dependencies from their source to verify that updates have been successful. If your manifest or lock files contain any private dependencies, Dependabot must be able to access the location at which those dependencies are hosted. Organization owners can grant Dependabot access to private repositories containing dependencies for a project within the same organization. For more information, see "Managing security and analysis settings for your organization." You can configure access to private registries in a repository's dependabot.yml configuration file. For more information, see "Configuration options for dependency updates."
+
+Dependabot doesn't support private GitHub dependencies for all package managers. See the details in the table below.
+
+The following table shows, for each package manager:
+
+The YAML value to use in the dependabot.yml file
+The supported versions of the package manager
+Whether dependencies in private GitHub repositories or registries are supported
+Whether vendored dependencies are supported
+Package manager	YAML value	Supported versions	Private repositories	Private registries	Vendoring
+Bundler	bundler	v1, v2		✓	✓
+Cargo	cargo	v1	✓	✓	
+Composer	composer	v1, v2	✓	✓	
+Docker	docker	v1	✓	✓	
+Hex	mix	v1		✓	
+elm-package	elm	v0.19	✓	✓	
+git submodule	gitsubmodule	N/A (no version)	✓	✓	
+GitHub Actions	github-actions	N/A (no version)	✓	✓	
+Go modules	gomod	v1	✓	✓	✓
+Gradle	gradle	N/A (no version)[1]	✓	✓	
+Maven	maven	N/A (no version)[2]	✓	✓	
+npm	npm	v6, v7	✓	✓	
+NuGet	nuget	<= 4.8[3]	✓	✓	
+pip	pip	v21.1.2		✓	
+pipenv	pip	<= 2021-05-29		✓	
+pip-compile	pip	6.1.0		✓	
+poetry	pip	v1		✓	
+Terraform	terraform	>= 0.13, <= 1.0	✓	✓	
+yarn	npm	v1	✓	✓	
+[1] Dependabot doesn't run Gradle but supports updates to the following files: build.gradle, build.gradle.kts (for Kotlin projects), and files included via the apply declaration that have dependencies in the filename. Note that apply does not support apply to, recursion, or advanced syntaxes (for example, Kotlin's apply with mapOf, filenames defined by property).
+
+[2] Dependabot doesn't run Maven but supports updates to pom.xml files.
+
+[3] Dependabot doesn't run the NuGet CLI but does support most features up until version 4.8.
+
+For package managers such as pipenv and poetry, you need to use the pip YAML value. For example, if you use poetry to manage your Python dependencies and want Dependabot to monitor your dependency manifest file for new versions, use package-ecosystem: "pip" in your dependabot.yml file.
+
+If your repository already uses an integration for dependency management, you will need to disable this before enabling Dependabot.
+
+About notifications for Dependabot version updates
+You can filter your notifications on GitHub to show notifications for pull requests created by Dependabot. For more information, see "Managing notifications from your inbox."
+
+Did this doc help you?
+Privacy policy
+Help us make these docs great!
+All GitHub docs are open source. See something that's wrong or unclear? Submit a pull request.
+
+Or, learn how to contribute.
+
+Still need help?
+Ask the GitHub community
+Contact support
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+Developer API
+Training
+Blog
+About
+Scroll to top
+About Dependabot version updates
