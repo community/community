@@ -331,8 +331,8 @@ Discussion = Struct.new(
           categoryId: "#{category_id}",
           repositoryId: "#{repo_id}",
           clientMutationId: "rubyGraphQL",
-          title: "#{title}",
-          body: "#{body}"
+         title: """#{title}""",
+         body: """#{body}"""
         }
       ) {
       clientMutationId
