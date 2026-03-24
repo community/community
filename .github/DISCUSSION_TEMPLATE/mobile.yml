@@ -1,32 +1,31 @@
+labels: ["Mobile", "source:ui"]
 body:
 - type: markdown
   attributes:
     value: |
       #### Explore our [GitHub Mobile sign in & troubleshooting guide](https://github.com/orgs/community/discussions/68753) for comprehensive guidance!
       - 💡 **Quick Tip:** For general development questions or detailed code issues, try [Chat with Copilot](https://docs.github.com/en/enterprise-cloud@latest/copilot/using-github-copilot/copilot-chat/asking-github-copilot-questions-in-github) first, it might have the answer you need before posting here.
-      - 🛠️ **Stay Updated:** To ensure you’re always on the latest available version of GitHub Mobile, enable auto updates in the [Google Play Store](https://play.google.com/store/apps/details?id=com.github.android) or [App Store](https://apps.apple.com/app/github/id1477376905?ls=1)..
+      - 🛠️ **Stay Updated:** To ensure you’re always on the latest available version of GitHub Mobile, enable auto updates in the [Google Play Store](https://play.google.com/store/apps/details?id=com.github.android) or [App Store](https://apps.apple.com/app/github/id1477376905?ls=1).
 - type: dropdown
   attributes:
-    label: Select Topic Area
+    label: "🏷️ Discussion Type"
     description: What would you like to discuss about GitHub Mobile? Choose your topic area. 
     options:
-      - Question
+      - Bug
       - Product Feedback
-      - Bug 
-      - General
+      - Question
   validations:
     required: true
 - type: dropdown
   id: feature-area
   attributes:
-    label: Feature Area
-    description: Which GitHub Mobile feature or product area is your discussion related to?
+    label: "💬 Feature/Topic Area"
+    description: Which GitHub Mobile platform is your discussion related to? (If applicable)
     options:
-      - General
       - Android
       - iOS
   validations:
-    required: true
+    required: false
 - type: textarea
   attributes:
     label: Body

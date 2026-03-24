@@ -1,0 +1,50 @@
+labels: ["Other Features and Feedback", "source:ui"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ The Community can not help with account-related issues, such as reinstatement requests or help to escalate your [GitHub Support](https://support.github.com/contact) tickets. ⚠️
+
+  - type: markdown
+    attributes:
+      value: |
+        📛 We made the decision to disable the ability to earn Achievements in our Community in order to discourage users from participating in coordinated or inauthentic activity like rapid questions and answers in order to earn badges. You can learn more about this decision in our announcement post here: [Achievements will no longer be available in the Community](https://github.com/orgs/community/discussions/106536) 📛
+
+  - type: dropdown
+    attributes:
+      label: "🏷️ Discussion Type"
+      description: What kind of post is this?
+      options:
+        - "Question"
+        - "Product Feedback"
+        - "Bug"
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Topic area
+      description: Which area best matches your post?
+      options:
+        - "Code Search and Navigation"
+        - "Feed"
+        - "Lists"
+        - "Models"
+        - "Pages"
+        - "Profile"
+        - "Sponsors"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Body
+      description: Start your discussion! Include what you expected to happen, what actually happened, and any screenshots/logs that help.
+      placeholder: |
+        What are you trying to do?
+        What did you expect to happen?
+        What happened instead?
+        Any links/screenshots?
+    validations:
+      required: true

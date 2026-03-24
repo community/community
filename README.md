@@ -6,41 +6,29 @@ In this repository, you will find categories for various product areas. Feel fre
 
 | **Feedback Category** | **About the Product** 	|
 |---	|---	|
-| 👍 [Accessibility](https://github.com/orgs/community/discussions/categories/accessibility) 	| [About Accessibility](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-personal-account-settings/managing-accessibility-settings#about-accessibility-settings) |
-| 🚢 [Actions](https://github.com/orgs/community/discussions/categories/actions) 	| [GitHub Actions](https://github.com/features/actions) |
-| 🔁 [API and Webhooks](https://github.com/orgs/community/discussions/categories/api-and-webhooks) 	| [GitHub REST API](https://docs.github.com/en/rest), [GitHub GraphQL API](https://docs.github.com/en/graphql), and [GitHub Webhooks](https://docs.github.com/en/developers/webhooks-and-events/webhooks/about-webhook) |
-| 🔎 [Code Search & Navigation](https://github.com/orgs/community/discussions/categories/code-search-and-navigation) 	| [Code Search & Navigation](https://cs.github.com/about) 	|
-| 💻 [Codespaces](https://github.com/orgs/community/discussions/categories/codespaces) 	| [GitHub Codespaces](https://github.com/features/codespaces) 	|
-| :copilot: [Copilot Conversations](https://github.com/orgs/community/discussions/categories/copilot-conversations) 	| [GitHub Copilot](https://copilot.github.com/) 	|
-| 🤖 [Code Security](https://github.com/orgs/community/discussions/categories/code-security) 	| [GitHub Code Security](https://github.com/features/security) 	|
-| 🗣️ [Discussions](https://github.com/orgs/community/discussions/categories/discussions)  	| [GitHub Discussions](https://docs.github.com/en/discussions) 	|
-| 🌐 [Feed](https://github.com/orgs/community/discussions/categories/feed)  	| [GitHub Feed](https://github.blog/2022-03-22-improving-your-github-feed/) 	|
-| 🎒 [GitHub Education](https://github.com/orgs/community/discussions/categories/github-education)  	| [GitHub Education](https://education.github.com/) 	|
-| ⭐ [Lists](https://github.com/orgs/community/discussions/categories/lists) 	| [GitHub Lists](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars#organizing-starred-repositories-with-lists) (Public Beta) 	|
-| 📱 [Mobile](https://github.com/orgs/community/discussions/categories/mobile) 	| [GitHub Mobile](https://github.com/mobile) 	|
-| 📦 [Packages](https://github.com/orgs/community/discussions/categories/packages) 	| [GitHub Packages](https://github.com/features/packages) |
-| 🗒️ [Pages](https://github.com/orgs/community/discussions/categories/pages)    | [GitHub Pages](https://docs.github.com/en/pages)  |
-| 🖼️ [Profile](https://github.com/orgs/community/discussions/categories/profile)  	| [GitHub Profile](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile) 	|
-| 🐙 [Projects and Issues](https://github.com/orgs/community/discussions/categories/projects-and-issues) 	| [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects) / [GitHub Issues](https://github.com/features/issues) 	|
-| ✔️ [Pull Requests](https://github.com/orgs/community/discussions/categories/pull-requests) 	| [GitHub Pull Requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) 	|
-| 🗳️ [Repositories](https://github.com/orgs/community/discussions/categories/repositories)  	| [GitHub Repositories](https://docs.github.com/en/repositories) 	|
-| 💖 [Sponsors](https://github.com/orgs/community/discussions/categories/sponsors) 	| [GitHub Sponsors](https://github.com/sponsors) 	|
-| :octocat: [General Feedback](https://github.com/orgs/community/discussions/categories/general) 	| [GitHub Docs](https://docs.github.com/en) |
+| 👍 [Accessibility](https://github.com/orgs/community/discussions/categories/accessibility) | [About Accessibility](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-personal-account-settings/managing-accessibility-settings#about-accessibility-settings) |
+| 🚢 [Actions](https://github.com/orgs/community/discussions/categories/actions) | [GitHub Actions](https://github.com/features/actions) |
+| 🔗 [Apps, API and Webhooks](https://github.com/orgs/community/discussions/categories/apps-api-and-webhooks) | [GitHub Apps](https://docs.github.com/en/apps), [GitHub REST API](https://docs.github.com/en/rest), [GitHub GraphQL API](https://docs.github.com/en/graphql), and [GitHub Webhooks](https://docs.github.com/en/webhooks) |
+| 🤖 [Code Security](https://github.com/orgs/community/discussions/categories/code-security) | [GitHub Code Security](https://github.com/features/security) |
+| 💻 [Codespaces](https://github.com/orgs/community/discussions/categories/codespaces) | [GitHub Codespaces](https://github.com/features/codespaces) |
+| :copilot: [Copilot Conversations](https://github.com/orgs/community/discussions/categories/copilot-conversations) | [GitHub Copilot](https://copilot.github.com/) |
+| 🗣️ [Discussions](https://github.com/orgs/community/discussions/categories/discussions) | [GitHub Discussions](https://docs.github.com/en/discussions) |
+| 🏢 [Enterprise](https://github.com/orgs/community/discussions/categories/enterprise) | [GitHub Enterprise](https://docs.github.com/en/enterprise-cloud@latest) |
+| 🎒 [GitHub Education](https://github.com/orgs/community/discussions/categories/github-education) | [GitHub Education](https://education.github.com/) |
+| 🏆 [GitHub Learn](https://github.com/orgs/community/discussions/categories/github-learn) | [GitHub Certifications](https://resources.github.com/learn/certifications/), [Learning Pathways](https://resources.github.com/learn/pathways/), and [GitHub Skills](https://skills.github.com/) |
+| 📱 [Mobile](https://github.com/orgs/community/discussions/categories/mobile) | [GitHub Mobile](https://github.com/mobile) |
+| 🟥 [npm](https://github.com/orgs/community/discussions/categories/npm) | [npm](https://docs.npmjs.com/) |
+| 📦 [Packages](https://github.com/orgs/community/discussions/categories/packages) | [GitHub Packages](https://github.com/features/packages) |
+| 💡 [Programming Help](https://github.com/orgs/community/discussions/categories/programming-help) | General programming questions and help |
+| 🐙 [Projects and Issues](https://github.com/orgs/community/discussions/categories/projects-and-issues) | [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects) / [GitHub Issues](https://github.com/features/issues) |
+| ✔️ [Pull Requests](https://github.com/orgs/community/discussions/categories/pull-requests) | [GitHub Pull Requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) |
+| 🗳️ [Repositories](https://github.com/orgs/community/discussions/categories/repositories) | [GitHub Repositories](https://docs.github.com/en/repositories) |
+| 👋 [Welcome to GitHub](https://github.com/orgs/community/discussions/categories/a-welcome-to-github) | Community introductions — say hi and share what you're working on |
+| 🧩 [Other Features and Feedback](https://github.com/orgs/community/discussions/categories/other-feature-feedback-questions-ideas) | [Code Search & Navigation](https://cs.github.com/about), [Feed](https://github.blog/2022-03-22-improving-your-github-feed/), [Lists](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars#organizing-starred-repositories-with-lists), [Models](https://github.com/features/preview/copilot-models), [Pages](https://docs.github.com/en/pages), [Profile](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile), and [Sponsors](https://github.com/sponsors) |
 
 These discussions are where you can share suggestions for how the products should be improved and discuss those improvements with the community, including members of the GitHub product team. Check out [Making suggestions](#making-suggestions) to learn how to provide feedback.
 
 ## Discussions Categories
-
-You will also find previous Discourse Community Forum categories that have since been updated in GitHub Discussions categories below:
-
-| **Discourse Category** | **New Discussions Category** 	|
-|---	|---	|
-| GitHub Help 	| New to GitHub |
-| Code to Cloud 	| Actions and Packages |
-| GitHub Ecosystem 	| APIs and Integrations 	|
-| Uncategorized 	| General 	|
-| Software Development 	| Programming Help 	|
-| 	| Machine Learning and ML Ops 	|
 
 When creating a new post, make sure to choose the predetermined category that best fits your topic. This will ensure that conversations are indexed by their corresponding product or feature, to help community members quickly find answers to their questions.
 

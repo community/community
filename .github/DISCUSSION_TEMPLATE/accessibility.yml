@@ -1,4 +1,4 @@
-labels: [Accessibility]
+labels: [Accessibility, source:ui]
 body: 
 - type: markdown
   attributes: 
@@ -10,21 +10,19 @@ body:
     To ensure you receive a timely response and connect with the proper team(s), please post in the correct category, questions about access, 2FA, and SMS belong in the [General category](https://github.com/orgs/community/discussions/categories/general?discussions_q=is%3Aopen+category%3AGeneral). Discussions that are posted in the wrong category may be moved. Users who post spam or violate of our [Code of Conduct](https://github.com/github/.github/blob/95e9dcb0b8b70a25cdb75de29f600812a07eb996/CODE_OF_CONDUCT.md) will be blocked.
 - type: dropdown
   attributes:
-    label: Select Topic Area
+    label: "🏷️ Discussion Type"
     description: What would you like to discuss?
     options:
-      - "Question"
-      - "Product Feedback"
       - "Bug"
-      - "Show & Tell"
-      - "General"
+      - "Product Feedback"
+      - "Question"
   validations:
     required: true
 - type: dropdown 
   attributes: 
-      label: GitHub Feature Area
+      label: "💬 Feature/Topic Area"
       description: >
-        What GitHub product/feature area is your Accessibility post related to? 
+        What GitHub product/feature area is your Accessibility post related to? (If applicable)
       options:
         - Actions
         - APIs and Webhooks
@@ -46,6 +44,7 @@ body:
         - Lists
         - Markdown
         - Mobile
+        - Models
         - Notifications
         - Packages
         - Pages
@@ -61,7 +60,7 @@ body:
         - Wiki
         - Other
   validations:
-      required: true
+      required: false
 - type: textarea
   attributes:
     label: Body

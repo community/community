@@ -1,0 +1,78 @@
+title: "👋 Hello from {Name/Handle}"
+labels: ["A Welcome to GitHub", "source:ui"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome! This space is **just** for introductions! So say hi and share what you’re excited about here on GitHub.
+        - **Quick nudge:** if your post is really “how do I use GitHub?” or troubleshooting something, please use [**New to GitHub**](https://github.com/community/community/discussions/categories/new-to-github) (or the [most relevant help category](https://github.com/community/community/discussions)) so you can get the best answers.
+        - **Privacy & safety:** please don’t share sensitive personal info (addresses, phone numbers, private emails, etc.).
+        - **One intro per person:** make one intro post and feel free to add updates as replies anytime.
+
+        Keep it friendly and human: a couple links are fine, but no link-dumping, recruiting, or promo-only posts.
+        <img src='https://github.com/user-attachments/assets/baa3b489-1a7c-4f48-bf62-5dce7fb30c54' width='30' alt='Welcome gif' />
+  - type: textarea
+    id: introduce_yourself
+    attributes:
+      label: "Introduce yourself"
+      description: "A few sentences is great. Help us say hi back."
+      placeholder: "Hi everyone I am… I am here because… Ask me about…"
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: "Links (optional)"
+      description: "If you want, share a personal website, blog, or social handle."
+      placeholder: |
+        https://your-site.example
+        https://your-blog.example
+        @your-handle
+    validations:
+      required: false
+  - type: dropdown
+    id: journey
+    attributes:
+      label: "Where are you in your GitHub journey?"
+      description: "Pick the closest match. There is no wrong answer."
+      options:
+        - "Brand new to GitHub"
+        - "Learning the basics"
+        - "Building my first project"
+        - "Looking for the latest developer trends"
+        - "Contributing to open source"
+        - "Maintaining a project or repo owner"
+        - "Here to make connections"
+        - "Student / Leveling up"
+        - "Just exploring"
+        - "Other"
+    validations:
+      required: true
+  - type: textarea
+    id: next_step
+    attributes:
+      label: "And where are you going next on GitHub?"
+      description: "Your next step can be small. This helps others cheer you on or share ideas."
+      placeholder: "My next step is… I want to try… I am looking for…"
+    validations:
+      required: true
+  - type: textarea
+    id: learn_build
+    attributes:
+      label: "What technical skills or projects are you working on?"
+      description: "A sentence or two is perfect."
+      placeholder: "I am working on… I am learning… My current project is…"
+    validations:
+      required: true
+  - type: textarea
+    id: hubber_question
+    attributes:
+      label: "Got a question for us? (optional)"
+      description: "Curious about the platform, community, careers, or how GitHub works behind the scenes? Ask away. For troubleshooting, use [New to GitHub](https://github.com/community/community/discussions/categories/new-to-github)."
+      placeholder: "I have always wondered… What is the story behind… How does GitHub…"
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        <img src="https://github.com/user-attachments/assets/f427e6a5-c010-422b-9517-845b9608314e" alt="Purple Mona mascot alongside green 3D cube blocks on a light background" />

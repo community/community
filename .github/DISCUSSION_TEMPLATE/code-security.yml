@@ -1,15 +1,13 @@
-labels: [Code Security]
+labels: [Code Security, source:ui]
 body:
 - type: dropdown
   attributes:
-    label: Select Topic Area
+    label: "🏷️ Discussion Type"
     description: What would you like to discuss?
     options:
-      - "Question"
-      - "Product Feedback"
       - "Bug"
-      - "Show & Tell"
-      - "General"
+      - "Product Feedback"
+      - "Question"
   validations:
     required: true
 - type: textarea

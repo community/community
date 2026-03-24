@@ -1,3 +1,4 @@
+labels: [source:ui]
 body:
   - type: markdown
     attributes:
@@ -10,22 +11,20 @@ body:
         ⚠️
   - type: dropdown
     attributes:
-      label: Select Topic Area
+      label: "🏷️ Discussion Type"
       description: What would you like to discuss?
       options:
-        - Question
-        - Product Feedback
         - Bug
-        - Show & Tell
-        - General
+        - Product Feedback
+        - Question
     validations:
       required: true
   - type: dropdown
     attributes:
-      label: Feature Area
+      label: "💬 Feature/Topic Area"
       description: >
         What GitHub product/feature area would you like to discuss? This
-        category is only for conversations related to the below.
+        category is only for conversations related to the below. (If applicable)
 
         Issues (The feature that allows you to track ideas, feedback, tasks, or bugs for work on GitHub. Not for any issue you are having).
 
@@ -34,7 +33,7 @@ body:
         - Issues
         - Projects
     validations:
-      required: true
+      required: false
   - type: textarea
     attributes:
       label: Body

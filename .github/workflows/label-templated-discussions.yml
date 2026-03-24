@@ -2,110 +2,79 @@ name: Label Templated Discussions
 
 on:
   discussion:
-    types: [created]
+    types: [created, category_changed]
 
 jobs:
-  label-templated-discussion:
+  validate-source:
+    name: Validate Discussion Source
+    # Only validate source on newly created discussions; category changes are always allowed.
+    if: github.event.action == 'created'
     runs-on: ubuntu-latest
+    permissions:
+      discussions: write
+      contents: read
+    outputs:
+      should_proceed: ${{ steps.source-check.outputs.should_proceed }}
 
     steps:
-      - name: Get discussion body html
-        id: get_discussion_body_html
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OWNER: ${{ github.repository_owner }}
-          REPO: ${{ github.event.repository.name }}
-          DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
-        run: |
-          gh api graphql -F owner=$OWNER -F name=$REPO -F number=$DISCUSSION_NUMBER  -f query='
-            query($owner: String!, $name: String!, $number: Int!) {
-              repository(owner: $owner, name: $name){
-                discussion(number: $number) {
-                  bodyHTML
-                  id
-                }
-              }
-            }' > discussion_data.json
-            
-          echo 'DISCUSSION_BODY_HTML='$(jq '.data.repository.discussion.bodyHTML' discussion_data.json) >> $GITHUB_ENV
-          echo 'DISCUSSION_ID='$(jq '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
-          
-      - run: npm install jsdom
-      
-      - name: Get selected topic
-        id: get_selected_topic
-        uses: actions/github-script@v7
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          result-encoding: string
-          script: |
-            try {
-              const jsdom = require('jsdom');
-              const { JSDOM } = jsdom;
-              const { DISCUSSION_BODY_HTML } = process.env
-              
-              const fragment = JSDOM.fragment(DISCUSSION_BODY_HTML);
-              const selectTopicHeader = fragment.querySelector("h3");
-              const templated = selectTopicHeader.textContent === 'Select Topic Area';
-              if (!templated) {
-                return "";
-              }
-              
-              const selectedTopicElement = selectTopicHeader.nextElementSibling;
-              if (!selectedTopicElement) {
-                return "";
-              }
-              
-              const selectedTopic = selectedTopicElement.textContent.trim().toLowerCase();
-              const validTopics = ["product feedback", "question", "bug", "show & tell", "general"];
-              return validTopics.includes(selectedTopic) ? selectedTopic : "";
-              
-            } catch (error) {
-              return "";
-            }
-            
-      - name: Fetch label id for selected topic
-        id: fetch_label_id
-        if: ${{ steps.get_selected_topic.outputs.result != '' }}
+          python-version: "3.11"
+
+      - name: Check if GitHub employee
+        id: check_employee
+        env:
+          ORG_MEMBERS_TOKEN: ${{ secrets.READ_GITHUB_ORG_MEMBERS_TOKEN }}
+          USERNAME: ${{ github.event.discussion.user.login }}
+        run: python .github/workflows/scripts/check_employee.py
+
+      - name: Validate discussion source
+        id: source-check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ github.repository_owner }}
           REPO: ${{ github.event.repository.name }}
-          TOPIC: ${{ steps.get_selected_topic.outputs.result }}
-        run: |
-          gh api graphql -F owner=$OWNER -F name=$REPO -F topic="$TOPIC"  -f query='
-            query($owner: String!, $name: String!, $topic: String) {
-              repository(owner: $owner, name: $name){
-                labels(first: 1, query: $topic) {
-                  edges {
-                    node {
-                      id
-                      name
-                    }
-                  }
-                }
-              }
-            }' > repository_label_data.json
-            
-          echo 'LABEL_ID='$(jq '.data.repository.labels.edges[].node | .id ' repository_label_data.json) >> $GITHUB_ENV
-          
-      - name: Label the discussion
-        if: ${{ steps.get_selected_topic.outputs.result != '' }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh api graphql -f query='
-            mutation($labelableId: ID!, $labelIds: [ID!]!) {
-              addLabelsToLabelable(input: {labelableId: $labelableId, labelIds: $labelIds}) {
-                labelable {
-                  labels(first: 10) {
-                    edges {
-                      node {
-                        id
-                        name
-                      }
-                    }
-                  }
-                }
-              }
-            }' -f labelableId=$DISCUSSION_ID -f labelIds=$LABEL_ID
-            
+          DISCUSSION_NODE_ID: ${{ github.event.discussion.node_id }}
+          AUTHOR_LOGIN: ${{ github.event.discussion.user.login }}
+          IS_EMPLOYEE: ${{ steps.check_employee.outputs.is_employee }}
+          DISCUSSION_LABELS: ${{ toJSON(github.event.discussion.labels.*.name) }}
+        run: python .github/workflows/scripts/source_check.py
+
+  label-reason-for-posting:
+    needs: validate-source
+    if: needs.validate-source.outputs.should_proceed == 'true'
+    uses: ./.github/workflows/reason-for-posting-labeler.yml
+    permissions:
+      discussions: write
+      contents: read
+    with:
+      discussion_body: ${{ github.event.discussion.body }}
+      discussion_node_id: ${{ github.event.discussion.node_id }}
+      owner: ${{ github.repository_owner }}
+      repo: ${{ github.event.repository.name }}
+    secrets: inherit
+
+  label-feature-topic-area:
+    needs: validate-source
+    # Run when: (a) this is a category_changed event (validate-source was skipped), or
+    #           (b) this is a created event that passed source validation.
+    if: >
+      !failure() && !cancelled() &&
+      (needs.validate-source.result == 'skipped' || needs.validate-source.outputs.should_proceed == 'true') &&
+      github.event.discussion.category.name != 'Announcements' &&
+      github.event.discussion.category.name != 'Discovery' &&
+      github.event.discussion.category.name != 'A Welcome to GitHub'
+    uses: ./.github/workflows/feature-topic-area-labeler.yml
+    permissions:
+      discussions: write
+      contents: read
+    with:
+      discussion_body: ${{ github.event.discussion.body }}
+      discussion_node_id: ${{ github.event.discussion.node_id }}
+      owner: ${{ github.repository_owner }}
+      repo: ${{ github.event.repository.name }}
+    secrets: inherit

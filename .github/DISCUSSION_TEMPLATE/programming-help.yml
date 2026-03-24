@@ -1,8 +1,18 @@
-labels: [Programming Help]
+labels: [Programming Help, source:ui]
 body:
 - type: markdown
   attributes:
     value: Start your discussion!
+  validations:
+    required: true
+- type: dropdown
+  attributes:
+    label: "🏷️ Discussion Type"
+    description: What would you like to discuss?
+    options:
+      - Bug
+      - Product Feedback
+      - Question
   validations:
     required: true
 - type: textarea
