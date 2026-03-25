@@ -1,3 +1,4 @@
+labels: [source:ui]
 body:
 - type: markdown
   attributes:
@@ -8,33 +9,31 @@ body:
       - 🔍 Are you a student/teacher looking to enable Copilot Pro? [Read our guide](https://gh.io/faq-nd-copilot)
 - type: dropdown
   attributes:
-    label: Select Topic Area
+    label: "🏷️ Discussion Type"
     description: What would you like to discuss about GitHub Copilot? Choose your topic area. 
     options:
-      - Question
+      - Bug
       - Product Feedback
-      - Bug 
-      - General
+      - Question
   validations:
     required: true
 - type: dropdown
   id: feature-area
   attributes:
-    label: Copilot Feature Area
-    description: Which Copilot feature or product area is your discussion related to?
+    label: "💬 Feature/Topic Area"
+    description: Which Copilot feature or product area is your discussion related to? (If applicable)
     options:
-      - General
       - Copilot in GitHub
       - Copilot Workspace
       - Copilot Agent Mode
       - Copilot Coding Agent
       - Copilot Enterprise
-      - Account Related 
+      - Account Related
       - VS Code
       - Visual Studio
       - JetBrains & Xcode
   validations:
-    required: true
+    required: false
 - type: textarea
   attributes:
     label: Body

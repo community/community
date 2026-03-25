@@ -1,4 +1,4 @@
-labels: [Actions]
+labels: [Actions, source:ui]
 body:
 - type: markdown
   attributes:
@@ -22,19 +22,18 @@ body:
 - type: dropdown
   id: reason
   attributes:
-    label: Why are you starting this discussion?
-    description: Tell us your goal! Are you asking a question, giving feedback, reporting a bug, or sharing something cool?
+    label: "🏷️ Discussion Type"
+    description: Tell us your goal! Are you asking a question, giving feedback, or reporting a bug?
     options:
-      - "Question"
-      - "Product Feedback"
       - "Bug"
-    default: 0
+      - "Product Feedback"
+      - "Question"
   validations:
     required: true
 - type: dropdown
   id: topic
   attributes:
-    label: What GitHub Actions topic or product is this about?
+    label: "💬 Feature/Topic Area"
     description: |
       Choose the single topic or product area most relevant to your discussion - [here is a list of label descriptions to help you decide which option fits best.](https://github.com/community/community/issues/labels?q=Action)
       
@@ -47,12 +46,10 @@ body:
       - "Actions Runner"
       - "Actions Checkout"
       - "Actions Cache"
-      - "General"
       - "Metrics & Insights"
       - "Workflow Deployment"
       - "Workflow Configuration"
       - "Schedule & Cron Jobs"
-    default: 5
   validations:
     required: false
 - type: textarea

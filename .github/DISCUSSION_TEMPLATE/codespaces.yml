@@ -1,16 +1,14 @@
-labels: [Codespaces]
+labels: [Codespaces, source:ui]
 body:
 - type: dropdown
   id: topic
   attributes:
-    label: Select Topic Area
+    label: "🏷️ Discussion Type"
     description: What would you like to discuss?
     options:
-      - "Question"
-      - "Product Feedback"
       - "Bug"
-      - "Show & Tell"
-      - "General"
+      - "Product Feedback"
+      - "Question"
   validations:
     required: true
 - type: textarea

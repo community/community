@@ -1,0 +1,64 @@
+labels: ["GitHub Learn", source:ui]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        #### Welcome to GitHub Learn! 🏆
+
+        This category is dedicated to discussions about **GitHub Certifications**, **Learning Pathways**, and **GitHub Skills**.
+
+        Before opening a new discussion, we recommend reviewing these resources:
+        - [GitHub Certifications](https://resources.github.com/learn/certifications/)
+        - [GitHub Skills](https://skills.github.com/)
+        - [GitHub Learning Pathways](https://resources.github.com/learn/pathways/)
+
+  - type: markdown
+    attributes:
+      value: |
+        > [!NOTE]
+        > This category is **not** for product-specific troubleshooting. If you have a question about a specific GitHub product (e.g., Copilot, Actions, Codespaces), please post in the relevant product category instead.
+        >
+        > For account or billing issues related to certification vouchers or exams, please contact [GitHub Support](https://support.github.com/contact).
+
+  - type: dropdown
+    attributes:
+      label: "🏷️ Discussion Type"
+      description: What would you like to discuss?
+      options:
+        - "Bug"
+        - "Product Feedback"
+        - "Question"
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: "📚 Topic Area"
+      description: Which area best matches your post?
+      options:
+        - "Exam Preparation"
+        - "Learning Paths"
+        - "Badges & Certifications"
+        - "Certification Renewal"
+        - "Vouchers"
+        - "GitHub Skills"
+        - "General"
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Body
+      description: Start your discussion!
+      placeholder: >-
+        Tell us what's on your mind — whether it's feedback on a certification exam, a suggestion for a new learning pathway, a bug in a GitHub Skills course, or a question about getting certified.
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        #### Before you go... 👋
+        * Remember to mark an [answer as "solved"](https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/participating-in-a-discussion#marking-a-comment-as-an-answer) if your question has been answered. ✅
+        * Be kind and constructive — we're all here to learn! 💖

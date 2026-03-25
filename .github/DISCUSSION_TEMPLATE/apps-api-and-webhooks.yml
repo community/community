@@ -1,0 +1,48 @@
+labels: ["Apps API and Webhooks","source:ui"]
+
+body:
+  - type: dropdown
+    attributes:
+      label: "🏷️ Discussion Type"
+      description: What would you like to discuss?
+      options:
+        - "Bug"
+        - "Product Feedback"
+        - "Question"
+    validations:
+      required: true
+      
+
+  - type: markdown
+    attributes:
+      value: |
+        Before opening a new discussion, we recommend reviewing our documentation:
+         - [API documentation](https://docs.github.com/en/rest?apiVersion=2022-11-28)
+         - [Webhooks documentation](https://docs.github.com/en/webhooks)
+         - [Apps documentation](https://docs.github.com/en/apps)
+
+
+  - type: dropdown
+    attributes:
+      label: "💬 Feature/Topic Area"
+      description: Which area best matches your post? (If applicable)
+      options:
+        - API
+        - Apps
+        - Webhooks
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Body
+      description: Start your discussion!
+      placeholder: >-
+        Provide a detailed description of your discussion (e.g., What issue are you facing? What feedback do you have? What question do you need answered?)
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        #### Don't forget to mark an [answer as "solved"](https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/participating-in-a-discussion#marking-a-comment-as-an-answer) to help others with similar questions. ✅
