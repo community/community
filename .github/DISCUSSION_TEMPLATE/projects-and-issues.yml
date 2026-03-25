@@ -33,7 +33,7 @@ body:
         - Issues
         - Projects
     validations:
-      required: false
+      required: true
   - type: textarea
     attributes:
       label: Body

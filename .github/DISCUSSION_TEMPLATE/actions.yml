@@ -50,8 +50,9 @@ body:
       - "Workflow Deployment"
       - "Workflow Configuration"
       - "Schedule & Cron Jobs"
+      - "Other"
   validations:
-    required: false
+    required: true
 - type: textarea
   attributes:
     label: Discussion Details
