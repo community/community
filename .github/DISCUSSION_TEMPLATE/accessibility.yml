@@ -60,7 +60,7 @@ body:
         - Wiki
         - Other
   validations:
-      required: false
+      required: true
 - type: textarea
   attributes:
     label: Body

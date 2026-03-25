@@ -33,7 +33,7 @@ body:
       - Visual Studio
       - JetBrains & Xcode
   validations:
-    required: false
+    required: true
 - type: textarea
   attributes:
     label: Body
