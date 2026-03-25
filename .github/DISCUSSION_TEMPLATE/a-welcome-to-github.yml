@@ -1,4 +1,3 @@
-title: "👋 Hello from {Name/Handle}"
 labels: ["A Welcome to GitHub", "source:ui"]
 body:
   - type: markdown
