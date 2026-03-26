@@ -1,0 +1,62 @@
+name: Dispatch Staff Label Feedback
+
+on:
+  discussion:
+    types:
+      - labeled
+      - unlabeled
+
+permissions:
+  contents: read
+
+jobs:
+  dispatch-feedback-event:
+    runs-on: ubuntu-latest
+    env:
+      COMMUNITY_OPS_REPOSITORY: community/community-ops
+    steps:
+      - name: Forward discussion label events
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ secrets.COMMUNITY_OPS_DISPATCH_TOKEN }}
+          script: |
+            const actor = context.actor;
+            const action = context.payload.action;
+            const discussion = context.payload.discussion;
+            const label = context.payload.label;
+
+            if (!label?.name) {
+              core.info("Skipping event with missing label");
+              return;
+            }
+
+            if (!discussion?.number) {
+              throw new Error("Missing discussion number in discussion event payload");
+            }
+
+            if ((actor || "").endsWith("[bot]")) {
+              core.info(`Skipping bot-generated event: ${actor}`);
+              return;
+            }
+
+            const [owner, repo] = process.env.COMMUNITY_OPS_REPOSITORY.split("/");
+            await github.rest.repos.createDispatchEvent({
+              owner,
+              repo,
+              event_type: "staff-label-correction",
+              client_payload: {
+                source_repository: `${context.repo.owner}/${context.repo.repo}`,
+                target_repository: `${context.repo.owner}/${context.repo.repo}`,
+                discussion_number: discussion.number,
+                discussion_title: discussion.title || "unknown",
+                discussion_url: discussion.html_url || discussion.url || "",
+                category: discussion.category?.name || "unknown",
+                category_slug: discussion.category?.slug || "unknown",
+                event_type: action,
+                label: label.name,
+                actor,
+                createdAt: new Date().toISOString(),
+              },
+            });
+
+            core.info(`Forwarded ${action} event for discussion #${discussion.number}`);
