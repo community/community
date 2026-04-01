@@ -27,6 +27,10 @@ body:
       - Copilot Workspace
       - Copilot Agent Mode
       - Copilot Cloud Agent
+      - Copilot Agentic Workflows
+      - Copilot CLI
+      - Copilot SDK
+      - Copilot Code Review
       - Copilot Enterprise
       - Account Related
       - VS Code
