@@ -1,0 +1,17 @@
+# This CODEOWNERS file defines the default owners for the community repository
+# For more information, see: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for everything in the repo
+* @Kushmanmb
+
+# GitHub workflows
+/.github/workflows/ @Kushmanmb
+
+# Ruby library files
+/.github/lib/ @Kushmanmb
+
+# Discussion templates
+/.github/DISCUSSION_TEMPLATE/ @Kushmanmb
+
+# Documentation
+/docs/ @Kushmanmb
