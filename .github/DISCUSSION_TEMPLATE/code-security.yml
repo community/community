@@ -41,11 +41,12 @@ body:
 
       If your post covers additional themes or topics, don't worry! Our team will do our best to add extra labels based on the content of your discussion.
     options:
-      - "Secret scanning"
+      - "Code quality"
       - "Code scanning"
       - "Dependabot"
+      - "Secret scanning"
       - "Supply chain security"
-      - "Code quality"
+      - "Other"
   validations:
     required: true
 - type: textarea
