@@ -1,18 +1,58 @@
 labels: ["Code Security", source:ui]
 body:
+- type: markdown
+  attributes:
+    value: |
+      🔐 **Welcome to the Code Security Category!** 🔐
+
+      This is your community for all things related to GitHub's code security features — from finding vulnerabilities in your code to keeping your dependencies safe and your secrets secure.
+
+      **What belongs here?**
+      - Questions about setting up or configuring code security features
+      - Bug reports for unexpected behavior in security tools
+      - Product feedback and feature requests to improve code security on GitHub
+
+      **How to best use this category:**
+      - **Have a Question?** Select "Question" below and our community will help you troubleshoot and find answers.
+      - **Product Feedback?** Have ideas to improve GitHub's code security experience? Select "Product Feedback" to share what works (or doesn't) for you.
+      - **Found a Bug?** If something isn't working as expected, select "Bug" so we can investigate.
+
+      After choosing your discussion type, pick the topic area that best matches your discussion.
+
+      **Quick links:** [Code Security Documentation](https://docs.github.com/en/code-security), [Secret Scanning Docs](https://docs.github.com/en/code-security/secret-scanning), [Code Scanning Docs](https://docs.github.com/en/code-security/code-scanning), [Dependabot Docs](https://docs.github.com/en/code-security/dependabot), [Supply Chain Security Docs](https://docs.github.com/en/code-security/supply-chain-security)
+
 - type: dropdown
+  id: reason
   attributes:
     label: "🏷️ Discussion Type"
-    description: What would you like to discuss?
+    description: Tell us your goal! Are you asking a question, giving feedback, or reporting a bug?
     options:
       - "Bug"
       - "Product Feedback"
       - "Question"
   validations:
     required: true
+- type: dropdown
+  id: topic
+  attributes:
+    label: "💬 Feature/Topic Area"
+    description: |
+      Choose the topic area most relevant to your discussion.
+
+      If your post covers additional themes or topics, don't worry! Our team will do our best to add extra labels based on the content of your discussion.
+    options:
+      - "Code quality"
+      - "Code scanning"
+      - "Dependabot"
+      - "Secret scanning"
+      - "Supply chain security"
+      - "Other"
+  validations:
+    required: true
 - type: textarea
   attributes:
-    label: Body
-    description: Start your discussion!
+    label: Discussion Details
+    description: >-
+      Share your question, feedback, or bug report! Include links, code snippets, or screenshots for more context. Tip: Reference the [Code Security docs](https://docs.github.com/en/code-security) for details.
   validations:
     required: true
