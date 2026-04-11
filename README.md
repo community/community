@@ -1,52 +1,38 @@
-# GitHub Community Discussions
+import { useState, useEffect, useRef, useMemo } from "react";
 
-In this repository, you will find categories for various product areas. Feel free to share feedback, discuss topics with other community members, or ask questions.
+// \u2500\u2500\u2500 ADMIN PASSWORD \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+const ADMIN_PASS = "RajAdmin@2024";
 
-## Product Feedback
+// \u2500\u2500\u2500 INITIAL CATEGORIES \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+const INIT_CATEGORIES = [
+  { id: "cold-drinks", name: "Cold Drinks", icon: "\ud83e\udd64", color: "#e8f4fd" },
+  { id: "cakes", name: "Cakes", icon: "\ud83c\udf82", color: "#fff0f5" },
+  { id: "namkeen", name: "Namkeen", icon: "\ud83e\udd5c", color: "#fffbea" },
+  { id: "chips", name: "Chips & Snacks", icon: "\ud83c\udf5f", color: "#fff5e6" },
+  { id: "biscuits", name: "Biscuits", icon: "\ud83c\udf6a", color: "#fdf5e6" },
+  { id: "ice-cream", name: "Ice Creams", icon: "\ud83c\udf66", color: "#f0fff4" },
+  { id: "tobacco", name: "Tobacco & Cigarettes", icon: "\ud83d\udeac", color: "#f5f5f5", optional: true },
+];
 
-| **Feedback Category** | **About the Product** 	|
-|---	|---	|
-| 👍 [Accessibility](https://github.com/orgs/community/discussions/categories/accessibility) | [About Accessibility](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-personal-account-settings/managing-accessibility-settings#about-accessibility-settings) |
-| 🚢 [Actions](https://github.com/orgs/community/discussions/categories/actions) | [GitHub Actions](https://github.com/features/actions) |
-| 🔗 [Apps, API and Webhooks](https://github.com/orgs/community/discussions/categories/apps-api-and-webhooks) | [GitHub Apps](https://docs.github.com/en/apps), [GitHub REST API](https://docs.github.com/en/rest), [GitHub GraphQL API](https://docs.github.com/en/graphql), and [GitHub Webhooks](https://docs.github.com/en/webhooks) |
-| 🤖 [Code Security](https://github.com/orgs/community/discussions/categories/code-security) | [GitHub Code Security](https://github.com/features/security) |
-| 💻 [Codespaces](https://github.com/orgs/community/discussions/categories/codespaces) | [GitHub Codespaces](https://github.com/features/codespaces) |
-| :copilot: [Copilot Conversations](https://github.com/orgs/community/discussions/categories/copilot-conversations) | [GitHub Copilot](https://copilot.github.com/) |
-| 🗣️ [Discussions](https://github.com/orgs/community/discussions/categories/discussions) | [GitHub Discussions](https://docs.github.com/en/discussions) |
-| 🏢 [Enterprise](https://github.com/orgs/community/discussions/categories/enterprise) | [GitHub Enterprise](https://docs.github.com/en/enterprise-cloud@latest) |
-| 🎒 [GitHub Education](https://github.com/orgs/community/discussions/categories/github-education) | [GitHub Education](https://education.github.com/) |
-| 🏆 [GitHub Learn](https://github.com/orgs/community/discussions/categories/github-learn) | [GitHub Certifications](https://resources.github.com/learn/certifications/), [Learning Pathways](https://resources.github.com/learn/pathways/), and [GitHub Skills](https://skills.github.com/) |
-| 📱 [Mobile](https://github.com/orgs/community/discussions/categories/mobile) | [GitHub Mobile](https://github.com/mobile) |
-| 🟥 [npm](https://github.com/orgs/community/discussions/categories/npm) | [npm](https://docs.npmjs.com/) |
-| 📦 [Packages](https://github.com/orgs/community/discussions/categories/packages) | [GitHub Packages](https://github.com/features/packages) |
-| 💡 [Programming Help](https://github.com/orgs/community/discussions/categories/programming-help) | General programming questions and help |
-| 🐙 [Projects and Issues](https://github.com/orgs/community/discussions/categories/projects-and-issues) | [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects) / [GitHub Issues](https://github.com/features/issues) |
-| ✔️ [Pull Requests](https://github.com/orgs/community/discussions/categories/pull-requests) | [GitHub Pull Requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) |
-| 🗳️ [Repositories](https://github.com/orgs/community/discussions/categories/repositories) | [GitHub Repositories](https://docs.github.com/en/repositories) |
-| 👋 [Welcome to GitHub](https://github.com/orgs/community/discussions/categories/a-welcome-to-github) | Community introductions — say hi and share what you're working on |
-| 🧩 [Other Features and Feedback](https://github.com/orgs/community/discussions/categories/other-feature-feedback-questions-ideas) | [Code Search & Navigation](https://cs.github.com/about), [Feed](https://github.blog/2022-03-22-improving-your-github-feed/), [Lists](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars#organizing-starred-repositories-with-lists), [Models](https://github.com/features/preview/copilot-models), [Pages](https://docs.github.com/en/pages), [Profile](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile), and [Sponsors](https://github.com/sponsors) |
+// \u2500\u2500\u2500 INITIAL PRODUCTS \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+const INIT_PRODUCTS = [
+  // Cold Drinks
+  { id:"p001", name:"Sting Energy Drink", category:"cold-drinks", brand:"Sting", price:20, discountPrice:null, stock:"In Stock", quantity:50, image:"https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=400&q=80", description:"Energizing carbonated drink with power-packed taste", tags:["drink","energy","cold"], status:"active" },
+  { id:"p002", name:"Coca Cola 600ml", category:"cold-drinks", brand:"Coca Cola", price:40, discountPrice:35, stock:"In Stock", quantity:30, image:"https://images.unsplash.com/photo-1554866585-cd94860890b7?w=400&q=80", description:"Classic refreshing cola drink", tags:["cold drink","cola"], status:"active" },
+  { id:"p003", name:"Sprite 250ml", category:"cold-drinks", brand:"Sprite", price:20, discountPrice:null, stock:"In Stock", quantity:40, image:"https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=400&q=80", description:"Crisp lemon-lime carbonated drink", tags:["sprite","lime","cold"], status:"active" },
+  { id:"p004", name:"Frooti Mango 200ml", category:"cold-drinks", brand:"Frooti", price:15, discountPrice:null, stock:"In Stock", quantity:60, image:"https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&q=80", description:"Fresh mango fruit drink", tags:["mango","frooti","juice"], status:"active" },
+  { id:"p005", name:"Red Bull 250ml", category:"cold-drinks", brand:"Red Bull", price:115, discountPrice:110, stock:"In Stock", quantity:20, image:"https://images.unsplash.com/photo-1622543925917-763c34d1a86e?w=400&q=80", description:"Premium energy drink with taurine & caffeine", tags:["energy","redbull","premium"], status:"active" },
+  { id:"p006", name:"Tropicana Orange 1L", category:"cold-drinks", brand:"Tropicana", price:90, discountPrice:80, stock:"In Stock", quantity:25, image:"https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=400&q=80", description:"100% real fruit juice", tags:["juice","orange","health"], status:"active" },
 
-These discussions are where you can share suggestions for how the products should be improved and discuss those improvements with the community, including members of the GitHub product team. Check out [Making suggestions](#making-suggestions) to learn how to provide feedback.
+  // Cakes
+  { id:"p007", name:"Chocolate Cake (1kg)", category:"cakes", brand:"Raj Confectionery", price:450, discountPrice:400, stock:"In Stock", quantity:10, image:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&q=80", description:"Rich dark chocolate layered cake with cream frosting", tags:["chocolate","cake","birthday"], status:"active" },
+  { id:"p008", name:"Butterscotch Cake (1kg)", category:"cakes", brand:"Raj Confectionery", price:420, discountPrice:380, stock:"In Stock", quantity:8, image:"https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=400&q=80", description:"Creamy butterscotch cake with caramel drizzle", tags:["butterscotch","cake","sweet"], status:"active" },
+  { id:"p009", name:"Black Forest Cake (1kg)", category:"cakes", brand:"Raj Confectionery", price:500, discountPrice:450, stock:"In Stock", quantity:6, image:"https://images.unsplash.com/photo-1565808229224-264b2d4c1397?w=400&q=80", description:"Classic German-style chocolate cherry cake", tags:["black forest","cherry","cake"], status:"active" },
+  { id:"p010", name:"Red Velvet Cake (1kg)", category:"cakes", brand:"Raj Confectionery", price:550, discountPrice:500, stock:"In Stock", quantity:5, image:"https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=400&q=80", description:"Velvety red sponge with cream cheese frosting", tags:["red velvet","cream","premium"], status:"active" },
+  { id:"p011", name:"Pineapple Cake (1kg)", category:"cakes", brand:"Raj Confectionery", price:400, discountPrice:350, stock:"In Stock", quantity:12, image:"https://images.unsplash.com/photo-1560180474-e8563fd75bab?w=400&q=80", description:"Tropical pineapple cream cake", tags:["pineapple","fruit cake","fresh"], status:"active" },
+  { id:"p012", name:"Vanilla Cake (500g)", category:"cakes", brand:"Raj Confectionery", price:220, discountPrice:200, stock:"In Stock", quantity:15, image:"https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&q=80", description:"Classic soft vanilla sponge cake", tags:["vanilla","simple","light"], status:"active" },
 
-## Discussions Categories
-
-When creating a new post, make sure to choose the predetermined category that best fits your topic. This will ensure that conversations are indexed by their corresponding product or feature, to help community members quickly find answers to their questions.
-
-This repository works in conjunction with the [GitHub public product roadmap](https://github.com/github/roadmap), which is where you can learn about what features we're working on, and when they'll be available. Accordingly, the Issues feature of this repository has been disabled. Discussion categories have been established for specific features listed above, as well as a general category for other topics. Additional categories may be added in the future. In the meantime, topics outside of the listed categories above, will be transferred into the General category. Please review the [CODE OF CONDUCT](https://docs.github.com/en/site-policy/github-terms/github-community-forum-code-of-conduct) before participating in discussions.
-
-## Making suggestions
-
-We encourage you to [open a discussion](https://github.com/orgs/community/discussions) if you have suggestions for how we can improve our products. You don't need to have a solution to the problem you are facing to kick off a discussion. 
-
-Prior to creating a new discussion, please take a look at previous discussions to see if someone else has already shared your suggestion(s). If you find a similar discussion, reply with additional details or upvote the discussion to signal your support rather than creating a new one.
-
-### From a suggestion to a shipped feature
-
-Once you kick off a discussion, the GitHub product team will evaluate the feedback but will not be able to respond to every submission. From there, we will work with you, and the entire community, to ensure we understand the current capabilities GitHub doesn’t have and explore the space for potential solutions to your problem statement:
-
-- If the product team determines that we are going to prioritize a feature to solve the problem you've identified, we may open an issue and track its development in the [public roadmap](https://github.com/github/roadmap).
-- If the product team determines that we will not be working to solve the problem you have identified, we may comment on the discussion describing our reasoning so our decisions can remain transparent.
-
-## Disclaimer
-
-Any statement in this repository that is not purely historical is considered a forward-looking statement. Forward-looking statements included in this repository are based on information available to GitHub as of the date they are made, and GitHub assumes no obligation to update any forward-looking statements. The forward-looking comments in the public feedback discussions do not represent a commitment, guarantee, obligation or promise to deliver any product or feature, or to deliver any product and feature by any particular date, and are intended to outline the general development plans. Customers should not rely on these public feedback discussions to make any purchasing decision.
+  // Namkeen
+  { id:"p013", name:"Haldiram Bikaneri Bhujia 400g", category:"namkeen", brand:"Haldiram", price:90, discountPrice:80, stock:"In Stock", quantity:30, image:"https://images.unsplash.com/photo-1601050690117-94f5f7fa8b13?w=400&q=80", description:"Authentic Bikaner-style fine sev bhujia", tags:["bhujia","namkeen","haldiram"], status:"active" },
+  { id:"p014", name:"Haldiram Khatta Meetha 200g", category:"namkeen", brand:"Haldiram", price:40, discountPrice:null, stock:"In Stock", quantity:40, image:"https://images.unsplash.com/photo-1559181567-c3190ef65ea3?w=400&q=80", description:"Sweet & tangy mixed namkeen snack", tags:["khatta meetha","sweet","salty"], status:"active" },
+  { id:"p015", name:"Radhe Lal Kaju Mixture 250g", category:"namkeen", brand:"Radhe Lal", price:120, discountPrice:110, stock:"In Stock", quantity:20, image:"https://images.unsplash.com/photo-1571680322279-a226e6
