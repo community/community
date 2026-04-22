@@ -7,6 +7,15 @@ body:
           Before you post, check our [SDP FAQ](https://gh.io/sdp-faq-nd) for answers to common questions. If your question isn't covered, select a Feature/Topic Area and start your discussion.
           We're here to help, share, and learn together—ask questions, offer advice, or connect with other students and educators!
           **Please do not post personal information or images of your evidence.**
+    - type: markdown
+      attributes:
+        value: |
+          > [!IMPORTANT]
+          > New activations of **Copilot Student, Pro, and Pro Plus** are currently **paused**. 
+          > 
+          > Your GitHub Education verification is active and **has not been removed**. When signups resume, you’ll be able to activate the Education benefit if you’re still eligible, and **Copilot Free remains available** in the meantime.
+          > 
+          > We don’t have an estimated timeframe to share yet. Updates will be posted in the [community announcement](https://github.com/orgs/community/discussions/192963). Thanks for your patience while we work to make this experience more reliable.
     - type: dropdown
       attributes:
         label: "🏷️ Discussion Type"
