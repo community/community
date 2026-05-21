@@ -33,6 +33,7 @@ body:
         - "Pages"
         - "Profile"
         - "Sponsors"
+        - "GitHub Nonprofits"
         - "Other"
     validations:
       required: true
