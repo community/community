@@ -1,5 +1,5 @@
 ## Overview and Purpose
-
+#Remove this repo
 Millions of developers across the world host millions of projects—both open and closed source—on GitHub. We're fortunate to be able to play a part in enabling collaboration across the developer community every day, which is a responsibility we don’t take lightly. Together, we all have the exciting opportunity to make this a community we can be proud of.
 
 GitHub Community, powered by GitHub Discussions, is intended to be a place for further collaboration, support, and brainstorming. This is a civilized place for connecting with other users, learning new skills, sharing feedback and ideas, and finding all the support you need for your GitHub projects. By participating in GitHub Community, you are agreeing to the same [Terms of Service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) and [GitHub Acceptable Use Policies](https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies) that apply to GitHub.com, as well as this GitHub Community-specific Code of Conduct.
