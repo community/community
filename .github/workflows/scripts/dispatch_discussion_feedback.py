@@ -2,9 +2,16 @@
 
 import json
 import os
+import socket
 import sys
+import time
 from datetime import datetime, timezone
 from urllib import error, request
+
+
+REQUEST_TIMEOUT_SECONDS = 10
+MAX_DISPATCH_ATTEMPTS = 3
+RETRY_DELAY_SECONDS = 2
 
 
 def load_event_payload(event_path: str) -> dict:
@@ -19,12 +26,29 @@ def parse_target_repository(value: str) -> tuple[str, str]:
     return owner, repo
 
 
+def normalize_login(value: str) -> str:
+    return value.strip().lower()
+
+
 def build_trusted_staff(raw_value: str) -> set[str]:
-    return {entry.strip() for entry in raw_value.split(",") if entry.strip()}
+    return {normalize_login(entry) for entry in raw_value.split(",") if entry.strip()}
 
 
 def iso_timestamp() -> str:
     return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def is_retryable_error(exc: Exception) -> bool:
+    if isinstance(exc, error.HTTPError):
+        return exc.code >= 500
+
+    if isinstance(exc, socket.timeout):
+        return True
+
+    if isinstance(exc, error.URLError):
+        return isinstance(exc.reason, socket.timeout)
+
+    return False
 
 
 def create_dispatch(owner: str, repo: str, token: str, event_type: str, payload: dict) -> None:
@@ -48,13 +72,37 @@ def create_dispatch(owner: str, repo: str, token: str, event_type: str, payload:
         },
     )
 
-    try:
-        with request.urlopen(api_request) as response:
-            if response.status != 204:
-                raise RuntimeError(f"Dispatch failed with unexpected status: {response.status}")
-    except error.HTTPError as exc:
-        message = exc.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"Dispatch failed with status {exc.code}: {message}") from exc
+    last_error = None
+    for attempt in range(1, MAX_DISPATCH_ATTEMPTS + 1):
+        try:
+            with request.urlopen(api_request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
+                if response.status != 204:
+                    raise RuntimeError(f"Dispatch failed with unexpected status: {response.status}")
+                return
+        except Exception as exc:
+            last_error = exc
+            if attempt < MAX_DISPATCH_ATTEMPTS and is_retryable_error(exc):
+                print(
+                    f"Dispatch attempt {attempt} failed with a transient error; retrying in {RETRY_DELAY_SECONDS} seconds..."
+                )
+                time.sleep(RETRY_DELAY_SECONDS)
+                continue
+            break
+
+    if isinstance(last_error, error.HTTPError):
+        message = last_error.read().decode("utf-8", errors="replace")
+        raise RuntimeError(
+            f"Dispatch failed with status {last_error.code}: {message}"
+        ) from last_error
+
+    if isinstance(last_error, error.URLError):
+        raise RuntimeError(f"Dispatch failed: {last_error.reason}") from last_error
+
+    if isinstance(last_error, socket.timeout):
+        raise RuntimeError("Dispatch failed: request timed out") from last_error
+
+    if last_error is not None:
+        raise RuntimeError(f"Dispatch failed: {last_error}") from last_error
 
 
 def main() -> int:
@@ -72,6 +120,7 @@ def main() -> int:
     discussion = payload.get("discussion") or {}
     label = payload.get("label") or {}
     actor = os.environ.get("GITHUB_ACTOR") or ((payload.get("sender") or {}).get("login")) or ""
+    normalized_actor = normalize_login(actor)
     trusted_staff = build_trusted_staff(os.environ.get("PROD_TRUSTED_STAFF", ""))
 
     discussion_number = discussion.get("number")
@@ -107,7 +156,7 @@ def main() -> int:
             "label": label_name,
             "actor": actor,
             "actor_type": actor_type,
-            "is_trusted_staff": actor in trusted_staff,
+            "is_trusted_staff": normalized_actor in trusted_staff,
             "label_source": "manual" if dispatch_event_type == "label-feedback" else "mirror-observation",
             "createdAt": iso_timestamp(),
         }
