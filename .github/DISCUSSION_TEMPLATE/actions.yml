@@ -55,7 +55,7 @@ body:
     required: true
 - type: textarea
   attributes:
-    label: Discussion Details
+    label: "Discussion Details"
     description: >-
       Share your question, feedback, or story! Include links, code, or screenshots for more context. Tip: Reference the docs https://docs.github.com/en/actions or relevant changelogs for details.
   validations:
