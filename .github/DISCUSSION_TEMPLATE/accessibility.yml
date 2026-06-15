@@ -25,7 +25,8 @@ body:
         What GitHub product/feature area is your Accessibility post related to? (If applicable)
       options:
         - Actions
-        - APIs and Webhooks
+        - API
+        - Apps
         - Code Scanning
         - Code Search and Navigation
         - Code Security
@@ -57,6 +58,7 @@ body:
         - UI/UX
         - Visual Studio
         - VSCode
+        - Webhooks
         - Wiki
         - Other
   validations:
