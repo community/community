@@ -1,35 +1,38 @@
+labels: ["Copilot", "source:ui"]
 body:
 - type: markdown
   attributes:
     value: |
       #### Explore our [Copilot FAQs](https://github.com/orgs/community/discussions/144674) and [GitHub Docs](https://docs.github.com/en/copilot) for comprehensive guidance!
+      - ❗️ New sign-ups for GitHub Copilot Pro, Pro+, and Student plans are paused. For the announcement and FAQ, please see [Changes to GitHub Copilot Individual Plans](https://github.com/orgs/community/discussions/192963).
       - 💡 **Quick Tip:** For general development questions or detailed code issues, try [Chat with Copilot](https://docs.github.com/en/enterprise-cloud@latest/copilot/using-github-copilot/copilot-chat/asking-github-copilot-questions-in-github) first, it might have the answer you need before posting here.
       - 🛠️ For bugs and feature requests related to Copilot in VS Code, please open an issue in our [VS Code repo](https://github.com/microsoft/vscode/issues). If your issue is related to Copilot Chat, please [visit our FAQ](https://aka.ms/vscode-report-ai-feedback).
-      - 🔍 Are you a student/teacher looking to enable Copilot Pro? [Read our guide](https://gh.io/faq-nd-copilot)
 - type: dropdown
   attributes:
-    label: Select Topic Area
+    label: "🏷️ Discussion Type"
     description: What would you like to discuss about GitHub Copilot? Choose your topic area. 
     options:
-      - Question
+      - Bug
       - Product Feedback
-      - Bug 
-      - General
+      - Question
   validations:
     required: true
 - type: dropdown
   id: feature-area
   attributes:
-    label: Copilot Feature Area
-    description: Which Copilot feature or product area is your discussion related to?
+    label: "💬 Feature/Topic Area"
+    description: Which Copilot feature or product area is your discussion related to? (If applicable)
     options:
-      - General
       - Copilot in GitHub
       - Copilot Workspace
       - Copilot Agent Mode
-      - Copilot Coding Agent
+      - Copilot Cloud Agent
+      - Copilot Agentic Workflows
+      - Copilot CLI
+      - Copilot SDK
+      - Copilot Code Review
       - Copilot Enterprise
-      - Account Related 
+      - Account Related
       - VS Code
       - Visual Studio
       - JetBrains & Xcode

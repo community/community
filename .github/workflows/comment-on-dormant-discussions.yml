@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     # At 03:25 every day
-    - cron: '25 3 * * *'
+    - cron: "5 0 * * *"
 
 jobs:
   build:
@@ -18,6 +18,8 @@ jobs:
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
 
       - name: Bundle install
         run: bundle install

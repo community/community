@@ -1,0 +1,42 @@
+name: Feature/Topic Area Labeler (Reusable)
+
+on:
+  workflow_call:
+    inputs:
+      discussion_body:
+        required: true
+        type: string
+      discussion_node_id:
+        required: true
+        type: string
+      owner:
+        required: true
+        type: string
+      repo:
+        required: true
+        type: string
+
+jobs:
+  label-feature-topic-area:
+    runs-on: ubuntu-latest
+    permissions:
+      discussions: write
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Label discussion by feature/topic area
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ inputs.owner }}
+          REPO: ${{ inputs.repo }}
+          DISCUSSION_BODY: ${{ inputs.discussion_body }}
+          DISCUSSION_NODE_ID: ${{ inputs.discussion_node_id }}
+        run: python .github/workflows/scripts/feature_topic_area_labeler.py

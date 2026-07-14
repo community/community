@@ -2,7 +2,8 @@
 
 source "https://rubygems.org"
 
-gem "faraday"
+gem "activesupport", "~> 7.0"
+gem "faraday", "~> 2.0"
 
 group :test, :development do
   gem "rubocop-github"

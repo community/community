@@ -1,37 +1,53 @@
+labels: ["GitHub Education", "source:ui"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        #### Welcome! Before You Create a New Post...  
-  - type: markdown
-    attributes:
-      value: |
-        Please read the **hints and tips** below. Your question might already have an answer waiting for you! 
-        If you are new here and are unsure where to start, please check out our [Quick Start Guide](https://github.com/orgs/community/discussions/141947). 👈
-  - type: markdown
-    attributes:
-      value: |
-        ### Let's first see if you need to create a discussion 🧠🔮 <sub><sup>_We will attempt to read your mind..._</sup></sub>
-        - **"Where are my academic benefits?"** <img width="5%" src="https://github.com/user-attachments/assets/940b5b29-2c08-4753-9b17-557b28ee93f2" /> Do you have this approved status image? You'll usually receive your benefits after 3 days of this approval status. Patience, my friend, patience! 😎  **"Awesome. But it's been 5 days?"** 😅 If you haven’t received your benefits within 5 days of your approval status, then yes, create this discussion and we'll assist!
-        - **Check out our [SDP FAQ](https://gh.io/sdp-faq-nd) and [Educators FAQ](https://github.com/orgs/community/discussions/145312)** – It has the most commonly asked questions when applying including: 
-          * ⏱️ [How long after I’ve been approved will I receive my academic benefits?](https://gh.io/faq-nd-long)
-          * 📩 [I don't have a school-issued email address, what other official proof of enrollment is accepted?](https://github.com/orgs/community/discussions/111352#i-dont-have-a-school-issued-email-address)
-          * ✈️ 💻 [How to enable Copilot Pro for GitHub Education verified students/teachers?](https://gh.io/faq-nd-copilot)
-        ### Thanks, but I still want to join the conversation! 💬😄 <sub><sup>_Love it! We're here for the banter_</sup></sub>
-        - **Can’t find your answer in our [SDP FAQ](https://gh.io/sdp-faq-nd)?** Then provide as much relevant information about your application as possible including posting your latest rejection reasons.
-        - **Calling all verified Educators** 📣 Did you know we have an exclusive teachers only discussions board you can access after being verified? 🤫 [Check it out here](https://github.com/community/Global-Campus-Teachers/discussions?new-dis) 👈 
-        
-        Once you're ready to post, feel free to jump in. **We’re here to help!** 🌟 Ensure you have read our [Code of Conduct](https://github.com/community/community/blob/main/CODE_OF_CONDUCT.md). Remember **do not post** any personal information on the discussions boards e.g images of your evidence.
-  - type: textarea
-    id: conversation
-    attributes:
-      label: Hi everyone, 
-      description: 
-    validations:
-      required: true
-  - type: markdown
-    attributes:
-      value: |
-        #### Anything else I could do to make my experience here more rewarding? 🤔
-        * Remember to mark an [answer as "solved"](https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/participating-in-a-discussion#marking-a-comment-as-an-answer) to help others with similar questions. ✅
-        * Praise generously 💖 Thank members who have helped you and continue to support others within the community. ✨
+    - type: markdown
+      attributes:
+        value: |
+          #### Welcome! Before You Create a New Post...
+          Before you post, check our [SDP FAQ](https://gh.io/sdp-faq-nd) for answers to common questions. If your question isn't covered, select a Feature/Topic Area and start your discussion.
+          We're here to help, share, and learn together—ask questions, offer advice, or connect with other students and educators!
+          **Please do not post personal information or images of your evidence.**
+    - type: dropdown
+      attributes:
+        label: "🏷️ Discussion Type"
+        description: What would you like to discuss?
+        options:
+          - Bug
+          - Product Feedback
+          - Question
+      validations:
+        required: true
+    - type: dropdown
+      attributes:
+        label: "💬 Feature/Topic Area"
+        description: Which area best matches your post? (If applicable)
+        options:
+          - Verification Help & Guidance
+          - Evidence and Image Capture
+          - School Email/Domain Issues
+          - Form Errors & Technical Issues
+          - Benefit Activation/Waiting
+          - Billing & Payment Issues
+          - Re-verification/Repeat Application
+          - Redeem Benefits/Offers
+          - GitHub Classroom
+          - Career & Internship Advice
+          - Student Events & Hackathons
+          - Study Projects & Resources
+          - Campus Experts
+          - Other
+      validations:
+        required: true
+    - type: textarea
+      id: conversation
+      attributes:
+        label: Hi everyone,
+        description:
+      validations:
+        required: true
+    - type: markdown
+      attributes:
+          value: |
+            #### Anything else I could do to make my experience here more rewarding? 🤔
+            * Remember to mark an [answer as "solved"](https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/participating-in-a-discussion#marking-a-comment-as-an-answer) to help others with similar questions. ✅
+            * Praise generously 💖 Thank members who have helped you and continue to support others within the community. ✨

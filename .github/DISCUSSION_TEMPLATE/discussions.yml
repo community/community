@@ -1,5 +1,5 @@
 title: "<Your question or feedback about the GitHub Discussions product>"
-labels: [Discussions]
+labels: [Discussions, source:ui]
 body:
   - type: markdown
     attributes: 
