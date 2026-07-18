@@ -1,0 +1,40 @@
+name: CL40 World & Chico Loco 40 & LB0025 (International) - Build + Publish
+
+on:
+  push:
+    tags:
+      - "v*"
+  pull_request:
+
+jobs:
+  cl40world-build-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build gem
+        run: gem build *.gemspec
+
+      - name: Publish to RubyGems
+        if: startsWith(github.ref, 'refs/tags/v') && env.RUBYGEMS_API_KEY != ''
+        env:
+          RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
+        run: |
+          mkdir -p ~/.gem
+          cat > ~/.gem/credentials <<EOF
+          ---
+          :rubygems_api_key: ${RUBYGEMS_API_KEY}
+          EOF
+          chmod 0600 ~/.gem/credentials
+          gem push *.gem
