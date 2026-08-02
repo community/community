@@ -1,0 +1,45 @@
+src/types.ts
+src/data/initialData.ts
+src/components/MaterialCatalog.tsx
+src/components/QuoteSystem.tsx
+src/App.tsx y src/components/HeaderNavbar.tsx
+# 1. Inicializar el repositorio Git local
+git init
+
+# 2. Agregar todos los archivos al seguimiento
+git add .
+
+# 3. Crear el primer commit
+git commit -m "Initial commit - EM Servicios Eléctricos App"
+
+# 4. Cambiar la rama principal a 'main'
+git branch -M main
+
+# 5. Vincular tu repositorio de GitHub (reemplaza con la URL de tu repositorio creado en github.com)
+git remote add origin https://github.com/TU_USUARIO/TU_REPOSITORIO.git
+
+# 6. Subir el código a GitHub
+git push -u origin main
+├── package.json              # Dependencias (React, Vite, Lucide Icons, Canvas Confetti, Docx, XLSX)
+├── vite.config.ts            # Configuración del empaquetador Vite
+├── index.html                # Punto de entrada HTML
+├── src/
+│   ├── main.tsx              # Renderizado principal de React
+│   ├── App.tsx               # Componente central con la lógica y persistencia del sistema
+│   ├── index.css             # Estilos globales y Tailwind CSS
+│   ├── types.ts              # Definiciones TypeScript (Invoices, Quotes, Materials, Clients, Evidences)
+│   ├── data/
+│   │   └── initialData.ts    # Datos iniciales (Novey, Cochez, Doit Center con imágenes y precios)
+│   ├── utils/
+│   │   └── exportUtils.ts   # Utilidades de exportación a Excel y reportes
+│   └── components/
+│       ├── HeaderNavbar.tsx          # Barra superior con navegación y atajos
+│       ├── Dashboard.tsx             # Panel de control e indicadores KPI
+│       ├── QuoteSystem.tsx           # Sistema de cotizaciones y buscador de materiales con fotos
+│       ├── InvoiceManagement.tsx     # Gestión de facturas y control de abonos
+│       ├── MaterialCatalog.tsx       # Catálogo de insumos con margen de ganancia e imágenes
+│       ├── ExportModal.tsx           # Respaldo completo en formato JSON y Excel
+│       ├── PrintDocumentModal.tsx    # Impresión y generación de comprobantes PDF
+│       ├── ThemeAndLogoModal.tsx     # Personalización del logo de la empresa y colores
+│       ├── DigitalSignaturePad.tsx   # Panel de firma digital en pantalla
+│       └── SummaryWidgets.tsx        # Módulos de resumen financiero
