@@ -30,7 +30,7 @@ These discussions are where you can share suggestions for how the products shoul
 
 ## Discussions Categories
 
-When creating a new post, make sure to choose the predetermined category that best fits your topic. This will ensure that conversations are indexed by their corresponding product or feature, to help community members quickly find answers to their questions.
+When creating a new post, make sure to choose the appropriate category that best fits your topic. This will ensure that conversations are indexed by their corresponding product or feature, to help community members quickly find answers to their questions.
 
 This repository works in conjunction with the [GitHub public product roadmap](https://github.com/github/roadmap), which is where you can learn about what features we're working on, and when they'll be available. Accordingly, the Issues feature of this repository has been disabled. Discussion categories have been established for specific features listed above, as well as a general category for other topics. Additional categories may be added in the future. In the meantime, topics outside of the listed categories above, will be transferred into the General category. Please review the [CODE OF CONDUCT](https://docs.github.com/en/site-policy/github-terms/github-community-forum-code-of-conduct) before participating in discussions.
 
@@ -38,7 +38,7 @@ This repository works in conjunction with the [GitHub public product roadmap](ht
 
 We encourage you to [open a discussion](https://github.com/orgs/community/discussions) if you have suggestions for how we can improve our products. You don't need to have a solution to the problem you are facing to kick off a discussion. 
 
-Prior to creating a new discussion, please take a look at previous discussions to see if someone else has already shared your suggestion(s). If you find a similar discussion, reply with additional details or upvote the discussion to signal your support rather than creating a new one.
+Before creating a new discussion, please take a look at previous discussions to see if someone else has already shared your suggestion(s). If you find a similar discussion, reply with additional details or upvote the discussion to signal your support rather than creating a new one.
 
 ### From a suggestion to a shipped feature
 
