@@ -1,9 +1,0 @@
-labels: [:megaphone:Annoucement, source:ui]
-body:
-- type: textarea
-  id: text
-  attributes:
-    label: Body
-    description: Start your discussion!
-  validations:
-    required: true
