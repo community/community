@@ -23,7 +23,7 @@
 
 5. **HOW TO ENTER**  
      
-   No Purchase Necessary. During your participation in the Program, you will develop an application using GitHub Copilot Agent (your “App”). The requirements for your App will be shared during the Program. You will receive entries by visiting the web site for the Sweepstakes at [https://github.com/orgs/community/discussions/184217](https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Forgs%2Fcommunity%2Fdiscussions%2F184217&data=05%7C02%7Cjragen%40shb.com%7C214d5efcaa094978688708de553ee252%7C7be5e27659ab444899e76ab9030adfbf%7C1%7C0%7C639041925774084398%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=s63vyFIZ7X%2BxljukEXS312tdo8%2BHdfCnxuNT4hqa1%2B4%3D&reserved=0) (“Sweepstakes Website”) and completing the following actions during each week of the Program:  
+   No Purchase Necessary. During your participation in the Program, you will develop an application using GitHub Copilot Agent (your “App”). The requirements for your App will be shared during the Program. You will receive entries by visiting the web site for the Sweepstakes at [https://github.com/orgs/community/discussions/184217](https://github.com/orgs/community/discussions/184217) (“Sweepstakes Website”) and completing the following actions during each week of the Program:  
    
 
 | Week | Action |
