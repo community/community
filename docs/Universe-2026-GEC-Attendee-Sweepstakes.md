@@ -17,7 +17,7 @@ The Sweepstakes will operate during regular Event hours from October 28, 2026 to
  
 Open to any registered Event attendee eighteen (18) years of age or older . If you are eighteen (18) years of age or older but have not reached the age of majority in your legal place of residence, then you must have the consent of a parent/legal guardian. 
  
-Employees and directors of Microsoft Corporation and its subsidiaries, affiliates, advertising agencies, and Sweepstakes Parties are not eligible, nor are persons involved in the execution or administration of this Sweepstakes or the family members of each above (parents, children, siblings, spouse/domestic partners, or individuals residing in the same household). Void in Cuba, Iran, North Korea, Sudan, Syria, Region of Crimea, Russia, and where otherwise prohibited by law.  
+Employees and directors of Microsoft Corporation and its subsidiaries, affiliates, advertising agencies, and Sweepstakes Parties are not eligible, nor are persons involved in the execution or administration of this Sweepstakes or the family members of each above (parents, children, siblings, spouse/domestic partners, or individuals residing in the same household). Void in Cuba, Iran, North Korea, Sudan, Region of Crimea, Russia, and where otherwise prohibited by law.  
  
 For business/tradeshow events: If you are attending the Event in your capacity as an employee, it is your sole responsibility to comply with your employer’s gift policies. Microsoft will not be party to any disputes or actions related to this matter. GOVERNMENT EMPLOYEES INCLUDING EDUCATORS: Microsoft is committed to complying with government gift and ethics rules and therefore government and public sector employees are not eligible for this Sweepstakes. 
  
