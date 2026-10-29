@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 # Step 1 is to check if the user applying the label is an employee. If employee = 'true', later steps will not fire. If employee = 'false', later steps will continue     
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-python@v5
         with:
