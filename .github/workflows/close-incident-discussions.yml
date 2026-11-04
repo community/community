@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@7bae1d00b5db9166f4f0fc47985a3a5702cb58f0
+        uses: ruby/setup-ruby@de492cf36cbab201753d720ce4f4e336cd688c94
 
       - name: Bundle install
         run: bundle install
