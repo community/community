@@ -1,3 +1,4 @@
+title: "<Your announcement>"
 labels: [📣 ANNOUNCEMENT, source:ui]
 body:
 - type: textarea

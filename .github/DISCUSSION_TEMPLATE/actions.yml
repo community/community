@@ -1,3 +1,4 @@
+title: "<Your question, feedback, or bug report about GitHub Actions>"
 labels: [Actions, source:ui]
 body:
 - type: markdown

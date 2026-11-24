@@ -1,3 +1,4 @@
+title: "<Your question, feedback, or bug report about GitHub Packages>"
 labels: [Packages, source:ui]
 body:
 - type: dropdown
